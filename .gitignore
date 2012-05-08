@@ -1,2 +1,3 @@
-_mypage
+_mypage/*.html
+_mypage/*.css
 _htaccess.txt

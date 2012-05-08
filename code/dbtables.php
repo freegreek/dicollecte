@@ -17,8 +17,9 @@
     
 */
 
-
-define('DB_VERSION', 0.9301);
+// To update the db, update this number (i.e. from 1.0001 to 1.0002)
+// then go to http://[homepage]/installer.php
+define('DB_VERSION', 1.0001);
 
 
 /*

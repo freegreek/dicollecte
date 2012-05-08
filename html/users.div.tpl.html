@@ -1,0 +1,25 @@
+<h1>{{LABEL}}</h1>
+
+<!-- BRANCH message -->
+<h3>{{message.MSGHEAD}}</h3>
+<p>{{message.MESSAGE}}</p>
+<!-- DIE message -->
+
+<div class="pagination">{{PAGES}}</div>
+
+<table class="table_centeralign border_collapse">
+    <tr class="tablehead">
+        <th width="25"></th>
+        <th width="40">#</th>
+        <th width="150">Login</th>
+        <th width="250">Name</th>
+        <th width="150">Date</th>
+        <th width="250">E-mail</th>
+        <th><img src="img/mail_notif.png" alt="" /></th>
+    </tr>
+    <!-- BRANCH user -->
+    <tr id="line{{user.ID}}"><td><a href="#" onclick="return deleteUser('{{_PRJ_}}',{{user.ID}});"><img src="img/tag_forbidden.png" alt="×" /></a></td><td>{{user.ID}}</td><td>{{user.LOGIN}}</td><td>{{user.NAME}}</td><td>{{user.DATE}}</td><td>{{user.EMAIL}}</td><td>{{user.EMAILNOTIF}}</td></tr>
+    <!-- DIE user -->
+</table>
+
+<div class="pagination">{{PAGES}}</div>

@@ -1,0 +1,123 @@
+
+    <div class="imgzone_right"><img src="./img/icon_gears.png" alt="" /></div>
+    <h1>Installer</h1>
+    
+    <!-- BRANCH message -->
+    <h3>{{message.MSGHEAD}}</h3>
+    <p>{{message.MESSAGE}}</p>
+    <!-- DIE message -->
+       
+    <!-- BRANCH connxform -->
+    <div class="roundcorner">
+        <h2>You must be logged as administrator</h2>
+        <form method="post" action="./installer_c.php">
+            <p>
+                <label>login: <input type="text" class="inputtxt" name="login" style="width: 125px;" maxlength="20" /></label>
+                <label>password: <input type="password" class="inputtxt" style="width: 125px;" name="pw" size="20" maxlength="20" /></label>
+            </p>
+            
+            <p>
+                <input type="hidden" name="cmd" value="connect" />
+                <input type="submit" value="OK" />
+            </p>
+        </form>
+    </div>
+    <!-- DIE connxform -->
+    
+    <!-- BRANCH projectslist -->
+    <div class="roundcorner">
+        <h2>Projects list</h2>
+        <table class="table_centeralign">
+            <tr class="tablehead"><th width="30"></th><th width="100">Identifier</th><th width="400">Label</th><th width="200">Version</th></tr>
+            <!-- BRANCH project -->
+            <tr>
+                <td>{{projectslist.project.ICON}}</td>
+                <td><samp>{{projectslist.project.PRJ}}</samp></td>
+                <td>{{projectslist.project.LABEL}}</td>
+                <td>{{projectslist.project.VERSION}}</td>
+            </tr>
+            <!-- DIE project -->    
+        </table>
+        <!-- BRANCH noprj -->
+        <br />
+        <p>No project found</p>
+        <!-- DIE noprj -->
+    </div>
+    <!-- DIE projectslist -->
+    
+    <!-- BRANCH update_old -->
+    <div class="roundcorner">
+        <h2>Update from old versions 0.4-0.6</h2>
+        <form method="post" action="./installer_c.php">
+            <p>Rename the database’s tables, and update to the current version.</p>
+            <p>
+                <input type="hidden" name="projects" value="{{update_old.PROJECTS}}" />
+                <input type="hidden" name="projectlabels" value="{{update_old.PROJECTLABELS}}" />
+                <input type="hidden" name="cmd" value="update_old" />
+                <input type="submit" value="Update" />
+            </p>
+        </form>
+    </div>
+    <!-- DIE update_old -->
+        
+    <!-- BRANCH install -->
+    <div class="roundcorner">
+        <h2>First installation</h2>
+        <form method="post" action="./installer_c.php">
+            <p>No previous installation of Dicollecte has been found.</p>
+            <br />
+            <table>
+                <tr><td width="200">Superuser account</td><td><samp>Admin</samp></td></tr>
+                <tr><td>Please, choose a password</td><td><input class="inputtxt" type="password" name="password" maxlength="20" /></td></tr>
+            </table>
+            <br /> 
+            <p>
+                <input type="hidden" name="cmd" value="firstinstall" />
+                <input type="submit" value="Install" />
+            </p>
+        </form>
+    </div>
+    <!-- DIE install -->
+    
+    <!-- BRANCH update -->
+    <div class="roundcorner">
+        <h2>Update database tables to version {{update.VERSION}}</h2>
+        <p>Please, save your data before updating.</p>
+        <form method="post" action="./installer_c.php">
+            <p>
+                <input type="hidden" name="cmd" value="update" />
+                <input type="submit" value="Update now" />
+            </p>
+        </form>
+    </div>
+    <!-- DIE update -->
+
+    <!-- BRANCH create_project -->
+    <div class="roundcorner">
+        <h2>Create a new project</h2>
+        <form method="post" action="./installer_c.php">
+            <p>Create the database’s tables and the folders.</p>
+            <p>
+                <label>Identifier <input class="inputtxt" type="text" name="identifier" maxlength="5" size="10" /></label> &nbsp; &nbsp; <label>Label <input class="inputtxt" type="text" name="label" size="60" /></label>
+                <input type="hidden" name="cmd" value="createprj" />
+                &nbsp; &nbsp; <input type="submit" value="Create project" />
+            </p>
+            
+        </form>
+    </div>
+    <!-- DIE create_project -->
+    
+    <!-- BRANCH destroy_project -->
+    <div class="roundcorner">
+        <h2>Erase a project</h2>
+        <form method="post" action="./installer_c.php">
+            <p><samp>Warning!</samp> This action will erase the database’s tables of the project and its folders. <samp>All data will be lost and unrecoverable.</samp></p>
+            <p>
+                <input type="hidden" name="cmd" value="destroyprj" />
+                <label>Identifier <input class="inputtxt" type="text" name="identifier" maxlength="5" size="10" /></label>
+                &nbsp; &nbsp; <input type="submit" value="Erase this project" onclick="return confirm('Do you really want to erase this project? All data will be lost and unrecoverable.')" />
+            </p>
+        </form>
+    </div>
+    <!-- DIE destroy_project -->
+

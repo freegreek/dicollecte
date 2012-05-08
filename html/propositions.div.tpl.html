@@ -1,0 +1,118 @@
+
+<!-- THIS TEMPLATE IS USED BY member.php AND propositions.php, WITH code/displaytable.php -->
+
+<!-- BRANCH user -->
+<div class="roundcorner" style="margin-top: 0; margin-bottom: 20px">
+    <!-- BRANCH userrank -->
+    <div class="linkbutton fright" style="margin-left: 10px">
+        <a href="#" onclick="$('#changerank').toggle(200); return false;">+</a>
+    </div>
+    <form class="fright" id="changerank" style="display: none" method="post" action="member_c.php?prj={{_PRJ_}}">
+        <p>{{user.userrank.LABEL}}
+            <select name="user_rank" size="1" style="width: 150px;">
+                <option {{user.userrank.1SEL}} value="1">{{user.userrank.1}}</option>
+                <option {{user.userrank.2SEL}} value="2">{{user.userrank.2}}</option>
+                <option {{user.userrank.3SEL}} value="3">{{user.userrank.3}}</option>
+                <option {{user.userrank.5SEL}} value="5">{{user.userrank.5}}</option>
+                <option {{user.userrank.7SEL}} value="7">{{user.userrank.7}}</option>
+                <option {{user.userrank.9SEL}} value="9">{{user.userrank.9}}</option>
+            </select>
+            <input type="hidden" name="id_user" value="{{user.userrank.ID}}" />
+            <input type="submit" value="{{user.userrank.SUBMIT}}" />
+        </p>
+    </form>
+    <!-- DIE userrank -->
+    <h2>{{user.LOGIN}} • {{user.NAME}} {{user.EMAIL}}</h2>
+    <p>{{user.RANK}} • {{user.MEMBERSINCE}} {{user.SINCEDATE}}</p>
+    <div class="clearer"></div>
+    
+    <table class="border_collapse">
+        <tr>
+            <td width="150"><img src="img/tag_prop.png" alt="" title="{{user.TOEVALLBL}}" /> <a href="member.php?prj={{_PRJ_}}&amp;tab=E&amp;id_user={{user.ID}}">{{user.NBTOEVAL}}</a> / {{user.NBPROP}} <a href="comments.php?prj={{_PRJ_}}&amp;prop_user={{user.ID}}&amp;user={{user.LOGIN}}"><img src="img/tag_log.png" alt="#" title="{{user.COMMENTSONPROP}}" /></a></td>
+            <td width="60"><img src="img/tag_valid.png" alt="" title="{{user.VALIDLBL}}" /> {{user.NBVALID}}</td>
+            <td width="120"><img src="img/tag_ok.png" alt="" title="{{user.INTEGRLBL}}" /> <a href="member.php?prj={{_PRJ_}}&amp;tab=T&amp;id_user={{user.ID}}">{{user.NBINTEGR}}</a> <a href="member.php?prj={{_PRJ_}}&amp;tab=R&amp;id_user={{user.ID}}"><img src="img/tag_forbidden.png" alt="" title="{{user.MEMLBL}}" /></a></td>
+            <td width="90"><img src="img/tag_comment.png" alt="" title="{{user.COMMENTSLBL}}" /> {{user.NBCOMMENTS}}</td>
+            <td width="90"><img src="img/tag_add.png" alt="" title="{{user.ADDDICTLBL}}" /> {{user.NBADDDICT}}</td>
+            <td width="90"><img src="img/tag_modif.png" alt="" title="{{user.ACTDICTLBL}}" /> {{user.NBACTDICT}}</td>
+            <td width="90"><img src="img/tag_note.png" alt="" title="{{user.NOTESLBL}}" /> {{user.NBNOTES}}</td>
+            <td width="90"><img src="img/tag_thes.png" alt="" title="{{user.ACTTHESLBL}}" /> {{user.NBACTTHES}}</td>
+            <td width="90"><img src="img/tag_message.png" alt="" title="{{user.MESSAGESLBL}}" /> {{user.NBMSG}}</td>
+            <td><img src="img/mail_notif.png" alt="" title="{{user.MAILNOTIFLBL}}" {{user.EMAILNOTIF}} /></td>
+        </tr>
+    </table>
+</div>
+<!-- DIE user -->
+
+<!-- BRANCH table -->
+    <div class="imgzone_right"><img src="{{table.IMG}}" alt="" /></div>
+    <div class="block_right linkbutton" style="margin-top: 30px"><a href="" onclick="$('#caption').toggle(200); return false;">{{table.CAPTION}}</a></div>
+    <!-- BRANCH actionsbutton -->
+    <div class="block_right linkbutton" style="margin-top: 30px"><a href="" onclick="$('#actions').toggle(200); return false;">{{table.actionsbutton.LABEL}}</a></div>
+    <!-- DIE actionsbutton -->
+    <h1 style="margin-bottom: 0px;">{{table.LABEL}}</h1>
+    <p>{{table.NOTE}} {{table.SORTBY}}</p>
+    
+    <div class="pagination">{{table.PAGES}}</div>
+    
+    <div id="caption" class="caption" style="display: none">
+        <div style="float: left; width:270px">
+            <table>
+                <tr><td width="24"><img src="./img/tag_add.png" alt="+" /></td><td>{{table.TAG_ADD}}</td></tr>
+                <tr><td width="24"><img src="./img/tag_delete.png" alt="-" /></td><td>{{table.TAG_DEL}}</td></tr>
+                <tr><td width="24"><img src="./img/tag_modify.png" alt=">" /></td><td>{{table.TAG_MODIF}}</td></tr>
+            </table>
+        </div>
+        <div style="float: left; width:270px">
+            <table>
+                <tr><td width="24"><img src="./img/tag_valid.png" alt="V" /></td><td>{{table.TAG_VALID}}</td></tr>
+                <tr><td width="24"><img src="./img/tag_reject.png" alt="R" /></td><td>{{table.TAG_REJECT}}</td></tr>
+                <tr><td width="24"><img src="./img/tag_alert.png" alt="!" /></td><td>{{table.TAG_ALERT}}</td></tr>
+                <tr><td width="24"><img src="./img/tag_suspend.png" alt="°" /></td><td>{{table.TAG_SUSPEND}}</td></tr>
+            </table>
+        </div>
+        <table>
+            <tr><td width="24"><img src="./img/tag_integrated.png" alt="I" /></td><td>{{table.TAG_INTEGRATED}}</td></tr>
+            <tr><td width="24"><img src="./img/tag_trash.png" alt="_" /></td><td>{{table.TAG_TRASH}}</td></tr>
+            <tr><td width="24"><img src="./img/tag_forbidden.png" alt="X" /></td><td>{{table.TAG_FORBIDDEN}}</td></tr>
+            <tr><td width="24">&nbsp;</td><td></td></tr>
+        </table>
+    </div>
+    
+    <!-- BRANCH actions -->
+    <div id="actions" style="display:none">
+        <!-- BRANCH actionvalid -->
+        <div class="largebutton">
+            <a href="propositions_c.php?prj={{_PRJ_}}&amp;cmd=validall{{table.actions.actionvalid.CPLIDUSER}}" onclick="return confirm('{{table.actions.actionvalid.CONFIRMAPPLYALL}}');">
+                <img src="./img/icon_approve.png" alt="" /> {{table.actions.actionvalid.APPLYALL}}
+            </a>
+        </div>
+        <!-- DIE actionvalid -->
+    
+        <!-- BRANCH actiondel -->
+        <div class="largebutton">
+            <a href="#" onclick="return howManyComments('{{_PRJ_}}','{{table.actions.actiondel.HOWMANYCOMMENTS}}');">
+                <img src="./img/icon_bomb.png" alt="" /> {{table.actions.actiondel.EMPTY}}
+            </a>
+        </div>
+        <!-- DIE actiondel -->
+        <br />
+    </div>
+    <!-- DIE actions -->
+    
+    <!-- BRANCH msg -->
+    <h3>{{table.msg.MSGHEAD}}</h3>
+    <p>{{table.msg.MESSAGE}}</p>
+    <br />
+    <!-- DIE msg -->
+    
+    <!-- BRANCH list -->
+    <table class="table_centeralign border_collapse">
+        <tr class="tablehead"><th width="20"></th><th width="250">{{table.list.LEMMA}} / {{table.list.DATE}}</th><th width="230">{{table.list.GRAMM}}</th><th width="210">{{table.list.LEX}}</th><th width="130">{{table.list.DICT}}</th><th width="20">{{table.list.NBCOMMENTS}}</th><th width="20">{{table.list.PRIORITY}}</th><th width="20">{{table.list.VALUE}}</th></tr>
+        <!-- BRANCH prop -->
+        <tr><td>{{table.list.prop.ACTION}}</td><td>{{table.list.prop.LEMMA}}</td><td>{{table.list.prop.GRAMM}}</td><td>{{table.list.prop.LEX}}</td><td>{{table.list.prop.DICT}}</td><td>{{table.list.prop.NBCOMMENTS}}</td><td>{{table.list.prop.PRIORITY}}</td><td>{{table.list.prop.VALUE}}</td></tr>
+        <!-- DIE prop -->
+    </table>
+    <!-- DIE list -->
+    
+    <div class="pagination">{{table.PAGES}}</div>
+<!-- DIE table -->

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>{{TAB_TITLE}} • Dicollecte • {{TAB_DESCR}}</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}" />
+    <meta name="keywords" content="{{PAGE_KEYWORDS}}" />
+    <meta name="author" content="Olivier R." />
+    <meta name="google-site-verification" content="e00L-hmAD359VQdJys1CVAJMGVLhp7PUz-RUeKO9R28" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="dark_elegance.css" />
+    <link rel="stylesheet" type="text/css" href="lib/autosuggest/autosuggest.css" />
+    <script type="text/javascript" src="./lib/jquery.js"></script>
+    <!-- BRANCH script -->
+    <script type="text/javascript" src="{{script.FILENAME}}"></script>
+    <!-- DIE script -->
+</head>
+
+<body>
+
+<div id="debugpanel">{{DEBUGPANEL}}</div>
+
+<div id="header">
+    <div id="maintitle">
+		<h1><a href="index.php">dicollecte<sup>({{_PRJ_}})</sup></a></h1>
+		<h2>{{TITLE2}}</h2>
+	</div>
+    <div class="roundcorner menubox">
+        <!-- BRANCH userpanel -->
+        <p style="font-size: 12px;">
+            <b>{{userpanel.LABEL}}: <a href="useraccount.php?prj={{_PRJ_}}">{{userpanel.LOGIN}}</a></b> |
+            <a href="member.php?prj={{_PRJ_}}&amp;id_user={{userpanel.IDUSER}}">{{userpanel.MYPROP}}</a> |
+            <a href="logout_c.php?prj={{_PRJ_}}">{{userpanel.LOGOUT}}</a>
+        </p>
+        <!-- DIE userpanel -->
+        
+        <!-- BRANCH connxform -->
+        <div id="logform" style="display: none">
+            <form method="post" action="./identification_c.php?prj={{_PRJ_}}">
+                <p>
+                    <label>{{connxform.USER}} <input type="text" class="inputtxt" name="login" maxlength="20" style="width: 125px; font-size: 12px;" /></label> 
+                    <label>{{connxform.PW}} <input type="password" class="inputtxt" name="pw" size="20" maxlength="20" style="width: 125px; font-size: 12px;" /></label> 
+                    <a href="#" onclick="$('#logform').hide(); $('#pwrecup').show(); return false;"><b>?</b></a>
+                    <input type="hidden" name="cmd" value="connx" />
+                    <input type="submit" class="button" value="⇒" style="font-size: 11px;" /> | 
+                    <a href="inscription.php?prj={{_PRJ_}}"><b>{{connxform.INSCRIPTION}}</b></a>
+                </p>
+            </form>
+        </div>
+        <div id="pwrecup" style="display: none">
+            <form method="post" action="./identification_c.php?prj={{_PRJ_}}">
+                <p>
+                    {{connxform.PWFORGOTTEN}} • 
+                    <label>{{connxform.USER}} <input type="text" class="inputtxt" name="login" maxlength="20" style="width: 125px; font-size: 12px;" /></label> 
+                    <input type="hidden" name="cmd" value="pwrecup" />
+                    <input type="submit" class="button" value="{{connxform.REINITPW}}" style="font-size: 11px;" />
+                    <a href="#" onclick="$('#pwrecup').hide(); $('#logform').show(); return false">←</a>
+                </p>
+            </form>
+        </div>
+        <div id="loginlink">
+            <p><a href="#" onclick="$('#logform').show(); $('#loginlink').hide(); return false">{{connxform.CONNEXION}}</a></p>
+        </div>
+        <!-- DIE connxform -->
+    </div>
+    <!-- BRANCH adminpanel -->
+    <div class="roundcorner menubox">
+        <p><a href="administration.php?prj={{_PRJ_}}" >{{adminpanel.ADMIN}}</a> {{adminpanel.AUTOEDITLINK}}</p>
+    </div>
+    <!-- DIE adminpanel -->
+	
+	<div class="clearer"></div>
+	
+	<div id="menu">
+    	<div class="menublock">
+            <a href="home.php?prj={{_PRJ_}}"><b>{{MENU_HOME}}</b></a>
+            <a href="faq.php?prj={{_PRJ_}}">{{MENU_FAQ}}</a>
+            <a href="news.php?prj={{_PRJ_}}">{{MENU_NEWS}}</a>
+        </div>
+        <div class="menublock menulimit">
+            <a href="dictionary.php?prj={{_PRJ_}}"><b>{{MENU_DICTIONARY}}</b></a>
+            <a href="documentation.php?prj={{_PRJ_}}">{{MENU_DOCUMENTATION}}</a>
+            <a href="affixes.php?prj={{_PRJ_}}">{{MENU_AFFIXES}}</a>
+        </div>
+        <div class="menublock">
+            <a href="propositions.php?prj={{_PRJ_}}&amp;tab=E"><b>{{MENU_PROPOSITIONS}}</b></a>
+            <a href="propositions.php?prj={{_PRJ_}}&amp;tab=R">{{MENU_REJECTED}}</a>
+            <a href="propositions.php?prj={{_PRJ_}}&amp;tab=T">{{MENU_TRASH}}</a>
+        </div>
+        <div class="menublock menulimit">
+            <a href="members.php?prj={{_PRJ_}}"><b>{{MENU_MEMBERS}}</b></a>
+            <a href="comments.php?prj={{_PRJ_}}">{{MENU_COMMENTS}}</a>
+            <a href="log.php?prj={{_PRJ_}}">{{MENU_LOG}}</a>
+        </div>
+        <div class="menublock menulimit">
+            <a href="synsets.php?prj={{_PRJ_}}"><b>{{MENU_SYNSETS}}</b></a>
+            <a href="thesaurus.php?prj={{_PRJ_}}">{{MENU_THESAURUS}}</a>
+            <a href="documentationthes.php?prj={{_PRJ_}}">{{MENU_DOCUMENTATIONTHES}}</a>
+        </div>
+        <div class="menublock menulimit">
+            <a href="download.php?prj={{_PRJ_}}"><b>{{MENU_DOWNLOAD}}</b></a>
+            <a href="forum.php?prj={{_PRJ_}}">{{MENU_FORUM}}</a>
+            <a href="{{MENU_COMMUNITYLINK}}">{{MENU_COMMUNITY}}</a>
+        </div>
+    </div>
+</div>
+<div class="clearer"></div>
+
+<div id="fixedmenu"><p><a href="#header"><img src="img/move_up.png" alt="↑" /></a></p><p><a href="#footer"><img src="img/move_down.png" alt="↓" /></a></p></div>
+
+<div id="main">
+    <noscript><div id="noscript"><p>{{NOSCRIPT}}</p></div></noscript>
+    <div id="ajaxmsgbox"><div id="ajaxwait" class="ajaxmsg"><img src="img/wait.gif" alt="processing..." /></div><div id="ajaxok" class="ajaxmsg">OK</div><div id="ajaxerror" class="ajaxmsg">AJAX error!</div></div>
+    {{SYSMSG}}
+

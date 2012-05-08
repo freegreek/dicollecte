@@ -1,0 +1,30 @@
+<h1>{{MEMBERS}}</h1>
+
+<!-- BRANCH message -->
+<h3>{{message.MSGHEAD}}</h3>
+<p>{{message.MESSAGE}}</p>
+<!-- DIE message -->
+
+<div class="pagination">{{PAGES}}</div>
+
+<table class="table_centeralign border_collapse">
+    <tr class="tablehead">
+        <th width="50"><img src="img/tag_info.png" alt="" title="{{RANKLBL}}" /></th>
+        <th width="150"><img src="img/tag_user.png" alt="" title="{{LOGINLBL}}" /></th>
+        <th width="120"><img src="img/tag_prop.png" alt="" title="{{TOEVALLBL}}" /></th>
+        <th width="70"><img src="img/tag_valid.png" alt="" title="{{VALIDLBL}}" /></th>
+        <th width="70"><img src="img/tag_ok.png" alt="" title="{{INTEGRLBL}}" /></th>
+        <th width="70"><img src="img/tag_comment.png" alt="" title="{{COMMENTSLBL}}" /></th>
+        <th width="70"><img src="img/tag_add.png" alt="" title="{{ADDDICTLBL}}" /></th>
+        <th width="70"><img src="img/tag_modif.png" alt="" title="{{ACTDICTLBL}}" /></th>
+        <th width="70"><img src="img/tag_note.png" alt="" title="{{NOTESLBL}}" /></th>
+        <th width="70"><img src="img/tag_thes.png" alt="" title="{{ACTTHESLBL}}" /></th>
+        <th width="70"><img src="img/tag_message.png" alt="" title="{{MESSAGESLBL}}" /></th>
+        <th><img src="img/mail_notif.png" alt="" title="{{MAILNOTIFLBL}}" /></th>
+    </tr>
+    <!-- BRANCH user -->
+    <tr><td>{{user.RANK}}</td><td><a href="member.php?prj={{_PRJ_}}&amp;id_user={{user.ID}}">{{user.LOGIN}}</a></td><td>{{user.NBTOEVAL}}</td><td>{{user.NBVALID}}</td><td>{{user.NBINTEGR}}</td><td>{{user.NBCOMMENTS}}</td><td>{{user.NBADDDICT}}</td><td>{{user.NBACTDICT}}</td><td>{{user.NBNOTES}}</td><td>{{user.NBACTTHES}}</td><td>{{user.NBMSG}}</td><td>{{user.EMAILNOTIF}}</td></tr>
+    <!-- DIE user -->
+</table>
+
+<div class="pagination">{{PAGES}}</div>

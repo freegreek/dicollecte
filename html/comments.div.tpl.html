@@ -1,0 +1,35 @@
+
+<div class="roundcorner fright">
+    <p><label class="defaultlbl" style="width: 200px;">{{SYSCOMMENTSLBL}}</label>{{SELECTSYS}}</p>
+    <!-- BRANCH mycom -->
+    <p><label class="defaultlbl" style="width: 200px;">{{mycom.MYCOMMENTSLBL}}</label>{{mycom.SELECTME}}</p>
+    <!-- DIE mycom -->
+</div>
+<h1>{{LABEL}}</h1>
+
+<div class="pagination">{{PAGES}}</div>
+
+<!-- BRANCH message -->
+<h3>{{message.MSGHEAD}}</h3>
+<p>{{message.MESSAGE}}</p>
+<!-- DIE message -->
+
+<div id="comments">
+    <!-- BRANCH comment -->
+    <div class="commblock">
+        <div class="commentcontent">
+            <p class="commenthead">{{comment.IMGACTION}} <a href="proposition.php?prj={{_PRJ_}}&amp;id={{comment.IDPROP}}"><b>{{comment.LEMMA}}</b></a><samp>{{comment.FLAGS}}</samp></p>
+            <div>{{comment.COMMENT}}</div>
+        </div>
+        <div class="commentinfo">
+            <div class="msguser"><a href="member.php?prj={{_PRJ_}}&amp;id_user={{comment.IDUSER}}">{{comment.LOGIN}}</a></div>
+            <div class="tinytxt">{{comment.DATE}}</div>
+            <div class="tinytxt">{{comment.UPDATE}}</div>
+        </div>
+    </div>
+    <div class="clearer"></div>
+    <!-- DIE comment -->
+</div>
+
+<div class="pagination" style="margin-top: 10px">{{PAGES}}</div>
+

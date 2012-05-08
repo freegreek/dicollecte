@@ -1,0 +1,74 @@
+
+<!-- BRANCH page -->
+<div id="main_left">
+    <!-- BRANCH home -->
+    <img class="imgzone_right" src="./img/icon_gears.png" alt="" />
+    <h1>{{page.home.LABEL}}</h1>
+    <div class="roundcorner fleft center" style="width: 103px; margin-right: 10px">
+        <a href="dictionary.php?prj={{_PRJ_}}">
+            <img src="img/icon_add.png" alt="" /><br />
+            <b>{{page.home.ADD}}</b>
+        </a>
+    </div>
+    <div class="roundcorner fleft center" style="width: 103px; margin-right: 10px">
+        <a href="dictionary.php?prj={{_PRJ_}}">
+            <img src="img/icon_modify.png" alt="" /><br />
+            <b>{{page.home.MODIFY}}</b>
+        </a>
+    </div>
+    <div class="roundcorner fleft center" style="width: 103px; margin-right: 10px">
+        <a href="dictionary.php?prj={{_PRJ_}}">
+            <img src="img/icon_delete.png" alt="" /><br />
+            <b>{{page.home.DELETE}}</b>
+        </a>
+    </div>
+    <div class="roundcorner fleft center" style="width: 103px">
+        <a href="dictionary.php?prj={{_PRJ_}}">
+            <img src="img/icon_write.png" alt="" /><br />
+            <b>{{page.home.REPORT}}</b>
+        </a>
+    </div>
+    <div class="clearer"></div>
+    <!-- DIE home -->
+    
+    <!-- BRANCH stats -->
+    <div class="roundcorner">
+        <img class="imgzone_right" src="./img/icon_stats.png" alt="" />
+        <h2>{{page.stats.LABEL}}</h2>
+        <table>
+            <tr><th width="325">{{page.stats.SPELLDICT}}</th><th width="150"></th></tr>
+            <tr><td>— {{page.stats.NBDICTENTLBL}}</td><td>{{page.stats.NBDICTENT}}</td></tr>
+            <tr><td>— {{page.stats.NBENTGRAMTAGLBL}}</td><td>{{page.stats.NBENTGRAMTAG}} ({{page.stats.PCENTGRAMTAG}}%)</td></tr>
+            <tr><td>— {{page.stats.NBENTSEMTAGLBL}}</td><td>{{page.stats.NBENTSEMTAG}} ({{page.stats.PCENTSEMTAG}}%)</td></tr>
+            <tr><td>— {{page.stats.NBNOTESLBL}}</td><td>{{page.stats.NBNOTES}}</td></tr>
+            <tr><td>— {{page.stats.NBPROPLBL}}</td><td>{{page.stats.NBPROP}}</td></tr>
+            <tr><td>&nbsp;</td><td></td></tr>
+            <tr><th>{{page.stats.THESAURUS}}</th><th></th></tr>
+            <tr><td>— {{page.stats.NBTHESENTLBL}}</td><td>{{page.stats.NBTHESENT}}</td></tr>
+            <tr><td>— {{page.stats.NBSYNSLBL}}</td><td>{{page.stats.NBSYNS}}</td><td></td></tr>
+        </table>
+        <div class="commentdate">{{page.stats.LASTUPDATE}}</div>
+    </div>
+    <!-- DIE stats -->
+    
+    {{page.MAINLEFT}}
+</div>
+
+<div id="main_right">
+    {{page.LANGLINKS}}
+    {{page.MAINRIGHT}}
+</div>
+<!-- DIE page -->
+
+<!-- BRANCH pageedit -->
+<div class="imgzone_right"><img src="./img/icon_lock.png" alt="" /></div>
+<h1>{{pageedit.PAGEEDIT}}&nbsp;: {{pageedit.PAGETITLE}}</h1>
+<form method="post" action="./autoedit_c.php?prj={{pageedit.PRJ}}&{{pageedit.PAGENAME}}">
+    <h3>{{pageedit.MAINBODY}}</h3>
+    <textarea class="monospace" name="mainbody" style="width: 900px;" cols="10" rows="30">{{pageedit.MAINLEFT}}</textarea>
+    <h3>{{pageedit.RIGHTCOLUMN}}</h3>
+    <textarea class="monospace" name="rightcolumn" style="width: 900px;" cols="10" rows="20">{{pageedit.MAINRIGHT}}</textarea>
+    <p><br /></p>
+    <p><input type="hidden" name="pagename" value="{{pageedit.PAGENAME}}"><input type="submit" class="button" value="{{pageedit.SUBMIT}}"></p>
+</form>
+<!-- DIE pageedit -->

@@ -1,0 +1,11 @@
+User-Agent: *
+Disallow: /comments.php
+Disallow: /member.php
+Disallow: /entry.php
+Disallow: /dictionary.php
+Disallow: /proposition.php
+Disallow: /propositions.php
+Disallow: /synonyms.php
+Disallow: /log.php
+Disallow: /messages.php
+Disallow: /affixes.php

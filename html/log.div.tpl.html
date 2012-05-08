@@ -1,0 +1,95 @@
+<div class="imgzone_right"><img src="./img/icon_logs.png" alt="" /></div>
+<h1>{{PAGETITLE}}</h1>
+
+<div class="roundcorner">
+    <b>{{FILTER}}</b> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}{{IDUSERSEL}}">{{NOFILTER}}</a> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}&amp;cat=P{{IDUSERSEL}}">{{PROPFILTER}}</a> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}&amp;cat=D{{IDUSERSEL}}">{{DICTFILTER}}</a> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}&amp;cat=E{{IDUSERSEL}}">{{EVALFILTER}}</a> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}&amp;cat=F{{IDUSERSEL}}">{{FLAGFILTER}}</a> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}&amp;cat=T{{IDUSERSEL}}">{{THESFILTER}}</a> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}&amp;cat=Y{{IDUSERSEL}}">{{SYNSFILTER}}</a> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}&amp;cat=N{{IDUSERSEL}}">{{NOTESFILTER}}</a> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}&amp;cat=A{{IDUSERSEL}}">{{ANNOUNCEFILTER}}</a> &nbsp; &nbsp;
+    <a href="log.php?prj={{_PRJ_}}&amp;cat=S{{IDUSERSEL}}">{{SYSTEMFILTER}}</a>
+</div>
+
+<div class="pagination">
+    {{PAGES}}
+</div>
+
+<div class="clearer">&nbsp;</div>
+
+<!-- BRANCH announces -->
+<div id="announces">
+
+    <!-- BRANCH newann -->
+    <div class="roundcorner">
+        <h2>{{newann.LABEL}}</h2>
+        <form method="post" action="./log_c.php?prj={{_PRJ_}}">
+            <p><textarea id="announce" name="announce" cols="10" rows="7" style="width: 875px;" onkeyup="charCount(this,3000,'charcounter');" onkeydown="charCount(this,3000,'charcounter');"></textarea></p>
+            <div class="littlelinkbutton" style="float: right;">
+                <a href="#" onclick="insertHtmlTag('announce', '<s>', '</s>'); return false;"><s>s</s></a>
+            </div>
+            <div class="littlelinkbutton" style="float: right;">
+                <a href="#" onclick="insertHtmlTag('announce', '<u>', '</u>'); return false;"><u>u</u></a>
+            </div>
+            <div class="littlelinkbutton" style="float: right;">
+                <a href="#" onclick="insertHtmlTag('announce', '<i>', '</i>'); return false;"><i>i</i></a>
+            </div>
+            <div class="littlelinkbutton" style="float: right;">
+                <a href="#" onclick="insertHtmlTag('announce', '<b>', '</b>'); return false;"><b>b</b></a>
+            </div>
+            <p><input type="hidden" name="cmd" value="newannounce" /><input type="submit" value="{{newann.SUBMIT}}" /> <samp id="charcounter">0</samp> / {{newann.MAXLENGTH}}</p>
+        </form>
+    </div>
+    <p><br /></p>
+    <!-- DIE newann -->
+    
+    <!-- BRANCH ann -->
+    <div class="commentblock">
+        <!-- BRANCH actions -->
+        <div class="littlelinkbutton" style="float: right; margin: 2px;">
+            <a href="log_c.php?prj={{_PRJ_}}&amp;cmd=deleteannounce&amp;id_log={{ann.actions.IDLOG}}" onclick="return confirm('{{_CONFIRMDELETEANN_}}');">X</a>
+        </div>
+        <div class="littlelinkbutton" style="float: right; margin: 2px;">
+            <a href="#" onclick="$('#eza{{ann.actions.IDLOG}}').toggle(200); copyMsg('ann{{ann.actions.IDLOG}}', 'newannounce{{ann.actions.IDLOG}}'); charCount(document.getElementById('newannounce{{ann.actions.IDLOG}}'),3000,'charcounter{{ann.actions.IDLOG}}'); return false;">&darr;</a>
+        </div>
+        <!-- DIE actions -->
+        <div class="comment">
+            <div class="commentnote">
+                <a href="member.php?prj={{_PRJ_}}&amp;id_user={{ann.IDUSER}}"><b>{{ann.LOGIN}}</b></a>
+            </div>
+            <div id="ann{{ann.IDLOG}}">{{ann.ANNOUNCE}}</div>
+            <!-- BRANCH edit -->
+            <div id="eza{{ann.edit.IDLOG}}" style="display: none">
+                <h3>{{_EDITLBL_}}</h3>
+                <form method="post" action="log_c.php?prj={{_PRJ_}}&amp;cmd=editannounce" accept-charset="UTF-8">
+                    <p><textarea name="newannounce" id="newannounce{{ann.edit.IDLOG}}" cols="10" rows="5" style="width: 860px;" onkeyup="charCount(this,3000,'charcounter{{ann.edit.IDLOG}}');" onkeydown="charCount(this,3000,'charcounter{{ann.edit.IDLOG}}');"></textarea></p>
+                    <p>
+                        <input type="hidden" name="id_log" value="{{ann.edit.IDLOG}}" />
+                        <input type="submit" value="{{_SUBMITANN_}}" /> <samp id="charcounter{{ann.edit.IDLOG}}">0</samp> / {{_MAXLENGTH_}}
+                    </p>
+                </form>
+            </div>
+            <!-- DIE edit -->
+            <div class="commentdate">{{ann.DATETIME}}</div>
+        </div>
+    </div>
+    <!-- DIE ann -->
+</div>
+<!-- DIE announces -->
+
+<!-- BRANCH table -->
+<table class="table_topalign border_collapse">
+    <tr class="tablehead"><th width="100">{{table.USERLBL}}</th><th width="110">{{table.CATEGORYLBL}}</th><th width="25">{{table.ACTIONLBL}}</th><th width="540">{{table.LABELLBL}}</th><th width="130">{{table.DATETIMELBL}}</th></tr>
+    <!-- BRANCH log -->
+    <tr><td>{{table.log.USER}}</td><td>{{table.log.CATEGORY}}</td><td>{{table.log.ACTION}}</td><td>{{table.log.LABEL}}</td><td>{{table.log.DATETIME}}</td></tr>
+    <!-- DIE log -->
+</table>
+<!-- DIE table -->
+
+<div class="pagination">
+    {{PAGES}}
+</div>

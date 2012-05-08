@@ -1,0 +1,49 @@
+<div id="main_left">
+    <img class="imgzone_left" src="img/icon_add.png" alt="" />
+    <h1>{{LABEL}}</h1>
+    <div class="clearer"></div>
+    
+    <p style="margin: 40px 0 20px 0" >{{FIELDSNOTE}}</p>
+    
+    <form class="entrydetail" method="post" action="newentry_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+        <div class="entryform">
+            {{ENTRYFORM}}
+        </div>
+        <p><b>{{COMMENTLBL}}</b></p>
+        <p><textarea id="comment" name="comment" cols="10" rows="10" style="width: 535px;" onkeyup="charCount(this,3000,'charcounter');" onkeydown="charCount(this,3000,'charcounter');"></textarea></p>
+        <div class="littlelinkbutton" style="float: right;">
+            <a href="#" onclick="insertHtmlTag('comment', '<u>', '</u>'); return false;"><u>u</u></a>
+        </div>
+        <div class="littlelinkbutton" style="float: right;">
+            <a href="#" onclick="insertHtmlTag('comment', '<i>', '</i>'); return false;"><i>i</i></a>
+        </div>
+        <div class="littlelinkbutton" style="float: right;">
+            <a href="#" onclick="insertHtmlTag('comment', '<b>', '</b>'); return false;"><b>b</b></a>
+        </div>
+        <p><samp id="charcounter">0</samp> / {{COMMENTNOTE}}</p>
+        
+        <!-- BRANCH submit -->
+        <!-- BRANCH di -->
+        <div class="fleft" style="margin-top: 10px;">
+            <label>{{submit.di.DIRECTINSERTIONLBL}} <input type="checkbox" name="insertindict" value="ON" /></label> &nbsp; &nbsp; 
+        </div>
+        <!-- DIE di -->
+        <p style="text-align: right"> 
+            <input type="submit" class="button" value="{{submit.SUBMIT}}" />
+        </p>
+        <!-- DIE submit -->
+        
+        <!-- BRANCH noid -->
+        <p><u><b>{{noid.IDMANDATORY}}</b></u></p>
+        <!-- DIE noid -->
+    </form>
+    <div class="searchin">
+        <div class="fleft" style="margin: 0 10px;">⇒</div>
+        <p id="srclinks" style="display: none">{{SRCLINKS}}</p>
+        <p id="dstlinks" style="display: inline"></p> &nbsp;
+    </div>
+</div>
+
+<div id="main_right">
+    {{LANGLINKS}}
+</div>

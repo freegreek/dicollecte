@@ -1,0 +1,171 @@
+<p>{{PATH}}</p>
+
+<div id="msgheader">
+    <div class="imgzone_left" style="background-image: url(./img/forum/{{FLOW}}); width: 64px; height: 64px;">{{CLOSEDIMG}}</div>
+    <div class="imgzone_right"{{TAG}}>{{SOLVEDIMG}}</div>
+    <h1><b id="h1">{{LABEL}}</b>
+    <!-- BRANCH threadbutton -->
+    <a class="nochange" href="#msgeditform" onclick="$('#threadform').toggle(200); document.getElementById('tl').value = document.getElementById('h1').innerHTML; return false;">
+        <img src="img/forum/edit.png" alt="*"/>
+    </a>
+    <!-- DIE threadbutton -->
+    </h1>
+</div>
+<div class="clearer"></div>
+
+<!-- BRANCH threadform -->
+<div id="threadform" style="display: none;">
+    <form method="post" class="roundcorner" action="thread_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+        <p><input type="hidden" name="cmd" value="renthread" /><input type="hidden" name="id_thread" value="{{_IDTHREAD_}}" /></p>
+        <p>{{threadform.RENAMELBL}} &nbsp; &nbsp;
+            <input type="text" class="inputtxt" id="tl" name="label" style="width: 500px;" maxlength="100" value="" />
+            <input type="submit" value="{{threadform.SUBMIT}}" />
+        </p>
+    </form>
+    <div class="clearer"></div>
+    
+    <div class="toolbar">
+        <p>{{threadform.TAGS}}</p>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=A"><img src="img/forum/tag_A.png" alt="A" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=B"><img src="img/forum/tag_B.png" alt="B" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=C"><img src="img/forum/tag_C.png" alt="C" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=D"><img src="img/forum/tag_D.png" alt="D" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=E"><img src="img/forum/tag_E.png" alt="E" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=F"><img src="img/forum/tag_F.png" alt="F" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=G"><img src="img/forum/tag_G.png" alt="G" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=H"><img src="img/forum/tag_H.png" alt="H" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=I"><img src="img/forum/tag_I.png" alt="I" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=J"><img src="img/forum/tag_J.png" alt="J" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=K"><img src="img/forum/tag_K.png" alt="K" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=L"><img src="img/forum/tag_L.png" alt="L" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=M"><img src="img/forum/tag_M.png" alt="M" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=N"><img src="img/forum/tag_N.png" alt="N" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=O"><img src="img/forum/tag_O.png" alt="O" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=P"><img src="img/forum/tag_P.png" alt="P" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=Q"><img src="img/forum/tag_Q.png" alt="Q" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=R"><img src="img/forum/tag_R.png" alt="R" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=settag&amp;t={{_IDTHREAD_}}&amp;tag=?"><img src="img/forum/act_notag.png" alt="×" /></a>
+    </div>
+    <!-- BRANCH flow -->
+    <div class="toolbar">
+        <p>{{threadform.flow.FLOW}}</p>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=setflowtag&amp;t={{_IDTHREAD_}}&amp;tag=A"><img src="img/forum/flow_A.png" alt="A" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=setflowtag&amp;t={{_IDTHREAD_}}&amp;tag=B"><img src="img/forum/flow_B.png" alt="B" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=setflowtag&amp;t={{_IDTHREAD_}}&amp;tag=C"><img src="img/forum/flow_C.png" alt="C" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=setflowtag&amp;t={{_IDTHREAD_}}&amp;tag=D"><img src="img/forum/flow_D.png" alt="D" /></a>
+        <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=setflowtag&amp;t={{_IDTHREAD_}}&amp;tag=E"><img src="img/forum/flow_E.png" alt="E" /></a>
+    </div>
+    <!-- DIE flow -->
+</div>
+<div class="clearer"></div>
+<!-- DIE threadform -->
+
+<div class="pagination">{{PAGES}}</div>
+
+<div id="messages">
+    <!-- BRANCH msg -->
+    <div id="msg{{msg.MSGNUM}}" class="msgblock">
+        <div class="msg">
+            <!-- BRANCH msgact -->
+            <div class="littlelinkbutton fright" style="margin-left: 2px;">
+                <a class="close" href="#" onclick="return delMessage('{{_PRJ_}}', '{{msg.msgact.IDMSG}}', '{{msg.msgact.MSGNUM}}', '{{_IDTHREAD_}}', '{{_CONFIRMDELETEMSG_}}');">X</a>
+            </div>
+            <div class="littlelinkbutton fright" style="margin-left: 2px;">
+                <a href="#msgeditform" onclick="$('#msgeditform').show(); $('#newmsgform').hide(); document.getElementById('msgnum').innerHTML = '{{msg.msgact.MSGNUM}}'; document.getElementById('id_msg').value = {{msg.msgact.IDMSG}};  copyMsg('content{{msg.msgact.IDMSG}}', 'msgedit'); charCount(document.getElementById('msgedit'),30000,'charcounter2');">&darr;</a>
+            </div>
+            <!-- DIE msgact -->
+            <!-- BRANCH msgcit -->
+            <div class="littlelinkbutton fright" style="margin-left: 2px;">
+                <a href="#newmsgform" onclick="$('#newmsgform').show(); $('#msgeditform').hide(); citMsg('{{msg.msgcit.IDMSG}}', 'msg'); charCount(document.getElementById('msg'),30000,'charcounter');">“</a>
+            </div>
+            <!-- DIE msgcit -->
+            <div class="bignum"></div>
+            <div id="content{{msg.IDMSG}}">{{msg.MSG}}</div>
+        </div>
+        <div class="msginfo">
+            <div class="tinytxt fright" style="margin: 2px;"><a href="#msg{{msg.MSGNUM}}">#{{msg.MSGNUM}}</a></div>
+            <div class="msguser"><a id="usermsg{{msg.IDMSG}}" href="member.php?prj={{_PRJ_}}&amp;id_user={{msg.IDUSER}}">{{msg.LOGIN}}</a></div>
+            <div class="tinytxt">{{msg.DATE}}{{msg.AT}}</div>
+            <div class="tinytxt">{{msg.UPDATE}}</div>
+        </div>
+    </div>
+    <div class="clearer"></div>
+    <!-- DIE msg -->
+</div>
+
+<div class="pagination">{{PAGES}}</div>
+
+<!-- BRANCH newmsg -->
+<div class="roundcorner" id="newmsgform">
+    <h2>{{newmsg.MSGLBL}}</h2>
+    <form method="post" action="thread_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+        <p><textarea id="msg" name="msg" cols="10" rows="16" class="spacefield" style="width: 856px" onkeyup="charCount(this,30000,'charcounter');" onkeydown="charCount(this,30000,'charcounter');"></textarea></p>
+        <div class="littlelinkbutton fright" style="margin-left: 5px">
+            <a href="#" onclick="insertHtmlTag('msg', '<q>', '</q>'); return false;">“q”</a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msg', '<s>', '</s>'); return false;"><s>s</s></a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msg', '<u>', '</u>'); return false;"><u>u</u></a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msg', '<i>', '</i>'); return false;"><i>i</i></a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msg', '<b>', '</b>'); return false;"><b>b</b></a>
+        </div>
+        <p>
+            <input type="hidden" name="cmd" value="newmsg" /><input type="hidden" name="id_thread" value="{{_IDTHREAD_}}" />
+            <input type="submit" class="button" value="{{newmsg.SUBMIT}}" /> <samp id="charcounter">0</samp> / {{newmsg.MAXLENGTH}}
+        </p>
+    </form>
+</div>
+
+<div class="roundcorner" id="msgeditform" style="display: none">
+    <div class="littlelinkbutton fright" style="margin: 2px;">
+        <a href="#" onclick="$('#msgeditform').hide(); $('#newmsgform').show(); return false;">X</a>
+    </div>
+    <h2>{{newmsg.MSGEDITLBL}} #<b id="msgnum"></b></h2>
+    <form method="post" action="thread_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+        <p><textarea name="msg" id="msgedit" cols="10" rows="16" class="spacefield" style="width: 856px" onkeyup="charCount(this,30000,'charcounter2');" onkeydown="charCount(this,30000,'charcounter2');"></textarea></p>
+        <div class="littlelinkbutton fright" style="margin-left: 5px">
+            <a href="#" onclick="insertHtmlTag('msgedit', '<q>', '</q>'); return false;">“q”</a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msgedit', '<s>', '</s>'); return false;"><s>s</s></a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msgedit', '<u>', '</u>'); return false;"><u>u</u></a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msgedit', '<i>', '</i>'); return false;"><i>i</i></a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msgedit', '<b>', '</b>'); return false;"><b>b</b></a>
+        </div>
+        <p>
+            <input type="hidden" name="cmd" value="editmsg" />
+            <input type="hidden" name="id_thread" value="{{_IDTHREAD_}}" /><input type="hidden" id="id_msg" name="id_msg" value="" />
+            <input type="submit" class="button" value="{{newmsg.SUBMITEDIT}}" onclick="return confirm('{{newmsg.CONFIRMEDIT}}');" /> <samp id="charcounter2">0</samp> / {{newmsg.MAXLENGTH}}
+        </p>
+    </form>
+</div>
+<!-- DIE newmsg -->
+
+<div class="roundcorner fleft" style="margin: 0; padding: 2px 10px;">
+    <p>{{ENOTIF}} &nbsp; <a href="#"><img src="img/mail_notif.png" id='enotif' style="opacity: {{NOTIFOPAC}}; vertical-align: bottom;" onclick="{{SUBCMD}} return false;" alt="⇒" title="{{ENOTIF}}"/></a> <b id="nbnotif">{{NBNOTIF}}</b></p>
+</div>
+
+<!-- BRANCH admthread -->
+<div class="toolbar">
+    <p>{{admthread.ACTIONS}}</p>
+    <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=switchsolved&amp;t={{_IDTHREAD_}}"><img src="img/forum/act_{{admthread.SOLVEDSELECT}}.png" alt="lock" /></a>
+    <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=switchlock&amp;t={{_IDTHREAD_}}"><img src="img/forum/act_lock_{{admthread.LOCKSELECT}}.png" alt="lock" /></a>
+    <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=copythread&amp;t={{_IDTHREAD_}}" onclick="return confirm('{{admthread.COPYCONFIRM}}')"><img src="img/forum/act_copy.png" alt="copy" /></a>
+    <a href="#" onclick="return cutThread('{{_PRJ_}}', {{_IDTHREAD_}},'{{admthread.CUTQUESTION}}')"><img src="img/forum/act_cut.png" alt="cut" /></a>
+    <a href="#" onclick="return joinToThread('{{_PRJ_}}', {{_IDTHREAD_}},'{{admthread.JOINQUESTION}}')"><img src="img/forum/act_join.png" alt="join" /></a>
+    <a href="#" onclick="return moveThread('{{_PRJ_}}', {{_IDTHREAD_}},'{{admthread.MOVEQUESTION}}')"><img src="img/forum/act_move.png" alt="move" /></a>
+    <a href="thread_c.php?prj={{_PRJ_}}&amp;cmd=delthread&amp;t={{_IDTHREAD_}}" onclick="return confirm('{{admthread.DELCONFIRM}}')"><img src="img/forum/act_erase.png" alt="erase" /></a>
+</div>
+<!-- DIE admthread -->

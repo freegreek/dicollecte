@@ -1,0 +1,189 @@
+<div id="main_left">
+    
+    <!-- BRANCH message -->
+    <h3>{{message.MSGHEAD}}</h3>
+    <p>{{message.MESSAGE}}</p>
+    <!-- DIE message -->
+    
+    <!-- BRANCH entry -->
+        <!-- BRANCH checkarea -->
+        <div id="checkarea" class="fright" style="margin-top: 10px;">
+            <a href="entry_c.php?prj={{_PRJ_}}&cmd=setchecktag&amp;id_entry={{_IDENTRY_}}&amp;nbc=0" onclick="return confirm('{{entry.checkarea.CONFIRMDELENTRY}}');"><img src="img/chk_0.png" id='chk_0' style="opacity: 0.1" onmouseover="showchk(0)" onmouseout="showchk(chkvalue)" alt="R" /></a>
+            <a href="#"><img src="img/chk_1.png" id='chk_1' style="opacity: 0.1" onclick="selectchk(1); setCheckTag('{{_PRJ_}}', {{_IDENTRY_}}, 1);" onmouseover="showchk(1)" onmouseout="showchk(chkvalue)" alt="!" /></a>
+            <a href="#"><img src="img/chk_2.png" id='chk_2' style="opacity: 0.1" onclick="selectchk(2); setCheckTag('{{_PRJ_}}', {{_IDENTRY_}}, 2);" onmouseover="showchk(2)" onmouseout="showchk(chkvalue)" alt="?" /></a>
+            <a href="#"><img src="img/chk_3.png" id='chk_3' style="opacity: 0.1" onclick="selectchk(3); setCheckTag('{{_PRJ_}}', {{_IDENTRY_}}, 3);" onmouseover="showchk(3)" onmouseout="showchk(chkvalue)" alt="*" /></a>
+        </div>
+        <!-- DIE checkarea -->
+        <!-- BRANCH checktag -->
+        <div id="checkarea" class="fright" style="margin-top: 10px;">
+            <img src="img/chk_{{entry.checktag.CHK}}.png" alt="" />
+        </div>
+        <!-- DIE checktag -->
+        
+        <h1>{{entry.LABEL}} <a class="nochange" href="entry.php?prj={{_PRJ_}}&amp;id={{_IDENTRY_}}"><img src="./img/link.png" alt="link" /></a></h1>
+        <div class="clearer"></div>
+        
+        <!-- BRANCH makeprop -->
+        <div class="linkbutton fright" style="padding-top: 6px; margin-left: 5px;">
+            <a href="#" onclick="$('#entryedit').toggle(); $('#entrydesc').toggle(); generateLinks((document.getElementById('entrydesc').style.display != 'none')); return false;">{{entry.makeprop.EDIT}}</a>
+        </div>
+        <div class="linkbutton fright" style="padding-top: 6px;">
+            <a href="entry_c.php?prj={{_PRJ_}}&amp;cmd=propdel&amp;id_entry={{_IDENTRY_}}" onclick="return confirm('{{entry.makeprop.CONFIRMPROPDEL}}');">{{entry.makeprop.PROPDEL}}</a>
+        </div>
+        <!-- DIE makeprop -->
+        
+        <p style="color: #808090">{{entry.FROMDATELBL}} {{entry.FROMDATE}}</p>
+        <div id="entrydesc" class="entrydetail entryform">
+            {{entry.ENTRY}}
+        </div>
+    
+        <!-- BRANCH edit -->
+        <div id="entryedit" class="entrydetail entryform" style="display: none;">
+            <form method="post" action="entry_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+                <div class="clearer"></div>
+                {{entry.edit.ENTRYFORM}}
+                <p><b>{{entry.edit.COMMENTLBL}}</b></p>
+                <textarea id="comment" name="comment" cols="10" rows="8" style="width: 535px;" onkeyup="charCount(this,3000,'charcounter');" onkeydown="charCount(this,3000,'charcounter');"></textarea>
+                <div class="littlelinkbutton fright">
+                    <a href="#" onclick="insertHtmlTag('comment', '<s>', '</s>'); return false;"><s>s</s></a>
+                </div>
+                <div class="littlelinkbutton fright">
+                    <a href="#" onclick="insertHtmlTag('comment', '<u>', '</u>'); return false;"><u>u</u></a>
+                </div>
+                <div class="littlelinkbutton fright">
+                    <a href="#" onclick="insertHtmlTag('comment', '<i>', '</i>'); return false;"><i>i</i></a>
+                </div>
+                <div class="littlelinkbutton fright">
+                    <a href="#" onclick="insertHtmlTag('comment', '<b>', '</b>'); return false;"><b>b</b></a>
+                </div>
+                <p><samp id="charcounter">0</samp> / {{entry.edit.COMMENTNOTE}}</p>
+                <!-- BRANCH de -->
+                <div class="fleft">
+                    <label>{{entry.edit.de.DIRECTEDITIONLBL}}
+                        <input id="selectbutton" type="checkbox" name="editindict" value="ON" style="margin-top: 10px"
+                               onclick="if (document.getElementById('selectbutton').checked == true) {
+                                            document.getElementById('submitbutton').value = '{{entry.edit.de.SAVELBL}}';
+                                            document.getElementById('comment').disabled = true;
+                                        }
+                                        else {
+                                            document.getElementById('submitbutton').value = '{{entry.edit.de.SUBMIT}}';
+                                            document.getElementById('comment').disabled = false;
+                                        }" />
+                    </label> &nbsp; 
+                </div>
+                <!-- DIE de -->
+                <p style="text-align: right;">
+                    <input type="hidden" name="id_entry" value="{{_IDENTRY_}}" />
+                    <input type="hidden" name="cmd" value="update" />
+                    <input id="submitbutton" class="button" type="submit" value="{{entry.edit.SUBMIT}}" />
+                </p>
+            </form>
+        </div>
+        <!-- DIE edit -->
+    
+        <div class="clearer"></div>
+        
+        <div class="searchin">
+            <div class="fleft" style="margin: 0 10px;">⇒</div>
+            <p id="srclinks" style="display: none">{{entry.SRCLINKS}}</p>
+            <p id="dstlinks" style="display: inline">{{entry.CUSTOMLINKS}}</p>
+        </div>
+        
+        <table class="table_centeralign">
+            <tr class="tablehead"><th width="280">{{entry.NBFLEXIONS}} &nbsp; &nbsp; {{entry.ALLFLEXIONS}}</th><th width="280">{{entry.MORPH}}</th></tr>
+            <!-- BRANCH flexion -->
+            <tr><td>{{entry.flexion.LEMMA}}</td><td>{{entry.flexion.MORPH}}</td></tr>
+            <!-- DIE flexion -->
+        </table>
+        
+        <br /><br />
+    
+        <!-- BRANCH note -->
+        <div class="commentblock">
+            <!-- BRANCH noteactions -->
+            <div class="littlelinkbutton fright" style="margin: 2px;">
+                <a href="entry_c.php?prj={{_PRJ_}}&amp;cmd=deletenote&amp;id_note={{note.noteactions.IDNOTE}}&amp;from={{_IDENTRY_}}" onclick="return confirm('{{_CONFIRMDELETECOM_}}');">X</a>
+            </div>
+            <div class="littlelinkbutton fright" style="margin: 2px;">
+                <a href="#" onclick="$('#ezn{{note.noteactions.IDNOTE}}').toggle(); copyMsg('note{{note.noteactions.IDNOTE}}', 'newnote{{note.noteactions.IDNOTE}}'); charCount(document.getElementById('newnote{{note.noteactions.IDNOTE}}'),3000,'charcounter{{note.noteactions.IDNOTE}}'); return false;">&darr;</a>
+            </div>
+            <!-- DIE noteactions -->
+            <div class="comment">
+                <div class="commentnote">
+                    <p><a href="member.php?prj={{_PRJ_}}&amp;id_user={{note.IDUSER}}">{{note.LOGIN}}</a></p>
+                </div>
+                <div id="note{{note.IDNOTE}}">{{note.NOTE}}</div>
+                <!-- BRANCH noteedit -->
+                <div id="ezn{{note.noteedit.IDNOTE}}" style="display: none">
+                    <h3>{{note.noteedit.EDITLBL}}</h3>
+                    <form method="post" action="entry_c.php?prj={{_PRJ_}}&amp;cmd=editnote&amp;from={{_IDENTRY_}}" accept-charset="UTF-8">
+                        <p><textarea name="newnote" id="newnote{{note.noteedit.IDNOTE}}" cols="10" rows="12" onkeyup="charCount(this,'5000','charcounter{{note.noteedit.IDNOTE}}');" onkeydown="charCount(this,'5000','charcounter{{note.noteedit.IDNOTE}}');"></textarea></p>
+                        <p>
+                            <input type="hidden" name="id_note" value="{{note.noteedit.IDNOTE}}" />
+                            <input type="submit" value="{{note.noteedit.SUBMIT}}" /> <samp id="charcounter{{note.noteedit.IDNOTE}}">0</samp> / {{note.noteedit.MAXLENGTH}}&nbsp;: <b>b</b> <i>i</i> <u>u</u>
+                        </p>
+                    </form>
+                </div>
+                <!-- DIE noteedit -->
+                <div class="commentdate">{{note.DATE}}</div>
+            </div>
+        </div>
+        <!-- DIE note -->
+        
+        <!-- BRANCH newnote -->
+        <div class="specialframe" id="notezone" style="margin: 20px 0 20px 0;">
+        <div class="imgzone_right"><img src="./img/icon_write.png" alt="" /></div>
+        <h2 style="margin-top: 0px;">{{entry.newnote.NOTELBL}}</h2>
+        <p>{{entry.newnote.NOTETXT}}</p>
+        <form method="post" action="entry_c.php?prj={{_PRJ_}}&amp;id_entry={{_IDENTRY_}}&amp;cmd=createnote" accept-charset="UTF-8">
+            <p><textarea id="note" name="note" cols="10" rows="15" style="width: 512px;" onkeydown="charCount(this,'5000','charcounter2');" onkeyup="charCount(this,'5000','charcounter2');"></textarea></p>
+            <div class="littlelinkbutton fright">
+                <a href="#" onclick="insertHtmlTag('note', '<s>', '</s>'); return false;"><s>s</s></a>
+            </div>
+            <div class="littlelinkbutton fright">
+                <a href="#" onclick="insertHtmlTag('note', '<u>', '</u>'); return false;"><u>u</u></a>
+            </div>
+            <div class="littlelinkbutton fright">
+                <a href="#" onclick="insertHtmlTag('note', '<i>', '</i>'); return false;"><i>i</i></a>
+            </div>
+            <div class="littlelinkbutton fright">
+                <a href="#" onclick="insertHtmlTag('note', '<b>', '</b>'); return false;"><b>b</b></a>
+            </div>
+            <p><samp id="charcounter2">0</samp> / {{entry.newnote.MAXLENGTH}}</p>
+            <p>
+                <input type="hidden" name="lemma" value="{{entry.newnote.LEMMA}}" />
+                <input type="submit" class="button" value="{{entry.newnote.SUBMIT}}" />
+            </p>
+        </form>
+        </div>
+        <!-- DIE newnote -->
+    
+    <!-- DIE entry -->
+</div>
+
+<div id="main_right">
+    <!-- BRANCH proplink -->
+    <div class="bigbutton">
+        <a href="proposition.php?prj={{_PRJ_}}&amp;id={{proplink.IDPROP}}"><img src="./img/icon_alert.png" alt="" /><br />{{proplink.GOTOPROP}}</a>
+    </div>
+    <!-- DIE proplink -->
+    <!-- BRANCH action -->
+        <div class="label">{{action.LABEL}}</div>
+        <!-- BRANCH restrictedbuttons -->
+        <div class="largebutton">
+            <a href="entry_c.php?prj={{_PRJ_}}&amp;cmd=eraseentry&amp;id_entry={{_IDENTRY_}}"
+               onclick="return confirm('{{action.restrictedbuttons.CONFIRMERASE}}');">
+                <img src="./img/icon_bomb.png" alt="" />{{action.restrictedbuttons.ERASE}}
+            </a>
+        </div>
+        <!-- DIE restrictedbuttons -->
+    <!-- DIE action -->
+    {{ENTRY_SIDEBAR}}
+</div>
+
+<script type="text/javascript">
+<!--
+    selectchk({{CHKVALUE}});
+    showchk({{CHKVALUE}});
+-->
+</script>

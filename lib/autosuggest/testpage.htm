@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<title>Autosuggest test page</title>
+
+		<!-- Page styles: -->
+		<style type="text/css">
+			input
+			{
+				font-size: 10px;
+				font-family: verdana;
+
+				width: 300px;
+			}
+
+			table
+			{
+				width: 100%;
+				text-align: center;
+			}
+		</style>
+
+		<!-- Autosuggest includes: -->
+		<link rel="stylesheet" type="text/css" href="autosuggest.css"></link>
+		<link rel="stylesheet" type="text/css" href="../../dark_elegance.css"></link>
+		<script type="text/javascript" src="autosuggest.js"></script>
+
+		<!-- Autosuggest data: -->
+		<script type="text/javascript">
+			var grammValues = [['nom épicène', '[nom]'], ['nom masculin', '[nm]'], ['nom féminin', '[nf]'], ['adjectif', 'adj'],
+								  ['dodge', 6], ['ford',7], ['gm', 8], ['honda', 9], ['hyundai', 10], ['isuzu', 11],
+								  ['jeep', 12], ['kia', 13], ['lamborghini', 14], ['mazda', 15], ['nissan', 16],
+								  ['opel', 17], ['pontiac', 18], ['renault', 19], ['saab', 20], ['toyota', 21],
+								  ['volkswagen', 22]];
+
+			var custom_array_2 = [['audi', 1], ['bentley', 2], ['buick', 3], ['chevrolet', 4], ['chrysler', 5],
+								  ['dodge', 6], ['ford',7], ['gm', 8], ['honda', 9], ['hyundai', 10], ['isuzu', 11],
+								  ['jeep', 12], ['kia', 13], ['lamborghini', 14], ['mazda', 15], ['nissan', 16],
+								  ['opel', 17], ['pontiac', 18], ['renault', 19], ['saab', 20], ['toyota', 21],
+								  ['volkswagen', 22]];
+		</script>
+	</head>
+	<body>
+		<table><tr><td>
+
+			<!-- The most simple installation: -->
+			<input type="text" id="tb" value="" />
+			<script type="text/javascript">new autosuggest("tb", grammValues); </script>
+
+			<p>&nbsp;</p>
+
+		</td><td>
+
+			<!-- Installation with the callback: -->
+			<input type="text" id="tb2" value="" />
+			<script type="text/javascript"> new autosuggest("tb2", custom_array_2, null, function(index, control) { alert("Selected key: \"" + control.keywords[index] + "\" with value: \"" + control.values[index] + "\""); }); </script>
+
+			<p>This autosuggest control will display an alert with the selected keyword and it's value.</p>
+
+		</td></tr></table>
+	</body>
+</html>

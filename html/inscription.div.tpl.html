@@ -1,0 +1,29 @@
+<div id="main_left">
+    <div class="imgzone_right"><img src="./img/icon_lock.png" alt="" /></div>
+    <h1>{{LABEL}}</h1>
+    
+    <div class="roundcorner">
+        <p>{{NOTE}}</p>
+    </div>
+    
+    <form method="post" action="./inscription_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+        <div class="roundcorner">
+            <p><label class="defaultlbl" style="width: 150px" for="login">{{LOGIN}}</label><input type="text" id="login" name="login" class="inputtxt" style="width: 300px;" maxlength="20" value="" /> <samp>*</samp></p>
+            <p><label class="defaultlbl" style="width: 150px" for="email">{{EMAIL}}</label><input type="text" id="email" name="email" class="inputtxt" style="width: 300px;" maxlength="60" value="" /> <samp>*</samp></p>
+            <p><label class="defaultlbl" style="width: 150px" for="name">{{NAME}}</label><input type="text" id="name" name="name" class="inputtxt" style="width: 300px;" maxlength="40" value="" /></p>
+            <p><samp>{{MANDATORY}}</samp></p>
+        </div>
+        
+        <div class="specialframe">
+            <h3 style="margin-top: 0px;">{{LALBL}}</h3>
+            {{LICENSE_AGREEMENT}}
+            <p style="text-align: right;"><label><img src="./img/tag_integrated.png" alt="" /> {{I_AGREE}} <input type="checkbox" name="iAgree" value="ON" /></label></p>
+        </div>
+        <p style="text-align: right;"><input class="button" type="submit" value="{{SUBMIT}}" /></p>
+    </form>
+    
+</div>
+
+<div id="main_right">
+    {{MAINRIGHT}}
+</div>

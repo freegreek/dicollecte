@@ -1,0 +1,54 @@
+
+
+----- PATTERNS TO EDIT THE THESAURUS BY E-MAIL: -----
+
+Mail subject must be: dicollecte
+
+***** To get entries: *****
+
+USER=username
+PASSWORD=crypted_password
+PROJECT=project
+COMMAND=SEE
+ENTRY
+word
+...
+word
+/ENTRY
+
+***** To add an entry to the thesaurus: *****
+
+USER=username
+PASSWORD=crypted_password
+PROJECT=project
+COMMAND=ADD
+ENTRY
+word
+(description)|synonym|...|synonym
+...
+(description)|synonym|...|synonym
+/ENTRY
+
+***** To update an existing entry: *****
+
+USER=username
+PASSWORD=crypted_password
+PROJECT=project
+COMMAND=UPDATE
+ENTRY
+word
+(description)|synonym|...|synonym
+...
+(description)|synonym|...|synonym
+/ENTRY
+
+***** To delete an entry: *****
+
+USER=username
+PASSWORD=crypted_password
+PROJECT=project
+COMMAND=DELETE
+ENTRY
+word
+/ENTRY
+

@@ -1,0 +1,91 @@
+
+    <div class="roundcorner fright" style="width: 300px;">
+        {{NOTETEXT}}
+    </div>
+    <h1>{{LABEL}}</h1>
+    
+    <div style="width: 550px">
+        <div class="roundcorner">
+            <h2>{{ENTRYTEST}}</h2>
+            <form method="post" action="affixes.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+                <p><b>{{SYNTAX}}</b> &nbsp; <input type="text" class="inputtxt" style="width: 300px;" name="entry" maxlength="200" />&nbsp;<input type="submit" value="{{SUBMIT}}" /></p>
+            </form>
+        </div>
+        
+        <div class="roundcorner">
+            <h2>{{ALLFLAGSLBL}}</h2>
+            <p style="text-align: left;"><samp>{{ALLFLAGS}}</samp></p>
+        </div>
+    </div>
+    
+    <!-- BRANCH leftbuttons -->
+    <div class="linkbutton fleft">
+        <a href="#" onclick="$('#newflag').toggle(200); $('#editflag').hide(200); return false;">{{leftbuttons.ADD}}</a>
+    </div>
+    <!-- DIE leftbuttons -->
+    
+    <!-- BRANCH rightbuttons -->
+    <div class="linkbutton fright" style="margin-left: 5px;"><a href="affixes_c.php?prj={{_PRJ_}}&amp;cmd=eraseflag&amp;flag={{rightbuttons.FLAGURL}}" onclick="return confirm('{{rightbuttons.CONFIRMERASE}}');">{{rightbuttons.ERASE}} {{rightbuttons.FLAGNAME}}</a></div>
+    <div class="linkbutton fright">
+        <a href="#" onclick="$('#editflag').toggle(200); $('#newflag').hide(200); return false;">{{rightbuttons.EDIT}} {{rightbuttons.FLAGNAME}}</a>
+    </div>
+    <!-- DIE rightbuttons -->
+    
+    <div class="clearer"></div>
+    
+    <!-- BRANCH message -->
+    <p>{{message.MESSAGE}}</p>
+    <!-- DIE message -->
+    
+    <!-- BRANCH newflag -->
+    <div id="newflag" style="display: none;">
+        <div class="roundcorner">
+            <form method="post" action="affixes_c.php?prj={{_PRJ_}}&amp;cmd=newaffixes" accept-charset="UTF-8">
+                <h2>{{newflag.NEWFLAGLBL}}</h2>
+                <p>{{newflag.NEWFLAGNOTE}}</p>
+                <p>
+                    <textarea class="monospace" name="flagaffixes" cols="10" rows="20" style="width: 865px; z-index: 100;"></textarea>
+                </p>
+                <p><input type="submit" class="button" value="{{newflag.SUBMIT}}" /></p>
+            </form>
+        </div>
+    </div>
+    <!-- DIE newflag -->
+    
+    <!-- BRANCH editflag -->
+    <div id="editflag" style="display: none;">
+        <div class="roundcorner">
+            <form method="post" action="affixes_c.php?prj={{_PRJ_}}&amp;cmd=editflag" accept-charset="UTF-8">
+                <h2>{{editflag.EDITFLAGLBL}}</h2>
+                <p>{{editflag.EDITFLAGNOTE}}</p>
+                <p>
+                    <textarea class="monospace" name="flagaffixes" cols="10" rows="20" style="width: 865px; z-index: 100;">{{editflag.FLAGRULES}}</textarea>
+                </p>
+                <p><input type="hidden" name="flag" value="{{editflag.FLAGNAME}}" /><input type="submit" class="button" value="{{editflag.SUBMIT}}" /></p>
+            </form>
+        </div>
+    </div>
+    <!-- DIE editflag -->
+    
+    <!-- BRANCH flexionslist -->
+    <h3>{{flexionslist.LEMMA}}<dfn>/</dfn><samp>{{flexionslist.FLAGS}}</samp></h3>
+    <table class="table_centeralign">
+        <tr class="tablehead"><th width="280">{{flexionslist.NBFLEXIONS}} {{flexionslist.FLEXIONS}}</th><th width="280">{{flexionslist.MORPH}}</th></tr>
+        <!-- BRANCH flexion -->
+        <tr><td>{{flexionslist.flexion.LEMMA}}</td><td>{{flexionslist.flexion.MORPH}}</td></tr>
+        <!-- DIE flexion -->
+    </table>
+    <!-- DIE flexionslist -->
+    
+    <!-- BRANCH flag -->
+    <div id="affixlist">
+        <h3>{{flag.FLAG}} <b>{{flag.NAME}}</b> : {{flag.TYPE}} -- {{flag.MIX}}</h3>
+        <table class="table_centeralign">
+            <tr class="tablehead"><th width="100">{{flag.CUT}}</th><th width="200">{{flag.ADD}}<dfn>/</dfn><samp>{{flag.FLAGS}}</samp></th><th width="200">{{flag.COND}}</th><th width="340">{{flag.GRAMM}}</th><th>{{flag.DIC}}</th></tr>
+            <!-- BRANCH rule -->
+            <tr><td>{{flag.rule.CUT}}</td><td>{{flag.rule.ADD}}<samp>{{flag.rule.FLAGS}}</samp></td><td>{{flag.rule.COND}}</td><td>{{flag.rule.GRAMM}}</td><td>{{flag.rule.DIC}}</td></tr>
+            <!-- DIE rule -->
+        </table>
+        <h4>{{NBRULES}} {{RULES}}</h4>
+    </div>
+    <!-- DIE flag -->

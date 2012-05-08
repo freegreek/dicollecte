@@ -1,0 +1,67 @@
+<!-- BRANCH message -->
+<div class="roundcorner"><p>{{message.LOCKMESSAGE}}</p></div>
+<!-- DIE message -->
+    
+<!-- BRANCH synset -->
+<!-- BRANCH delsyn -->
+<a class="fright" href="synsets_c.php?prj=fr&amp;cmd=erasesyn&amp;id_synset={{_IDSYNSET_}}" onclick="return confirm('{{_CONFIRMERASE_}}')"><img src="img/act_erase.png" alt="erase" /></a>
+<!-- DIE delsyn -->
+<h1>{{synset.LABEL}} <a href="synset.php?prj={{_PRJ_}}&amp;id={{_IDSYNSET_}}">#{{_IDSYNSET_}}</a></h1>
+<h2>{{synset.MEANINGLBL}} {{synset.MEANING}}</h2>
+<div class="roundcorner" id="blocksynset">
+    <p> <b id="deleted" style="color: #F07070; {{synset.DELDISPLAY}}">{{synset.DELETEDLBL}} • </b>
+        <span id="synset">{{synset.SYNSET}}</span> • <b id="nbsyn" style="color: #E0F0E0;">[{{synset.NBSYN}}]</b>
+    </p>
+    <div class="fleft" style="margin-top: 5px">
+        <span id="date">{{synset.DATE}}</span> •
+        <!-- BRANCH cmdbut -->
+        <a href="#" onclick="$('#synsetform').toggle(200); editSynset2(); return false;"><img src="img/tag_write.png" alt="⇒"/></a>
+        <a id="deletecmd" {{synset.cmdbut.DELCMDDISPLAY}} href="#" onclick="delSynset2('{{_PRJ_}}', {{_IDSYNSET_}}, '{{_CONFIRMDEL_}}');"><img src="img/tag_erased.png" alt="×"/></a>
+        <a id="undeletecmd" {{synset.cmdbut.UNDELCMDDISPLAY}} href="#" onclick="undelete('{{_PRJ_}}', {{_IDSYNSET_}}, '{{_CONFIRMRESTORE_}}');"><img src="img/tag_undo.png" alt="←"/></a>
+        <!-- DIE cmdbut -->
+    </div>
+    <p class="synsetinfo"><b id="pos">{{synset.POS}}</b> • <b id="tags">{{synset.TAGS}}</b></p>
+    <form id="synsetform" class="synsetform" method="post" action="./synsets_c.php?prj={{_PRJ_}}&amp;cmd=editsyn" accept-charset="UTF-8">
+        <p><textarea id="newsynset" name="synset"  class="spacefield" cols="10" rows="5" style="width: 855px;"></textarea></p>
+        <p style="margin-top: 10px; text-align: right;">
+            <input type="hidden" name="id_synset" value="{{_IDSYNSET_}}" />
+            <input type="text" id="newpos" name="newpos" class="inputtxt" value="" /> • 
+            <input type="text" id="newtags" name="newtags" class="inputtxt" value="" /> &nbsp; &nbsp; &nbsp;
+            <input type="submit" class="button" value="{{_MODIFY_}}"
+                   onclick="sendFormEditSynset2('{{_PRJ_}}', {{_IDSYNSET_}}); return false;" />
+            <script type="text/javascript">new autosuggest("newpos", ssposValues);</script>
+            <script type="text/javascript">new autosuggest("newtags", sstagsValues);</script>
+        </p>
+    </form>
+</div>
+
+<div id="synsetpatternhist">
+    <div class="roundcorner" id="blocksynsethist__NEWIDHIST__" style="display: none">
+        <p><span id="synsethist__NEWIDHIST__">__NEWSYNSETHIST__</span> • <b id="nbsynhist__NEWIDHIST__" style="color: #E0F0E0;">[__NEWNBSYNHIST__]</b></p>
+        <div class="fleft" style="margin-top: 5px">
+            <span id="datehist__NEWIDHIST__">__NEWDATEHIST__</span> •
+            <a href="#" onclick="restoreHist('{{_PRJ_}}', __NEWIDHIST__, '{{_CONFIRMRESTORE_}}');"><img src="img/tag_switch.png" alt="↑"/></a>
+            <a href="#" onclick="eraseHist('{{_PRJ_}}', __NEWIDHIST__, '{{_CONFIRMDEL_}}');"><img src="img/tag_erased.png" alt="×"/></a>
+        </div>
+        <p class="synsetinfo"><b id="poshist__NEWIDHIST__">__NEWPOSHIST__</b> • <b id="tagshist__NEWIDHIST__">__NEWTAGSHIST__</b></p>
+    </div>
+</div>
+
+<h2>{{synset.HISTORYLBL}}</h2>
+<!-- DIE synset -->
+
+<div id="history">
+<!-- BRANCH old -->
+<div class="roundcorner" id="blocksynsethist{{old.IDHIST}}">
+    <p><span id="synsethist{{old.IDHIST}}">{{old.SYNSET}}</span> • <b id="nbsynhist{{old.IDHIST}}" style="color: #E0F0E0;">[{{old.NBSYN}}]</b></p>
+    <div class="fleft" style="margin-top: 5px">
+        <span id="datehist{{old.IDHIST}}">{{old.DATE}}</span> •
+        <!-- BRANCH action -->
+        <a href="#" onclick="restoreHist('{{_PRJ_}}', {{old.action.IDHIST}}, '{{_CONFIRMRESTORE_}}');"><img src="img/tag_switch.png" alt="↑"/></a>
+        <a href="#" onclick="eraseHist('{{_PRJ_}}', {{old.action.IDHIST}}, '{{_CONFIRMDEL_}}');"><img src="img/tag_erased.png" alt="×"/></a>
+        <!-- DIE action -->
+    </div>
+    <p class="synsetinfo"><b id="poshist{{old.IDHIST}}">{{old.POS}}</b> • <b id="tagshist{{old.IDHIST}}">{{old.TAGS}}</b></p>
+</div>
+<!-- DIE old -->
+</div>

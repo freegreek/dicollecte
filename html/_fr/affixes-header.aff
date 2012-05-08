@@ -1,0 +1,156 @@
+
+SET UTF-8
+
+WORDCHARS -’
+
+
+TRY aàâäbcçdeéèêëfghiîïjklmnoôöpqrstuùûüvwxyzæœAÀÂÄBCÇDEÉÈÊËFGHIÎÏJKLMNOÔÖPQRSTUÙÛÜVWXYZÆŒáíóÿñåã
+
+MAP 12
+MAP aàâä
+MAP eéèêë
+MAP iîïy
+MAP oôö
+MAP uùûü
+MAP cç
+MAP AÀÂÄ
+MAP EÉÈÊË
+MAP IÎÏY
+MAP OÔÖ
+MAP UÙÛÜ
+MAP CÇ
+
+REP 66
+REP f ph
+REP ph f
+REP c qu
+REP qu c
+REP k qu
+REP qu k
+REP x ct
+REP ct x
+REP bb b
+REP b bb
+REP cc c
+REP c cc
+REP ff f
+REP f ff
+REP ll l
+REP l ll
+REP mm m
+REP m mm
+REP nn n
+REP n nn
+REP pp p
+REP p pp
+REP rr r
+REP r rr
+REP ss s
+REP s ss
+REP ss c
+REP c ss
+REP ss ç
+REP ç ss
+REP tt t
+REP t tt
+REP œ oe
+REP oe œ
+REP æ ae
+REP ae æ
+REP ai é
+REP é ai
+REP ai è
+REP è ai
+REP ai ê
+REP ê ai
+REP ei é
+REP é ei
+REP ei è
+REP è ei
+REP ei ê
+REP ê ei
+REP o au
+REP au o
+REP o eau
+REP eau o
+REP ett èt
+REP èt ett
+REP ell èl
+REP èl ell
+REP ème e
+REP ogue ogiste
+REP ogiste ogue
+REP disez dites
+REP fesez faites
+REP faisez faites
+REP puit puits
+REP sanctionnable punissable
+REP questionnable discutable
+REP antitartre détartrant
+
+
+
+KEY azertyuiop|qsdfghjklmù|wxcvbn|aéz|yèu|iço|oàp|aqz|zse|edr|rft|tgy|yhu|uji|iko|olpm|qws|sxd|dcf|fvg|gbh|hnj
+
+ICONV 32
+ICONV à à
+ICONV â â
+ICONV ä ä
+ICONV é é
+ICONV è è
+ICONV ê ê
+ICONV ë ë
+ICONV î î
+ICONV ï ï
+ICONV ô ô
+ICONV ö ö
+ICONV ù ù
+ICONV û û
+ICONV ü ü
+ICONV ÿ ÿ
+ICONV ç ç
+ICONV À À
+ICONV Â Â
+ICONV Ä Ä
+ICONV É É
+ICONV È È
+ICONV Ê Ê
+ICONV Ë Ë
+ICONV Î Î
+ICONV Ï Ï
+ICONV Ô Ô
+ICONV Ö Ö
+ICONV Ù Ù
+ICONV Û Û
+ICONV Ü Ü
+ICONV Ÿ Ÿ
+ICONV Ç Ç
+
+OCONV 1
+OCONV ' ’
+
+
+
+FLAG long
+
+FULLSTRIP
+
+NEEDAFFIX ()
+
+FORBIDDENWORD {}
+
+CIRCUMFIX **
+
+KEEPCASE ||
+
+NOSUGGEST --
+
+
+
+BREAK 2
+BREAK -
+BREAK .
+
+COMPOUNDMIN 2
+
+COMPOUNDFLAG ==

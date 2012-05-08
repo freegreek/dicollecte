@@ -1,0 +1,105 @@
+<div class="imgzone_right"><img src="./img/icon_gears.png" alt="O" title="{{SEARCH}}" /></div>
+
+<!-- BRANCH submit -->
+<div class="linkbutton fright"><a href="newentry.php?prj={{_PRJ_}}">{{submit.SUBMIT}}</a></div>
+<!-- DIE submit -->
+
+<h1>{{LABEL}}</h1>
+<div class="roundcorner">
+    <form method="post" action="dictionary.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+        <p style="height: 24px;">
+            <a class="inlinebutton" href="" onclick="$('#extsearch').toggle(200); return false;">+</a>
+            <input type="text" class="inputtxt" id="defaultfield" name="lemma" maxlength="200" style="font-size: 16px; heigth: 20px; width: 500px;" />
+            <input type="submit" class="button" style="font-size: 16px; heigth: 16px;" value="{{SEARCH}}" /> &nbsp;
+            <label for="regex" title="{{LEMMAONLY}}">{{REGEX}}</label> <input type="checkbox" id="regex" name="regex" value="ON" />
+        </p>
+        <div class="clearer"></div>
+        <div id="extsearch" style="display: none">
+            <h3>{{ADVANCEDSEARCH}}</h3>
+            <div class="dictform" style="width: 535px;">
+                {{DICTFORM}}
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- BRANCH message -->
+<h3>{{message.MSGHEAD}}</h3>
+<p>{{message.MESSAGE}}</p>
+<!-- DIE message -->
+
+<!-- BRANCH doc -->
+<div class="roundcorner docblock docmargin">
+    <p class="center"><img src="img/icon_add.png" alt="" /></p>
+    <h4>{{doc.ADD}}</h4>
+    <p>{{doc.ADDTXT}}</p>
+</div>
+<div class="roundcorner docblock docmargin">
+    <p class="center"><img src="img/icon_modify.png" alt="" /></p>
+    <h4>{{doc.MODIF}}</h4>
+    <p>{{doc.MODIFTXT}}</p>
+</div>
+<div class="roundcorner docblock docmargin">
+    <p class="center"><img src="img/icon_delete.png" alt="" /></p>
+    <h4>{{doc.DEL}}</h4>
+    <p>{{doc.DELTXT}}</p>
+</div>
+<div class="roundcorner docblock">
+    <p class="center"><img src="img/icon_write.png" alt="" /></p>
+    <h4>{{doc.REPORT}}</h4>
+    <p>{{doc.REPORTTXT}}</p>
+</div>
+<!-- DIE doc -->
+
+<div class="pagination">{{PAGES}} {{PROPSFOUND}}</div>
+
+<!-- BRANCH list -->
+<table class="table_centeralign border_collapse">
+    <tr class="tablehead">
+        <th width="20">{{list.CHECK}}</th>
+        <th width="290">{{list.LEMMA}} / {{list.DATE}}</th>
+        <th width="240">{{list.GRAMM}}</th>
+        <th width="180">{{list.LEX}}</th>
+        <th width="25">{{list.IFQ}}</th>
+        <th width="105">{{list.DICT}}</th>
+        <th width="20">{{list.NOTES}}</th>
+        <th width="20">{{list.LOCK}}</th>
+    </tr>
+    <!-- BRANCH entry -->
+    <tr><td>{{list.entry.CHKTAG}}</td><td>{{list.entry.LEMMA}}</td><td>{{list.entry.GRAMM}}</td><td>{{list.entry.LEX}}</td><td>{{list.entry.IFQ}}</td><td>{{list.entry.DICT}}</td><td>{{list.entry.NBNOTES}}</td><td>{{list.entry.LOCK}}</td></tr>
+    <!-- DIE entry -->
+</table>
+<!-- DIE list -->
+
+<div class="pagination">{{PAGES}}</div>
+
+<!-- BRANCH props -->
+<div class="separator" id="extendedres">&nbsp;</div>
+<h3 id="props">{{props.PROPSLBL}}</h3>
+<div class="pagination">{{props.PAGES}}</div>
+<table class="table_centeralign border_collapse">
+    <tr class="tablehead"><th width="20"></th><th width="280"></th><th width="240"></th><th width="180"></th><th width="120"></th><th width="30"></th><th></th></tr>
+    <!-- BRANCH sugg -->
+    <tr><td>{{props.sugg.ACTION}}</td><td>{{props.sugg.LEMMA}}</td><td>{{props.sugg.GRAMM}}</td><td>{{props.sugg.LEX}}</td><td>{{props.sugg.DICT}}</td><td>{{props.sugg.NBCOMMENTS}}</td><td>{{props.sugg.VALUE}}</td></tr>
+    <!-- DIE sugg -->
+</table>
+<div class="pagination">{{props.PAGES}}</div>
+<!-- DIE props -->
+
+<!-- BRANCH notes -->
+<div class="pagination">{{notes.PAGES}}</div>
+
+    <!-- BRANCH note -->
+    <div class="def">
+        <div class="defsource">
+            <p><a href="member.php?prj={{_PRJ_}}&amp;id_user={{notes.note.IDUSER}}">{{notes.note.LOGIN}}</a></p>
+            <p>{{notes.note.DATE}}</p>
+        </div>
+        <div class="defcontent" id="note{{notes.note.IDNOTE}}">
+            {{notes.note.NOTE}}
+        </div>
+    </div>
+    <!-- DIE note -->
+    
+<div class="pagination">{{notes.PAGES}}</div>
+<!-- DIE notes -->

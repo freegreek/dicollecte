@@ -1,0 +1,87 @@
+.autosuggest-body
+{
+	position: absolute;
+	border: 2px solid #333343;
+	z-index: 100;
+}
+
+.autosuggest-body iframe
+{
+	display: block;
+	position: absolute;
+	z-index: 999;
+	filter: alpha(opacity=0);
+}
+
+.autosuggest-body table
+{
+	width: 100%;
+	background-color: #EEEEFE;
+}
+
+.autosuggest-body tr
+{
+	cursor: hand;
+	cursor: pointer;
+	color: black;
+
+	font-family: verdana, arial, helvetica;
+	font-size: 8px;
+    height: 10px;
+	text-align: left;
+}
+
+.autosuggest-body tr.up
+{
+	height: 10px;
+	background: #656291 url("arrow-up.gif") center center no-repeat;
+}
+
+.autosuggest-body tr.down
+{
+	height: 10px;
+	background: #656291 url("arrow-down.gif") center center no-repeat;
+}
+
+.autosuggest-body tr.up-disabled
+{
+	height: 10px;
+	background: #656291 url("arrow-up-d.gif") center center no-repeat;
+	cursor: default;
+}
+
+.autosuggest-body tr.down-disabled
+{
+	height: 10px;
+	background: #656291 url("arrow-down-d.gif") center center no-repeat;
+	cursor: default;
+}
+
+.autosuggest-body tr.selected
+{
+	background-color: #D6D7E7;
+	font-weight: bold;
+	color: #AA2232;
+}
+
+.autosuggest-body td
+{
+	font-size: 11px;
+	white-space: nowrap;
+}
+.autosuggest-body span.match
+{
+	text-decoration: underline;
+}
+.autosuggest-body .values
+{
+    color: #555555;
+}
+
+.autosuggest-body .title
+{
+	display: block;
+    font-weight: bold;
+    margin: 5px 0 0 10px;
+    color: #333343;
+}

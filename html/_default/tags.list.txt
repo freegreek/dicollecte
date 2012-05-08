@@ -1,0 +1,253 @@
+; ---------------------------------------------------------
+; Hunspell tags
+; ---------------------------------------------------------
+
+__flags__
+subcategoryA
+elem1 = description 1
+elem2 = description 2
+
+subcategoryB
+elem3 = description 3
+elem4 = description 4
+elem5 = description 5
+
+subcategoryC
+elem6 = description 6
+
+subcategoryD
+elem7 = description 7
+elem8 = description 8
+elem9 = description 9
+elem10 = description 10
+elem11 = description 11
+elem12 = description 12
+elem13 = description 13
+
+__po__
+noun = Noun
+adj = Adjective
+
+Verb
+r.verb = Regular verb
+i.verb = Irregular verb
+
+Miscellaneous
+adv = Adverb
+interj = Interjection
+onom = Onomatopeoa
+
+Grammatical word
+pron = Pronoun
+prep = Preposition
+conj = Conjonction
+art = Article
+
+Proper name
+fn = First Name
+name = Name
+patr = Patronym
+
+
+__is__
+sg = Singular
+pl = Plural
+inv = Invariable
+mas = Masculine
+fem = Feminine
+
+__ds__
+subcategoryA
+elem1 = description 1
+elem2 = description 2
+
+subcategoryB
+elem3 = description 3
+elem4 = description 4
+elem5 = description 5
+
+subcategoryC
+elem6 = description 6
+
+subcategoryD
+elem7 = description 7
+elem8 = description 8
+elem9 = description 9
+elem10 = description 10
+elem11 = description 11
+elem12 = description 12
+elem13 = description 13
+
+__ts__
+subcategoryA
+elem1 = description 1
+elem2 = description 2
+
+subcategoryB
+elem3 = description 3
+elem4 = description 4
+elem5 = description 5
+
+subcategoryC
+elem6 = description 6
+
+subcategoryD
+elem7 = description 7
+elem8 = description 8
+elem9 = description 9
+elem10 = description 10
+elem11 = description 11
+elem12 = description 12
+elem13 = description 13
+
+__ip__
+subcategoryA
+elem1 = description 1
+elem2 = description 2
+
+subcategoryB
+elem3 = description 3
+elem4 = description 4
+elem5 = description 5
+
+subcategoryC
+elem6 = description 6
+
+subcategoryD
+elem7 = description 7
+elem8 = description 8
+elem9 = description 9
+elem10 = description 10
+elem11 = description 11
+elem12 = description 12
+elem13 = description 13
+
+__dp__
+subcategoryA
+elem1 = description 1
+elem2 = description 2
+
+subcategoryB
+elem3 = description 3
+elem4 = description 4
+elem5 = description 5
+
+subcategoryC
+elem6 = description 6
+
+subcategoryD
+elem7 = description 7
+elem8 = description 8
+elem9 = description 9
+elem10 = description 10
+elem11 = description 11
+elem12 = description 12
+elem13 = description 13
+
+__tp__
+subcategoryA
+elem1 = description 1
+elem2 = description 2
+
+subcategoryB
+elem3 = description 3
+elem4 = description 4
+elem5 = description 5
+
+subcategoryC
+elem6 = description 6
+
+subcategoryD
+elem7 = description 7
+elem8 = description 8
+elem9 = description 9
+elem10 = description 10
+elem11 = description 11
+elem12 = description 12
+elem13 = description 13
+
+__sp__
+subcategoryA
+elem1 = description 1
+elem2 = description 2
+
+subcategoryB
+elem3 = description 3
+elem4 = description 4
+elem5 = description 5
+
+subcategoryC
+elem6 = description 6
+
+subcategoryD
+elem7 = description 7
+elem8 = description 8
+elem9 = description 9
+elem10 = description 10
+elem11 = description 11
+elem12 = description 12
+elem13 = description 13
+
+__pa__
+subcategoryA
+elem1 = description 1
+elem2 = description 2
+
+subcategoryB
+elem3 = description 3
+elem4 = description 4
+elem5 = description 5
+
+subcategoryC
+elem6 = description 6
+
+subcategoryD
+elem7 = description 7
+elem8 = description 8
+elem9 = description 9
+elem10 = description 10
+elem11 = description 11
+elem12 = description 12
+elem13 = description 13
+
+__gramm__
+
+
+
+; ---------------------------------------------------------
+; Dicollecte tags
+; ---------------------------------------------------------
+
+; Lexical field
+__lex__
+Usage
+rare = Rare
+old = Old, obsolete
+neo = Neologism
+
+Categories
+abr = Abbreviation
+alt = Alternative spelling
+symb = Symbol
+TM = Product
+
+Loanwords
+fr = French
+ge = German
+gr = Greek
+lat = Latin
+
+
+; ---------------------------------------------------------
+; Synsets tags
+; ---------------------------------------------------------
+__sspos__
+nom = Nom
+adj = Adjectif
+nom adj = Nom et adjectif
+verb = Verbe
+adv = Adverbe
+loc.adv = Locution adverbiale
+
+__sstags__
+fam = Familier

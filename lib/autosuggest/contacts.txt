@@ -1,0 +1,17 @@
+If you wish to report a bug or express your opinion, feel free to e-mail me:
+
+  dmitrykhudorozhkov@yahoo.com
+
+Job offers (both remote and relocation) are warmly welcome. I'm proficient in:
+
+- Firefox extensions and Greasemonkey scripts;
+
+- client-side JavaScript (incl. jQuery/mooTools/YUI, ...);
+
+- C/C++/C# desktop programming (more than 9 years of experience) with a little bit of network & db coding;
+
+- XML and it's applications (XSLT/XPath, XSD, SVG, VML, ...);
+
+- HTML & CSS (incl. tableless slicing);
+
+- a little bit of PHP and SQL.

@@ -1,0 +1,131 @@
+<!-- BRANCH forums -->
+<div class="fright" style="margin-top: 20px">
+    <!--<a href="#" onclick="$('#searchform').toggle(200); off('admforum'); return false;">{{forums.SEARCH}}</a> &nbsp; &nbsp; &nbsp;-->
+    <a href="messages.php?prj={{_PRJ_}}">{{forums.LASTMSG}}</a>
+</div>
+
+<h1>{{forums.FORUMS}}
+    <!-- BRANCH admbutton -->
+    <a class="nochange" href="#" onclick="$('#admforum').toggle(200); return false;"><img src="img/forum/edit.png" alt="edit"/></a>
+    <!-- DIE admbutton -->
+</h1>
+
+<div id="searchform" class="roundcorner defaultform" style="display: none; margin-bottom: 30px">
+    <form method="post" action="forum_c.php?prj={{_PRJ_}}">
+        <p>
+            <label class="defaultlbl" style="width: 200px" for="search">{{forums.SEARCHLBL}}</label>
+            <input type="text" class="inputtxt" id="login" name="search" style="width: 300px;" maxlength="40" value="" />
+        </p>
+
+        <p>
+            <input type="hidden" name="cmd" value="update" />
+            <input type="submit" class="button" value="{{forums.SEARCH}}" />
+        </p>
+    </form>
+</div>
+
+    <!-- BRANCH createforum -->
+    <div id="admforum" class="roundcorner"  style="display: none; margin-bottom: 30px">
+        <form method="post" action="forum_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+            <p>
+                {{createforum.NAMELBL}} <input type="text" class="inputtxt" name="name" style="width: 250px;" maxlength="80" value="" /> &nbsp; &nbsp;
+                {{createforum.DESCRLBL}} <input type="text" class="inputtxt" name="descr" style="width: 250px;" maxlength="100" value="" /> &nbsp; &nbsp;
+                <input type="hidden" class="button" name="cmd" value="newforum" /><input type="submit" value="{{createforum.SUBMITNEW}}" />
+            </p>
+        </form>
+    </div>
+    <!-- DIE createforum -->
+
+<div class="bordertable forumheight" style="margin-bottom: 20px;">
+    <table class="border_collapse" width="100%">
+        <thead>
+            <tr><th width="5%"></th><th width="60%">{{forums.FORUMLBL}}</th><th class="center" width="10%">{{forums.NBTHDLBL}}</th><th width="25%">{{forums.LASTMSGLBL}}</th></tr>
+        </thead>
+        <tbody>
+            <!-- BRANCH forum -->
+            <tr><td>{{forums.forum.ICON}}</td><td>{{forums.forum.LABEL}}</td><td class="center">{{forums.forum.NBTHD}}</td><td>{{forums.forum.LASTMSG}}</td></tr>
+            <!-- DIE forum -->
+        </tbody>
+    </table>
+</div>
+<!-- DIE forums -->
+
+<!-- BRANCH threads -->
+<p class="f_path">{{threads.PATH}}</p>
+<div class="pagination fright" style="margin-top: 25px">{{threads.PAGES}}</div>
+<h1 id="tlist" style="margin-bottom: 0;"><b id="fnl">{{threads.LABEL}}</b>
+    <!-- BRANCH rendelbutton -->
+    <a class="nochange" href="#"
+        onclick="$('#rendelforum').toggle(200); document.getElementById('fn').value = document.getElementById('fnl').innerHTML; document.getElementById('fd').value = document.getElementById('fdl').innerHTML; return false;">
+        <img src="img/forum/edit.png" alt="edit"/>
+    </a>
+    <!-- DIE rendelbutton -->
+</h1>
+<p id="fdl" style="margin-bottom: 20px">{{threads.DESCR}}</p>
+
+    <!-- BRANCH rendelforum -->
+    <div id="rendelforum" class="roundcorner"  style="display: none;">
+        <div class="fright" style="margin-top: -4px;"><a href="forum_c.php?prj={{_PRJ_}}&amp;cmd=delforum&amp;id_forum={{rendelforum.IDFORUM}}"><img src="img/forum/act_erase.png" alt="erase" /></a></div>
+        <form method="post" action="forum_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+            <p>
+                <input type="hidden" name="id_forum" value="{{rendelforum.IDFORUM}}" />
+                {{rendelforum.NAMELBL}} <input type="text" id="fn" class="inputtxt" name="name" style="width: 250px;" maxlength="80" value="" />
+                {{rendelforum.DESCRLBL}} <input type="text" id="fd" class="inputtxt" name="descr" style="width: 250px;" maxlength="100" value="" />
+                <input type="hidden" name="cmd" value="renforum" /><input type="submit" value="{{rendelforum.SUBMITREN}}" />
+            </p>
+        </form>
+    </div>
+    <!-- DIE rendelforum -->
+
+<div class="bordertable forumheight">
+    <table class="border_collapse" width="100%">
+        <thead>
+            <tr><th width="5%"></th><th width="55%">{{threads.THDLBL}}</th><th width="5%"></th><th class="center" width="10%">{{threads.NBMSGLBL}}</th><th width="25%">{{threads.LASTMSGLBL}}</th></tr>
+        </thead>
+        <tbody>
+            <!-- BRANCH thread -->
+            <tr>
+                <td class="imgcell" style="background-image: url(./img/forum/flow_{{threads.thread.FLOW}}.png);">{{threads.thread.LOCKED}}</td>
+                <td>{{threads.thread.LABEL}}</td>
+                <td class="imgcell"{{threads.thread.TAG}}>{{threads.thread.SOLVED}}</td>
+                <td class="center">{{threads.thread.NBMSG}}</td>
+                <td>{{threads.thread.LASTMSG}}</td>
+            </tr>
+            <!-- DIE thread -->
+        </tbody>
+    </table>
+</div>
+<div class="pagination fright" style="margin-top: 25px">{{threads.PAGES}}</div>
+<!-- DIE threads -->
+
+<!-- BRANCH newthread -->
+<div class="roundcorner">
+    <h2>{{newthread.NEWTHREADLBL}}</h2>
+    <form method="post" action="forum_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+        <p style="margin-top: 10px">{{newthread.SUBJECTLBL}}</p>
+        <p><input type="text" class="spacefield" id="subject" name="subject" style="width: 856px" maxlength="100" value="" /></p>
+        
+        <p style="margin-top: 20px">{{newthread.MSGLBL}}</p>
+        <p><textarea name="msg" id="msg" cols="10" rows="12" class="spacefield" style="width: 856px" onkeyup="charCount(this,30000,'charcounter');" onkeydown="charCount(this,30000,'charcounter');"></textarea></p>
+        <div class="littlelinkbutton fright" style="margin-left: 5px">
+            <a href="#" onclick="insertHtmlTag('msg', '<q>', '</q>'); return false;">“q”</a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msg', '<s>', '</s>'); return false;"><s>s</s></a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msg', '<u>', '</u>'); return false;"><u>u</u></a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msg', '<i>', '</i>'); return false;"><i>i</i></a>
+        </div>
+        <div class="littlelinkbutton fright">
+            <a href="#" onclick="insertHtmlTag('msg', '<b>', '</b>'); return false;"><b>b</b></a>
+        </div>
+        <p>
+            <input type="hidden" name="cmd" value="newthread" /><input type="hidden" name="id_forum" value="{{newthread.IDFORUM}}" />
+            <input type="submit" class="button" value="{{newthread.SUBMIT}}" /> <samp id="charcounter">0</samp> / {{newthread.MAXLENGTH}}
+        </p>
+    </form>
+</div>
+<!-- DIE newthread -->

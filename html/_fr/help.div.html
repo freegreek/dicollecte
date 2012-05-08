@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+<title>Mémo pour les contrôleurs de Dicollecte</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<link rel="shortcut icon" type="image/x-icon" href="http://dicollecte.free.fr/img/tag_valid.png" />
+</head>
+<body>
+<div>
+
+<h1>Mémo pour les contrôleurs de Dicollecte</h1>
+
+<h2>Propositions</h2>
+
+<p>La section «Propositions» contient trois pages: les <a href="http://dicollecte.free.fr/propositions.php?prj=fr&amp;tab=E">propositions en cours d'évaluation</a>, <a href="http://dicollecte.free.fr/propositions.php?prj=fr&amp;tab=R">rejetées</a> ou <a href="http://dicollecte.free.fr/propositions.php?prj=fr&amp;tab=T">envoyées dans la corbeille (zone d'évacuation)</a>. Sur ces trois pages, chaque proposition est accompagnée d'icônes représentant différents cas de figure.</p>
+
+<p class="centre"><img src="proposition-en-cours-d-evaluation.png" alt="" /></p>
+
+<p>On peut connaître le type de la proposition:</p>
+
+<ul>
+	<li><img src="http://dicollecte.free.fr/img/tag_add.png" alt="+" /> demande d'ajout d'un mot dans le dictionnaire</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_modify.png" alt="&gt;" /> demande de modification d'un mot présent dans le dictionnaire</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_del.png" alt="-" /> demande de suppression d'un mot présent dans le dictionnaire</li>
+</ul>
+
+<p class="note">Le type de la proposition est généré automatiquement selon la situation. Après <a href="http://dicollecte.free.fr/dictionary.php?prj=fr">une recherche dans le dictionnaire</a>, un lien <a href="http://dicollecte.free.fr/newentry.php?prj=fr">Proposer une nouvelle entrée</a> apparaît. Il est aussi possible de cliquer sur un mot dans la liste des résultats et, ce faisant, voir les liens «Proposer des modifications» et «Proposer la suppression».</p>
+
+<p>On peut connaître aussi le statut de la proposition:</p>
+
+<ul>
+	<li><img src="http://dicollecte.free.fr/img/tag_alert.png" alt="!" /> Proposition douteuse: la proposition a été signalée par un contrôleur ou un administrateur ayant un doute sur la possibilité d'accepter cette proposition.</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_suspend.png" alt="S" /> Proposition suspendue: l'acceptation ou non de la proposition dépend d'une prise de décision au sujet d'une règle plus large, par exemple l'intégration ou non des mots en latin. En général, ce statut est donné par un administrateur.</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_reject.png" alt="R" /> Proposition rejetée: la proposition a été marquée comme non intégrable dans le dictionnaire, mais la décision n'est pas finale; un contrôleur ou un administrateur peuvent avoir un avis différent et changer le statut en <img src="http://dicollecte.free.fr/img/tag_alert.png" alt="!" /> Proposition douteuse par exemple.</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_valid.png" alt="V" /> Proposition validée: la proposition a été validée, mais demeure encore en attente d'une décision de la part d'un administrateur. Encore une fois, le statut peut être modifié par un autre contrôleur ou administrateur.</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_integrated.png" alt="I" /> [admin.] Proposition intégrée: un administrateur a accepté la proposition et cette dernière a été officiellement intégrée au dictionnaire.</li>
+</ul>
+
+<p class="note">Seuls les administrateurs peuvent intégrer une proposition au dictionnaire. La décision finale leur appartient, mais les quatre autres statuts possibles sont accessibles aussi bien aux contrôleurs qu'aux administrateurs.</p>
+
+<h3>Propositions en cours d'évaluation</h3>
+
+<p>Sur la page <a href="http://dicollecte.free.fr/propositions.php?prj=fr&amp;tab=E">Propositions en cours d'évaluation</a>, on peut trouver des propositions ayant le statut suivant:</p>
+
+<ul>
+	<li><img src="http://dicollecte.free.fr/img/tag_alert.png" alt="!" /> Proposition douteuse</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_suspend.png" alt="S" /> Proposition suspendue</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_reject.png" alt="R" /> Proposition rejetée</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_valid.png" alt="V" /> Proposition validée</li>
+</ul>
+
+<p>Les propositions intégrées au dictionnaire ne se trouvent donc plus sur cette page.</p>
+
+<h3>Propositions rejetées</h3>
+
+<p>Sur la page <a href="http://dicollecte.free.fr/propositions.php?prj=fr&amp;tab=R">Propositions rejetées</a>, on peut trouver des propositions ayant le statut suivant:</p>
+
+<ul>
+	<li><img src="http://dicollecte.free.fr/img/tag_reject.png" alt="R" /> Proposition rejetée</li>
+</ul>
+
+<p>La proposition a été vue par un administrateur, qui a pris une décision.</p>
+
+<h3>Propositions placées dans la corbeille (zone d'évacuation)</h3>
+
+<p>Sur la page <a href="http://dicollecte.free.fr/propositions.php?prj=fr&amp;tab=T">Propositions placées dans la corbeille (zone d'évacuation)</a>, on peut trouver des propositions ayant le statut suivant:</p>
+
+<ul>
+	<li><img src="http://dicollecte.free.fr/img/tag_reject.png" alt="R" /> Proposition rejetée</li>
+	<li><img src="http://dicollecte.free.fr/img/tag_integrated.png" alt="I" /> Proposition intégrée</li>
+</ul>
+
+<p>La proposition a été vue par un administrateur, qui a pris une décision. La corbeille est vidée de temps à autre par un administrateur.</p>
+
+<p class="note">On remarque que les sections «Propositions rejetées» et «Corbeille» peuvent contenir toutes les deux des propositions rejetées. La différence est que la section «Propositions rejetées» liste des propositions qui ont été rejetées, mais qui ont généré un débat ou dont le refus est basé sur des règles qui peuvent être amenées à évoluer, tandis que la section «Corbeille» contient des propositions rejetées sans opposition ou qui constituaient une erreur, qui contenaient une faute d'orthographe, etc. La corbeille étant potentiellement vidée, il est possible de garder une trace de certaines propositions rejetées dans la section «Propositions rejetées».</p>
+
+<h3>Détails d'une proposition</h3>
+
+<p>En cliquant sur un mot dans la liste d'une des trois pages de la section «Propositions», on tombe sur la page spécifique à chaque proposition, dans laquelle on trouve entre autres différentes actions possibles. Ces actions sont réalisables par un contrôleur ou un administrateur:</p>
+
+<ul>
+	<li><img src="http://dicollecte.free.fr/img/icon_valid.png" alt="V" /> Valider: on peut valider une proposition quand on n'a pas de doute que cette dernière est intégrable au dictionnaire; conduit au statut <img src="http://dicollecte.free.fr/img/tag_valid.png" alt="V" /> Proposition validée.</li>
+	<li><img src="http://dicollecte.free.fr/img/icon_alert.png" alt="!" /> Signaler: on peut signaler une proposition quand on a un doute sur son acceptation; conduit au statut <img src="http://dicollecte.free.fr/img/tag_alert.png" alt="!" /> Proposition douteuse.</li>
+	<li><img src="http://dicollecte.free.fr/img/icon_reject.png" alt="X" /> Rejeter: on peut rejeter une proposition quand on n'a pas de doute que cette dernière ne peut être intégrée au dictionnaire; conduit au statut <img src="http://dicollecte.free.fr/img/tag_reject.png" alt="R" /> Proposition rejetée.</li>
+	<li><img src="http://dicollecte.free.fr/img/icon_suspend.png" alt="¤" /> Suspendre: on peut suspendre une proposition quand cette dernière concerne une règle qui est en discussion; conduit au statut <img src="http://dicollecte.free.fr/img/tag_suspend.png" alt="S" /> Proposition suspendue. En général, cette action est effectuée par un administrateur.</li>
+</ul>
+
+<p>Ces actions ne sont pas définitives. Par exemple, un contrôleur peut valider une proposition; et un autre, ayant un doute, peut par la suite la signaler.</p>
+
+<p class="note">Lorsqu'on modifie le statut d'une proposition, il faut l'indiquer dans un commentaire pour que les autres puissent suivre les changements. De façon générale, il faut laisser un commentaire pour toute modification à une proposition. Aussi, il ne faut pas valider ses propres propositions, bien sûr dans le but de les faire analyser par d'autres.</p>
+
+<p>Outre ces quatre actions, deux autres se trouvent sur la page spécifique à chaque proposition et, contrairement aux autres présentées ci-dessus, ne font pas seulement apposer une étiquette à une proposition, mais la déplacent dans une autre section:</p>
+
+<ul>
+	<li><img src="http://dicollecte.free.fr/img/icon_forbidden.png" alt="-" /> Proscrire cette proposition: cette action déplace la proposition dans la section «Propositions rejetées». Cependant, il est préférable en général de ne pas l'utiliser et de laisser les propositions dans la zone d'évaluation.</li>
+	<li><img src="http://dicollecte.free.fr/img/icon_trash.png" alt="X" /> Jeter à la corbeille: cette action, en plus de rejeter la proposition, déplace cette dernière dans la section «Corbeille (zone d'évacuation)». Cependant, on doit utiliser cette action seulement pour ses propres propositions qui n'ont pas encore eu de commentaires.</li>
+</ul>
+
+<p>Enfin, il est possible aussi de modifier directement les champs relatifs à une proposition:</p>
+
+<ul>
+	<li>Lemme</li>
+	<li>Drapeaux</li>
+	<li>Nature grammaticale</li>
+	<li>Lexique</li>
+	<li>Dictionnaire</li>
+</ul>
+
+<p>Pour plus de détails sur ces champs, consulter la <a href="http://dicollecte.free.fr/documentation.php?prj=fr">documentation sur le site de Dicollecte</a>.</p>
+
+<p class="note">À partir d'une recherche dans le dictionnaire, en cochant préalablement l'option «Ouvertes&nbsp;?», il est possible de modifier la nature grammaticale des mots dont ce champ n'est pas encore précisé. En général, cette méthode doit être utilisée seulement quand le mot se trouve dans les propositions en cours d'évaluation. Cependant, <a href="http://dicollecte.free.fr/logs.php?prj=fr">la page de suivi</a> permet de consulter les modifications apportées au dictionnaire sans passer par la zone des propositions en cours d'évaluation.</p>
+
+<h2>Rôle des contrôleurs</h2>
+
+<p>Les contrôleurs ont grosso modo les tâches suivantes:</p>
+
+<ul>
+	<li>vérifier qu'un mot proposé ne se trouve pas déjà dans le dictionnaire de Dicollecte;</li>
+	<li>vérifier les champs remplis lors de la proposition, les modifier le cas échéant en laissant un commentaire pour indiquer les modifications, ou les compléter;</li>
+	<li>faire une recherche dans les dictionnaires (Petit Robert, Petit Larousse, GDT, CNRTL, etc.) ou sur le web (par exemple dans les pages francophones de Google) pour vérifier la présence ou le nombre d'occurences du mot proposé;</li>
+	<li>vérifier qu'une proposition est recevable selon <a href="http://dicollecte.free.fr/faq.php?prj=fr">les règles présentées dans la F.A.Q.</a>;</li>
+	<li>selon les résultats de la recherche, donner un statut à la proposition (douteuse, suspendue, validée ou rejetée) en laissant un commentaire pour indiquer la modification.</li>
+</ul>
+
+<h2>Références web utiles</h2>
+
+Voici une liste non exhaustive de références utiles:
+
+<ul>
+	<li><a href="http://www.granddictionnaire.com/">Grand dictionnaire terminologique (GDT) de l'Office québécoise de la langue française (OQLF)</a></li>
+	<li><a href="http://www.oqlf.gouv.qc.ca/ressources/bdl.html">Banque de dépannage linguistique (BDL) de l'OQLF</a></li>
+	<li><a href="http://franqus.usherbrooke.ca/">Franqus: dictionnaire du français standard en usage au Québec</a></li>
+	<li><a href="http://www.cnrtl.fr/lexicographie/">Centre National de Ressources Textuelles et Lexicales (CNRTL)</a></li>
+	<li><a href="http://dictionnaire.tv5.org/">Dictionnaire multifonctions sur TV5</a></li>
+	<li><a href="http://fr.wikipedia.org/wiki/Accueil">Wikipédia</a></li>
+	<li><a href="http://fr.wiktionary.org/wiki/Wiktionnaire:Page_d%27accueil">Wiktionnaire</a></li>
+	<li><a href="http://www.larousse.fr/encyclopedie/">Encyclopédie Larousse en ligne</a></li>
+	<li><a href="http://www.crisco.unicaen.fr/cgi-bin/cherches.cgi">Dictionnaire des synonymes du Centre de Recherche Inter-langues sur la Signification en COntexte (CRISCO)</a></li>
+	<li><a href="http://tilt.eu.org/rimes/">Rimes</a></li>
+	<li><a href="http://www.patrimoine-de-france.org/mots/">Patrimoine de France</a></li>
+	<li><a href="http://www.spl.gouv.qc.ca/cgi/rali/SPL-CLQ.cgi">Réseau des corpus lexicaux québécois</a></li>
+	<li><a href="http://www.tlfq.ulaval.ca/bdlp/">Base de données lexicographiques panfrancophone (BDLP)</a></li>
+	<li><a href="http://www.leconjugueur.com/">Le Conjugueur</a></li>
+	<li><a href="http://www.la-conjugaison.fr/">La conjugaison</a></li>
+	<li><a href="http://66.46.185.79/bdl/gabarit_bdl.asp?Th=1&amp;Th_id=359&amp;niveau=">Répertoire de noms masculins et de noms féminins (BDL)</a></li>
+	<li><a href="http://66.46.185.79/bdl/gabarit_bdl.asp?Th=1&amp;Th_id=358&amp;niveau=">Formation de noms féminins (BDL)</a></li>
+	<li><a href="http://atilf.atilf.fr/gsouvay/scripts/feminin.exe?2;OUVRIR_MENU=2">Du féminin (ATILF)</a></li>
+	<li><a href="http://www.rrq.gouv.qc.ca/Interactif/PR2I121_Prenoms/PR2I121_Prenoms/PR2SPrenoms.aspx?langue=fr">Banque de prénoms de la Régie des rentes du Québec (RRQ)</a></li>
+	<li><a href="http://www.linternaute.com/femmes/prenoms/">L'encyclopédie des prénoms</a></li>
+</ul>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<h1>{{LABEL}}</h1>
+
+<div class="pagination">{{PAGES}}</div>
+
+<div id="messages">
+    <!-- BRANCH msg -->
+    <div class="msgblock">
+        <div class="msg">
+            <h2><a href="thread.php?prj={{_PRJ_}}&amp;t={{msg.IDTHREAD}}#msg{{msg.MSGNUM}}">{{msg.THREAD}} #{{msg.MSGNUM}}</a></h2>
+            <div id="content{{msg.IDMSG}}">{{msg.MSG}}</div>
+        </div>
+        <div class="msginfo">
+            <div class="msguser"><a href="member.php?prj={{_PRJ_}}&amp;id_user={{msg.IDUSER}}">{{msg.LOGIN}}</a></div>
+            <div class="tinytxt">{{msg.DATE}}</div>
+            <div class="tinytxt">{{msg.UPDATE}}</div>
+        </div>
+    </div>
+    <div class="clearer"></div>
+    <!-- DIE msg -->
+</div>
+
+<div class="pagination">{{PAGES}}</div>

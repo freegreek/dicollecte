@@ -1,0 +1,225 @@
+<div id="main_left">
+    
+    <!-- BRANCH message -->
+    <h3>{{message.MSGHEAD}}</h3>
+    <p>{{message.MESSAGE}}</p>
+    <!-- DIE message -->
+    
+    <!-- BRANCH prop -->
+    <div class="imgzone_left">{{prop.ACTIONIMG}}</div>
+    <div class="imgzone_right">{{prop.VALUEIMG}}</div>
+    <div class="prop">
+        <div class="roundcorner fright" style="margin: 5px -10px 0 0; padding: 2px 10px;">
+            <p><a href="#"><img src="img/mail_notif.png" id='enotif' style="opacity: {{prop.NOTIFOPAC}}; vertical-align: bottom;" onclick="{{prop.SUBCMD}} return false;" alt="⇒" title="{{prop.ENOTIF}}"/></a> <b id="nbnotif">{{prop.NBNOTIF}}</b></p>
+        </div>
+        <!-- BRANCH priority -->
+        <div id="priority" class="fright" style="margin: 10px 10px 0 0;">
+            <a href="#"><img src="img/nostar.png" id='star_0' style="opacity: 0.20" onclick="selectstar(0); setPropPriority('{{_PRJ_}}', {{_IDPROP_}}, 0);" onmouseover="showstar(0)" onmouseout="showstar(starvalue)" alt="" /></a>
+            <a href="#"><img src="img/star_off.png" id='star_1' style="opacity: 1" onclick="selectstar(1); setPropPriority('{{_PRJ_}}', {{_IDPROP_}}, 1);" onmouseover="showstar(1)" onmouseout="showstar(starvalue)" alt="" /></a>
+            <a href="#"><img src="img/star_off.png" id='star_2' style="opacity: 0.20" onclick="selectstar(2); setPropPriority('{{_PRJ_}}', {{_IDPROP_}}, 2);" onmouseover="showstar(2)" onmouseout="showstar(starvalue)" alt="" /></a>
+            <a href="#"><img src="img/star_off.png" id='star_3' style="opacity: 0.20" onclick="selectstar(3); setPropPriority('{{_PRJ_}}', {{_IDPROP_}}, 3);" onmouseover="showstar(3)" onmouseout="showstar(starvalue)" alt="" /></a>
+        </div>
+        <!-- DIE priority -->
+        <h2>{{prop.ACTION}}</h2>
+        <h1>{{prop.LABEL}} <a class="nochange" href="proposition.php?prj={{_PRJ_}}&amp;id={{_IDPROP_}}"><img src="./img/link.png" alt="link" /></a></h1>
+    </div>
+    <div class="clearer"></div>
+    
+    <!-- BRANCH editbutton -->
+    <div class="linkbutton fright" style="margin-top: 25px; width: 100px;">
+        <a href="#" onclick="$('#propedit').toggle(); $('#propdesc').toggle(); generateLinks((document.getElementById('propdesc').style.display != 'none')); return false;">{{prop.editbutton.EDIT}}</a>
+    </div>
+    <!-- DIE editbutton -->
+    <h3>{{prop.FROM}} {{prop.LOGIN}}, {{prop.DATE}}</h3>
+    <div id="propdesc" class="entrydetail entryform">
+        {{prop.ENTRY}}
+    </div>    
+    <!-- BRANCH edit -->
+    <div id="propedit" class="entrydetail entryform" style="display: none;">
+        <form method="post" action="proposition_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+            {{prop.edit.ENTRYFORM}}
+            <p style="text-align: right;">
+                <label>{{prop.edit.UNVALIDATE}} <input type="checkbox" name="unvalidate" value="ON" checked="checked" {{prop.edit.UDISABLED}} /></label> &nbsp; &nbsp;
+                <input type="hidden" name="id_prop" value="{{_IDPROP_}}" />
+                <input type="hidden" name="cmd" value="update" />
+                <input type="submit" class="button" value="{{prop.edit.SUBMIT}}" />
+            </p>
+        </form>
+    </div>
+    <!-- DIE edit -->
+    
+    <div class="clearer">&nbsp;</div>
+    
+    <div class="searchin">
+        <div class="fleft" style="margin: 0 10px;">⇒</div>
+        <p id="srclinks" style="display: none">{{prop.SRCLINKS}}</p>
+        <p id="dstlinks" style="display: inline">{{prop.CUSTOMLINKS}}</p>
+    </div>
+    
+    <table class="table_centeralign">
+        <tr class="tablehead"><th width="280">{{prop.NBFLEXIONS}} &nbsp; &nbsp; {{prop.ALLFLEXIONS}}</th><th width="280">{{prop.MORPH}}</th></tr>
+        <!-- BRANCH flexion -->
+        <tr><td>{{prop.flexion.LEMMA}}</td><td>{{prop.flexion.MORPH}}</td></tr>
+        <!-- DIE flexion -->
+    </table>
+    <!-- DIE prop -->
+    
+    <div id="comments">
+        <!-- BRANCH comment -->
+        <div id="comment{{comment.IDCOM}}" class="commentblock">
+            <!-- BRANCH commactions -->
+            <div class="littlelinkbutton fright" style="margin: 2px;">
+                <a href="#" onclick="return delComment('{{_PRJ_}}', '{{comment.commactions.IDCOM}}', '{{_IDPROP_}}', '{{_CONFIRMDELETECOM_}}');">X</a>
+            </div>
+            <div class="littlelinkbutton fright" style="margin: 2px;">
+                <a href="#" onclick="$('#ezc{{comment.commactions.IDCOM}}').toggle(200); copyMsg('com{{comment.commactions.IDCOM}}', 'newcomment{{comment.commactions.IDCOM}}'); charCount(document.getElementById('newcomment{{comment.commactions.IDCOM}}'),3000,'charcounter{{comment.commactions.IDCOM}}'); return false;">&darr;</a>
+            </div>
+            <!-- DIE commactions -->
+            <div class="comment">
+                <div class="commentnote">
+                    <a href="member.php?prj={{_PRJ_}}&amp;id_user={{comment.IDUSER}}"><b>{{comment.LOGIN}}</b></a>
+                </div>
+                <div id="com{{comment.IDCOM}}">{{comment.COMMENT}}</div>
+                <!-- BRANCH commedit -->
+                <div id="ezc{{comment.commedit.IDCOM}}" style="display: none">
+                    <h3>{{comment.commedit.EDITLBL}}</h3>
+                    <form method="post" action="proposition_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+                        <p><textarea name="newcomment" id="newcomment{{comment.commedit.IDCOM}}" cols="10" rows="8" style="width: 525px;" onkeyup="charCount(this,3000,'charcounter{{comment.commedit.IDCOM}}');" onkeydown="charCount(this,3000,'charcounter{{comment.commedit.IDCOM}}');"></textarea></p>
+                        <p>
+                            <input type="hidden" name="cmd" value="editcomment" />
+                            <input type="hidden" name="id_com" value="{{comment.commedit.IDCOM}}" /><input type="hidden" name="id_prop" value="{{_IDPROP_}}" />
+                            <input type="submit" value="{{comment.commedit.SUBMIT}}" /> <samp id="charcounter{{comment.commedit.IDCOM}}">0</samp> / {{comment.commedit.MAXLENGTH}}
+                        </p>
+                    </form>
+                </div>
+                <!-- DIE commedit -->
+                <div class="commentdate">{{comment.DATE}}</div>
+            </div>
+        </div>
+        <!-- DIE comment -->
+        
+        <!-- BRANCH yourcomment -->
+        <div class="roundcorner">
+            <h2>{{yourcomment.YOURCOMMENT}}</h2>
+            <form method="post" action="proposition_c.php?prj={{_PRJ_}}&amp;cmd=insertcomment" accept-charset="UTF-8">
+                <p><textarea name="comment" id="comment" cols="10" rows="12" style="width: 530px;" onkeyup="charCount(this,3000,'charcounter');" onkeydown="charCount(this,3000,'charcounter');"></textarea></p>
+                <div class="littlelinkbutton fright" style="margin-left: 5px">
+                    <a href="#" onclick="insertHtmlTag('comment', '<q>', '</q>'); return false;">“q”</a>
+                </div>
+                <div class="littlelinkbutton fright">
+                    <a href="#" onclick="insertHtmlTag('comment', '<s>', '</s>'); return false;"><s>s</s></a>
+                </div>
+                <div class="littlelinkbutton fright">
+                    <a href="#" onclick="insertHtmlTag('comment', '<u>', '</u>'); return false;"><u>u</u></a>
+                </div>
+                <div class="littlelinkbutton fright">
+                    <a href="#" onclick="insertHtmlTag('comment', '<i>', '</i>'); return false;"><i>i</i></a>
+                </div>
+                <div class="littlelinkbutton fright">
+                    <a href="#" onclick="insertHtmlTag('comment', '<b>', '</b>'); return false;"><b>b</b></a>
+                </div>
+                <p>
+                    <input type="hidden" name="id_prop" value="{{_IDPROP_}}" />
+                    <input type="submit" class="button" value="{{yourcomment.SUBMIT}}" /> <samp id="charcounter">0</samp> / {{yourcomment.MAXLENGTH}}
+                </p>
+            </form>
+        </div>
+        <!-- DIE yourcomment -->
+    </div>
+</div>
+
+<div id="main_right">
+    <!-- BRANCH nav -->
+    <div class="buttonline">
+        <div class="smallbuttondarkgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=next&amp;value=?"><img src="./img/tag_notes.png" alt="?" /></a></div>
+        <div class="smallbuttondarkgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=next&amp;value=S"><img src="./img/tag_suspend.png" alt="^" /></a></div>
+        <div class="smallbuttondarkgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=next&amp;value=!"><img src="./img/tag_alert.png" alt="!" /></a></div>
+        <div class="smallbuttondarkgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=next&amp;value=R"><img src="./img/tag_reject.png" alt="×" /></a></div>
+        <div class="smallbuttondarkgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=next&amp;value=V"><img src="./img/tag_valid.png" alt="*" /></a></div>
+        <div class="buttondarkgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=next{{nav.TAB}}">{{nav.NEXT}} →</a></div>
+        <div class="clearer"></div>
+    </div>
+    <div class="buttonline">
+        <div class="buttonlightgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=prev{{nav.TAB}}">← {{nav.PREVIOUS}}</a></div>
+        <div class="smallbuttonlightgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=prev&amp;value=V"><img src="./img/tag_valid.png" alt="*" /></a></div>
+        <div class="smallbuttonlightgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=prev&amp;value=R"><img src="./img/tag_reject.png" alt="×" /></a></div>
+        <div class="smallbuttonlightgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=prev&amp;value=!"><img src="./img/tag_alert.png" alt="!" /></a></div>
+        <div class="smallbuttonlightgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=prev&amp;value=S"><img src="./img/tag_suspend.png" alt="^" /></a></div>
+        <div class="smallbuttonlightgrey"><a href="proposition.php?prj={{_PRJ_}}&amp;id={{nav.DATETIME}}&amp;cmd=prev&amp;value=?"><img src="./img/tag_notes.png" alt="?" /></a></div>
+        <div class="clearer"></div>
+    </div>
+    <!-- DIE nav -->
+    <!-- BRANCH action -->
+        <div class="label">{{action.LABEL}}</div>
+        <!-- BRANCH changeaction -->
+        <div class="largebutton">
+            <a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=changeaction&amp;id_prop={{_IDPROP_}}" onclick="return confirm('{{action.changeaction.CONFIRMCHANGE}}');">
+                {{action.changeaction.CHANGEACTION}}
+            </a>
+        </div>
+        <!-- DIE changeaction -->
+        
+        <!-- BRANCH evaluate -->
+        <div class="buttonline">
+            <div class="buttongreen"><a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=eval&amp;value=V&amp;id_prop={{_IDPROP_}}"><img src="./img/icon_valid.png" alt="" /><br />{{action.evaluate.VALID}}</a></div>
+            <div class="buttonyellow"><a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=eval&amp;value=!&amp;id_prop={{_IDPROP_}}"><img src="./img/icon_alert.png" alt="" /><br />{{action.evaluate.ALERT}}</a></div>
+            <div class="buttonred"><a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=eval&amp;value=R&amp;id_prop={{_IDPROP_}}"><img src="./img/icon_reject.png" alt="" /><br />{{action.evaluate.REJECT}}</a></div>
+            <div class="buttoncyan"><a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=eval&amp;value=S&amp;id_prop={{_IDPROP_}}"><img src="./img/icon_suspend.png" alt="" /><br />{{action.evaluate.SUSPEND}}</a></div>
+            <div class="clearer"></div>
+        </div>
+        <!-- DIE evaluate -->
+        
+        <!-- BRANCH applybutton -->
+        <div class="largebutton">
+            <a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=apply&amp;cmd2=validate&amp;id_prop={{_IDPROP_}}" onclick="return confirm('{{action.applybutton.CONFIRMVALIDAPPLY}}');">
+                <img src="./img/icon_approve.png" alt="" /> {{action.applybutton.VALIDAPPLY}}
+            </a>
+        </div>
+        <div class="largebutton">
+            <a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=apply&amp;id_prop={{_IDPROP_}}" onclick="return confirm('{{action.applybutton.CONFIRMAPPLYDUBIOUS}}');">
+                <img src="./img/icon_approvedubious.png" alt="" /> {{action.applybutton.APPLYDUBIOUS}}
+            </a>
+        </div>
+        <!-- DIE applybutton -->
+        
+        <!-- BRANCH reevalbutton -->
+        <div class="largebutton">
+            <a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=reeval&amp;id_prop={{_IDPROP_}}" onclick="return confirm('{{action.reevalbutton.CONFIRMREEVAL}}');">
+                <img src="./img/icon_gears.png" alt="" /> {{action.reevalbutton.REEVAL}}
+            </a>
+        </div>
+        <!-- DIE reevalbutton -->
+        
+        <!-- BRANCH forbidbutton -->
+        <div class="largebutton">
+            <a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=forbid&amp;id_prop={{_IDPROP_}}" onclick="return confirm('{{action.forbidbutton.CONFIRMFORBID}}');">
+                <img src="./img/icon_forbidden.png" alt="" /> {{action.forbidbutton.FORBID}}
+            </a>
+        </div>
+        <!-- DIE forbidbutton -->
+        
+        <!-- BRANCH trashbutton -->
+        <div class="largebutton">
+            <a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=trash&amp;id_prop={{_IDPROP_}}" onclick="return confirm('{{action.trashbutton.CONFIRMTRASH}}');">
+                <img src="./img/icon_trash.png" alt="" /> {{action.trashbutton.TRASH}}
+            </a>
+        </div>
+        <!-- DIE trashbutton -->
+        
+        <!-- BRANCH erasebutton -->
+        <div class="largebutton">
+            <a href="proposition_c.php?prj={{_PRJ_}}&amp;cmd=erase&amp;id_prop={{_IDPROP_}}" onclick="return confirm('{{action.erasebutton.CONFIRMERASE}}');">
+                <img src="./img/icon_bomb.png" alt="" /> {{action.erasebutton.ERASE}}
+            </a>
+        </div>
+        <!-- DIE erasebutton -->
+    <!-- DIE action -->
+    {{LANGLINKS}}
+</div>
+
+<script type="text/javascript">
+<!--
+    selectstar({{STARVALUE}});
+    showstar({{STARVALUE}});
+-->
+</script>

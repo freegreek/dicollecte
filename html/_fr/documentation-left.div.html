@@ -1,0 +1,334 @@
+    <h1>Documentation</h1>
+    
+    <p><a href="#dicos">Les différents dictionnaires</a></p>
+    <p><a href="#repartition">Répartition des graphies</a></p>
+    <p><a href="#orga">Lemmes et formes fléchies</a></p>
+    <p><a href="#drapeaux">Les drapeaux</a></p>
+    <p><a href="#grammaire">Nature grammaticale</a></p>
+    <p><a href="#lexique">Champs lexicaux</a></p>
+    <p><a href="#politique">Politique du dictionnaire</a></p>
+
+    <h2 id="dicos" class="section">Les dictionnaires français</h2>
+    <p>En 1990, le Conseil supérieur à la langue française et l’Académie française ont proposé une réforme de l’orthographe qui concerne plusieurs milliers de mots. L’emploi des nouvelles graphies n’est pas obligatoire. Les anciennes comme les nouvelles sont considérées comme correctes. À noter que certains mots concernés ne sont pas modifiés&nbsp;: la réforme ne fait que sélectionner une graphie parmi plusieurs possibles.</p>
+    <p>La nouvelle orthographe suscite beaucoup de polémiques. Afin de satisfaire autant que possible toutes les sensibilités vis-à-vis de la réforme, nous créons quatre dictionnaires à partir de la base de données&nbsp;:</p>
+    <ul>
+        <li><b>«Moderne»</b>&nbsp;: ce dictionnaire propose une sélection des graphies classiques et réformées, suivant la lente évolution de l’orthographe actuelle. Ce dictionnaire contient les graphies les moins polémiques de la réforme.</li>
+        <li><b>«Classique»</b>&nbsp;: ce dictionnaire est une extension du dictionnaire «Moderne», et propose en sus des graphies classiques, plus ou moins désuètes. L’orthographe correspond à celle qu’on trouve dans la plupart des livres publiés à ce jour.</li>
+        <li><b>«Réforme 1990»</b>&nbsp;: ce dictionnaire ne connaît que les graphies nouvelles des mots concernés par la réforme de 1990.</li>
+        <li><b>«Classique &amp; Réforme 1990»</b>&nbsp;: ce dictionnaire contient les nouvelles et les anciennes graphies des mots concernés par la réforme de 1990, ainsi que certains mots ou graphies rares que nous avons préféré ne pas inclure dans les autres dictionnaires.</li>
+    </ul>
+    <div class="roundcorner">
+        <p>La genèse de ces dictionnaires nécessite de classer chaque entrée dans un sous-dictionnaire. Il existe 5 sous-dictionnaires&nbsp;: <i>Commun</i>, <i>Moderne</i>, <i>Classique</i>, <i>Réforme</i>, <i>Annexe</i>.</p>
+        <p style="text-align: center"><img src="html/fr/repartition_dicos.png" alt="" /></p>
+        <p>La genèse des dictionnaires se fait selon ce schéma&nbsp;:</p>
+        <ul>
+        <li>dictionnaire «Moderne»&nbsp;: <i>Commun</i> + <i>Moderne</i>.</li>
+        <li>dictionnaire «Classique»&nbsp;: <i>Commun</i> + <i>Moderne</i> + <i>Classique</i>.</li>
+        <li>dictionnaire «Réforme 1990»&nbsp;: <i>Commun</i> + <i>Réforme</i>.</li>
+        <li>dictionnaire «Classique &amp; Réforme 1990»&nbsp;: <i>Commun</i> + <i>Moderne</i> + <i>Classique</i> + <i>Réforme</i> + <i>Annexe</i>.</li>
+        </ul>
+    </div>
+    
+    <h2 id="repartition" class="section">Répartition des graphies</h2>
+    <p>Lorsqu’un mot n’a qu’une seule graphie, elle est placée dans le sous-dictionnaire <i>Commun</i>.</p>
+    <p>Lorsqu’un mot possède deux graphies, plusieurs répartitions sont possibles&nbsp;:</p>
+    <ul>
+        <li>si l’on estime que l’une des graphies est trop novatrice (comme <i>ognon</i>), celle-ci est placée dans <i>Réforme</i>, l’autre dans <i>Moderne</i> (comme <i>oignon</i>)&nbsp;;</li>
+        <li>si l’on estime que la graphie moderne est suffisamment courante (comme <i>néoconservateur</i>), celle-ci est placée dans <i>Commun</i>, l’autre dans <i>Classique</i> (comme <i>néo-conservateur</i>)&nbsp;;</li>
+        <li>dans certains cas (rares), on peut décider d’une autre répartition, par exemple une graphie dans <i>Commun</i> et l’autre dans <i>Moderne</i>, ou encore les deux graphies dans <i>Commun</i>.</li>
+    </ul>
+    <p>Lorsqu’un mot possède plus de deux graphies, nous pouvons ne conserver que deux d’entre elles, et les répartir comme ci-dessus, ou bien nous pouvons en conserver plusieurs et leur attribuer une répartition en fonction des usages (par exemple, <a href="http://www.dicollecte.org/dictionary.php?prj=fr&amp;lemma=mahara"><i>maharadja</i></a>). En général, nous ne conservons que les graphies les plus fréquentes et éliminons les autres.</p>
+    <p>Le sous-dictionnaire <i>Annexe</i> sert à stocker des graphies très rares ou des mots susceptibles de créer des confusions avec d’autres plus courants. Ce sous-dictionnaire sert plutôt de zone de stockage pour exceptions gênantes.</p>
+    <p>Autant que possible, nous préférons ne proposer qu’une seule graphie par mot dans les dictionnaires «Moderne» et «Réforme 1990». Le dictionnaire «Classique» est une extension du «Moderne». Le dictionnaire «Classique &amp; Réforme 1990» est un vaste bordel.</p>
+    <p>La répartition des graphies est un sujet souvent polémique.</p>
+    <p>Tous les mots du dictionnaire n’ont pas été examinés, pas plus que leurs éventuelles graphies alternatives, certains mots possèdent donc plusieurs graphies, tandis que d’autres n’en ont qu’une seule alors qu’ils pourraient en avoir plusieurs. La question des variantes graphiques est un chantier permanent.</p>
+    
+    <h2 id="orga" class="section">Lemmes et formes fléchies</h2>
+    <p>Tous les mots du français ne sont pas présents directement dans le dictionnaire. Celui-ci ne contient que des lemmes à partir desquels les formes fléchies seront générées&nbsp;: les pluriels, les formes masculines et féminines, les conjugaisons, et parfois des formes dérivées. Ces déclinaisons sont générées par des drapeaux qui décrivent les modifications à apporter sur le lemme.</p>
+    <p>Dans notre dictionnaire, c’est la forme féminine, lorsque celle-ci existe, qui sert de lemme à partir duquel le masculin sera engendré. Par exemple, dans notre dictionnaire, <i>française</i> est le lemme de <i>français</i>. Ce choix est pratique&nbsp;: il est presque toujours possible de trouver la forme masculine à partir de la terminaison du féminin, tandis que l’inverse n’est pas possible. Par exemple, un mot finissant par <i>-eur</i> ne détermine aucunement si la forme féminine sera en <i>-euse</i>, en <i>-eure</i> ou en <i>-rice</i>.</p>
+    
+    <h2 id="drapeaux" class="section">Drapeaux générant les formes fléchies</h2>
+    <p>Chaque drapeau permet d’apposer un ou plusieurs affixes sur le lemme (un affixe est un préfixe ou un suffixe). Chaque affixe s’applique sur le lemme selon des règles définies dans le fichier des affixes. Un lemme peut être tronqué avant l’ajout d’un affixe&nbsp;; un affixe ne s’applique que dans des conditions déterminées.</p>
+    <p>Un drapeau est codé sur deux caractères.</p>
+    
+    <div class="roundcorner">
+        <h4>Drapeaux pour les non-verbes</h4>
+        <p>La première lettre de ces drapeaux est une majuscule.</p>
+        <table class="table_topalign">
+            <tr><th colspan="2">Pluriels</th></tr>
+            <tr><td width="30"><samp>S.</samp></td><td>pluriel en -s.</td></tr>
+            <tr><td><samp>S*</samp></td><td>pluriel en -s avec formes élidées.</td></tr>
+            <tr><td><samp>X.</samp></td><td>pluriel en -x.</td></tr>
+            <tr><td><samp>X*</samp></td><td>pluriel en -x avec formes élidées.</td></tr>
+            <tr><td><samp>I.</samp></td><td>pluriel des mots latins.</td></tr>
+            <tr><td><samp>I*</samp></td><td>pluriel des mots lations avec formes élidées.</td></tr>
+            <tr><td><samp>A.</samp></td><td>pluriel des mots anglais (gentleman, -men&nbsp;; miss, -es&nbsp;; penalty, -ties&nbsp;; smash, -es).</td></tr>
+            <tr><td><samp>A*</samp></td><td>pluriel des mots anglais avec formes élidées.</td></tr>
+            <tr><th colspan="2">Pluriels &amp; formes féminines</th></tr>
+            <tr><td><samp>F.</samp></td><td>lemme féminin dont la forme masculine adopte un pluriel en -s.</td></tr>
+            <tr><td><samp>F*</samp></td><td>idem avec formes élidées.</td></tr>
+            <tr><td><samp>W.</samp></td><td>lemme féminin dont la forme masculine adopte un pluriel en -x.</td></tr>
+            <tr><td><samp>W*</samp></td><td>idem avec formes élidées.</td></tr>
+    
+            <tr><th colspan="2">Élisions (préfixes)</th></tr>
+            <tr><td><samp>L'</samp></td><td>élision de “le” ou “la”.</td></tr>
+            <tr><td><samp>D'</samp></td><td>élision de “de”.</td></tr>
+            <tr><td><samp>Q'</samp></td><td>élision de “que”.</td></tr>
+            <tr><td><samp>Q*</samp></td><td>élision de “quoique”, de “puisque”, de “lorsque”.</td></tr>
+            <tr><td><samp>Qj</samp></td><td>élision de “jusque”.</td></tr>
+            <tr><td><samp>Si</samp></td><td>élision de “si”.</td></tr>
+            
+            <tr><th colspan="2">Unités de mesure (préfixes)</th></tr>
+            <tr><td><samp>Um</samp></td><td>ajout des préfixes: milli, nano, hecto, pico, etc.</td></tr>
+            <tr><td><samp>U.</samp></td><td>idem sous leur forme abrégée.</td></tr>
+        </table>
+        <p><b>Note&nbsp;:</b> Il n’existe pas de drapeaux pour les préfixes <i>anti-</i>, <i>contre-</i>, <i>dé-</i>, <i>in-</i>, <i>pré-</i>, <i>re-</i>, <i>ré-</i>, <i>super-</i>, etc. Les seuls préfixes que les règles d’affixation génèrent sont des formes élidées ou les préfixes pour les unités de mesure. C’est pourquoi le dictionnaire doit contenir des entrées séparées pour <u>accessible</u> et <u>inaccessible</u>. Ce choix délibéré permet d’éviter les confusions.</p>
+    </div>
+    
+    <div class="roundcorner">
+        <h4>Conjugaison des verbes</h4>
+        <p>Le premier caractère de ces drapeaux est une minuscule. Le second un chiffre pour les cas généraux, une lettre majuscule pour les cas particuliers. Le troisième groupe ne contient guère que des cas particuliers.</p>
+        <table class="table_topalign">
+            <tr><th colspan="2">Premier groupe</th></tr>
+            <tr><td width="30" ><samp>a&nbsp;</samp></td><td>verbes en <i>-er</i>, <i>-ger</i>, <i>-cer</i>, <i>-yer</i>.</td></tr>
+            <tr><td><samp>b&nbsp;</samp></td><td>verbes en <i>-ecer</i>, <i>-emer</i>, <i>-ener</i>, <i>-eper</i>, <i>-erer</i>, <i>-eser</i>, <i>-ever</i>, <i>-evrer</i>, ainsi que les verbes en <i>-eter</i> et <i>-eler</i>, dont la consonne ne se double pas. Changement du <i>e</i> en <i>è</i> avant la syllabe muette.</td></tr>
+            <tr><td><samp>c&nbsp;</samp></td><td>verbes en <i>-ébrer</i>, <i>-écer</i>, <i>-écher</i>, <i>-écrer</i>, <i>-éder</i>, <i>-éger</i>, <i>-égler</i>, <i>-égner</i>, <i>-égrer</i>, <i>-éguer</i>, <i>-éler</i>, <i>-émer</i>, <i>-éner</i>, <i>-éper</i>, <i>-équer</i>, <i>-érer</i>, <i>-éser</i>, <i>-éter</i>, <i>-étrer</i>, <i>-évrer</i>, <i>-éyer</i>. Changement du <i>é</i> en <i>è</i>.</td></tr>
+            <tr><td><samp>d&nbsp;</samp></td><td>verbes en <i>-eler</i>, <i>-eter</i>. Doublement des consonnes <i>l</i> ou <i>t</i>.</td></tr>
+            <tr><td><samp>&nbsp;0</samp></td><td>pas d’élisions.</td></tr>
+            <tr><td><samp>&nbsp;1</samp></td><td>élisions pour formes intransitives.</td></tr>
+            <tr><td><samp>&nbsp;2</samp></td><td>élisions pour formes transitives.</td></tr>
+            <tr><td><samp>&nbsp;3</samp></td><td>élisions pour formes pronominales.</td></tr>
+            <tr><td><samp>&nbsp;4</samp></td><td>élisions pour formes transitives et pronominales.</td></tr>
+            <tr><td><samp>&nbsp;5</samp></td><td>élisions pour formes transitives indirectes.</td></tr>
+            <tr><td><samp>a6</samp></td><td>verbes pronominaux réciproques.</td></tr>
+            <tr><td><samp>a8</samp></td><td>verbes impersonnels (infinitif + singulier).</td></tr>
+            <tr><td><samp>a9</samp></td><td>verbes impersonnels (pluriel).</td></tr>
+            
+            <tr><th colspan="2">Deuxième groupe</th></tr>
+            <tr><td><samp>f0</samp></td><td>pas d’élisions.</td></tr>
+            <tr><td><samp>f1</samp></td><td>élisions pour formes intransitives.</td></tr>
+            <tr><td><samp>f2</samp></td><td>élisions pour formes transitives.</td></tr>
+            <tr><td><samp>f3</samp></td><td>élisions pour formes pronominales.</td></tr>
+            <tr><td><samp>f4</samp></td><td>élisions pour formes transitives et pronominales.</td></tr>
+            <tr><td><samp>f5</samp></td><td>élisions pour formes transitives indirectes.</td></tr>
+            
+            <tr><th colspan="2">Troisième groupe</th></tr>
+            <tr><td colspan="2">Tous les drapeaux pour le 3<sup>e</sup> groupe sont des cas particuliers et sont dédiés à un seul verbe ou une liste définie.</td></tr>
+            <tr><td><samp>i</samp></td><td>verbes en <i>-ir</i>.</td></tr>
+            <tr><td><samp>p,q</samp></td><td>verbes en <i>-oir</i>.</td></tr>
+            <tr><td><samp>t</samp></td><td>verbes en <i>-dre</i>, <i>-tre</i>, <i>-pre</i>.</td></tr>
+            <tr><td><samp>u</samp></td><td>verbes en <i>-battre</i>.</td></tr>
+            <tr><td><samp>v</samp></td><td>verbes en <i>-mettre</i>.</td></tr>
+            <tr><td><samp>w</samp></td><td>verbes en <i>-eindre</i>, <i>-oindre</i>, <i>-aire</i>, <i>-aindre</i>, <i>-aincre</i>, <i>-aître</i>, <i>-croître</i>.</td></tr>
+            <tr><td><samp>x</samp></td><td>verbes en <i>-oire</i>, <i>-clore</i>, <i>-clure</i>, <i>-ou(r)dre</i>, <i>-vre</i>.</td></tr>
+            <tr><td><samp>y</samp></td><td>verbes en <i>-ire</i>.</td></tr>
+            
+            <tr><th colspan="2">Participes passés</th></tr>
+            <tr><td><samp>p+</samp></td><td>participes passés pour les verbes du premier et du deuxième groupe.</td></tr>
+            <tr><td><samp>p.</samp></td><td>participe passé invariable pour les verbes du premier et du deuxième groupe.</td></tr>
+            <tr><td><samp>q+</samp></td><td>participes passés pour certains verbes du troisième groupe.</td></tr>
+            <tr><td><samp>q.</samp></td><td>participe passé invariable pour certains verbes du troisième groupe.</td></tr>
+        </table>
+    </div>
+    
+    <div class="roundcorner">
+        <h4>Méta-drapeaux</h4>
+        <p>Ces drapeaux n’engendrent aucune déclinaison. Ils indiquent des règles spécifiques.</p>
+        <table class="table_topalign">
+            <tr><td width="30"><samp>()</samp></td><td>Indique un lemme virtuel. Un lemme virtuel n’est pas inclus dans la liste des déclinaisons. Mais en vérité, pour le dictionnaire français, les lemmes virtuels s’engendrent eux-mêmes avec d’autres drapeaux. Par exemple, accroupir<samp>/f3()</samp> va recréer sa forme à l’infinitif avec les drapeaux <samp>m’</samp>, <samp>t’</samp>, <samp>s’</samp> pour générer <i>m’accroupir</i>, <i>t’accroupir</i>, <i>s’accroupir</i>.</td></tr>
+            <tr><td><samp>||</samp></td><td>Casse imposée.</td></tr>
+            <tr><td><samp>--</samp></td><td>Entrée reconnue, mais exclue des suggestions du correcteur.</td></tr>
+            <tr><td><samp>**</samp></td><td>Flexion sur le préfixe et le suffixe imposée (<i>circumfix</i> dans Hunspell).</td></tr>
+        </table>
+    </div>
+    <br />
+    
+    <h2 id="grammaire" class="section">Nature grammaticale</h2>
+    <div class="roundcorner">
+        <h4>Noms et adjectifs</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>nom</samp></td><td>Nom commun.</td></tr>
+            <tr><td><samp>adj</samp></td><td>Adjectif.</td></tr>
+        </table>
+        <br />
+        <h4>Noms propres</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>prn</samp></td><td>Prénom.</td></tr>
+            <tr><td><samp>patr</samp></td><td>Patronyme.</td></tr>
+            <tr><td><samp>geo</samp></td><td>Indique un nom propre géographique&nbsp;: Berlin, Hawaï, la France, l’Everest, le Danube, la Bohême, etc.</td></tr>
+        </table>
+        <br />
+        <div style="margin-left: 75px;">
+            <h4>Inflexions&nbsp;</h4>
+            <table class="table_topalign">
+                <tr><th width="75"></th><th></th></tr>
+                <tr><td><samp>pl</samp></td><td>pluriel.</td></tr>
+                <tr><td><samp>inv</samp></td><td>invariable en nombre, c’est-à-dire singulier ou pluriel.</td></tr>
+                <tr><td><samp>mas</samp></td><td>masculin.</td></tr>
+                <tr><td><samp>fem</samp></td><td>féminin.</td></tr>
+                <tr><td><samp>epi</samp></td><td>épicène, c’est-à-dire masculin ou féminin.</td></tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="roundcorner">
+        <h4>Verbes</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>v0a</samp></td><td>Avoir.</td></tr>
+            <tr><td><samp>v0e</samp></td><td>Être.</td></tr>
+            <tr><td><samp>v1</samp>…</td><td>Verbe du premier groupe, …</td></tr>
+            <tr><td><samp>v2</samp>…</td><td>Verbe du deuxième groupe, …</td></tr>
+            <tr><td><samp>v3</samp>…</td><td>Verbe du troisième groupe, …</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;…<samp>i</samp>…</td><td>… intransitif,</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;…<samp>t</samp>…</td><td>… transitif direct,</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;…<samp>î</samp>…</td><td>… transitif indirect,</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;…<samp>p</samp>…</td><td>… pronominal,</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;…<samp>r</samp>…</td><td>… pronominal réciproque,</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;…<samp>m</samp>…</td><td>… impersonnel.</td></tr>
+        </table>
+        <p>Exemples&nbsp;: danser <samp>v1it</samp>, évanouir <samp>v2p</samp>, fusiller <samp>v1t</samp>, écrire <samp>v3itîp</samp>, appartenir <samp>v3îp</samp>, s’entre-déchirer <samp>v1r</samp>.</p>
+        <br />
+        <div style="margin-left: 75px;">
+            <h4>Inflexions&nbsp;</h4>
+            <table class="table_topalign">
+                <tr><th width="75"></th><th></th></tr>
+                <tr><td><samp>infi</samp></td><td>infinitif,</td></tr>
+                <tr><td><samp>ppre</samp></td><td>participe présent,</td></tr>
+                <tr><td><samp>ppas</samp></td><td>participe passé,</td></tr>
+                <tr><td><samp>ipre</samp></td><td>indicatif présent,</td></tr>
+                <tr><td><samp>ipsi</samp></td><td>passé simple,</td></tr>
+                <tr><td><samp>iimp</samp></td><td>imparfait,</td></tr>
+                <tr><td><samp>ifut</samp></td><td>futur,</td></tr>
+                <tr><td><samp>cond</samp></td><td>présent conditionnel,</td></tr>
+                <tr><td><samp>spre</samp></td><td>subjonctif présent,</td></tr>
+                <tr><td><samp>simp</samp></td><td>imparfait du subjonctif,</td></tr>
+                <tr><td><samp>impe</samp></td><td>impératif.</td></tr>
+                <tr><td><samp>&nbsp;</samp></td><td> </td></tr>
+                <tr><td><samp>1sg</samp></td><td>1re personne du singulier.</td></tr>
+                <tr><td><samp>2sg</samp></td><td>2e personne du singulier.</td></tr>
+                <tr><td><samp>3sg</samp></td><td>3e personne du singulier.</td></tr>
+                <tr><td><samp>1pl</samp></td><td>1re personne du pluriel.</td></tr>
+                <tr><td><samp>2pl</samp></td><td>2e personne du pluriel.</td></tr>
+                <tr><td><samp>3pl</samp></td><td>3e personne du pluriel.</td></tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="roundcorner">
+        <h4>Divers</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>adv</samp></td><td>Adverbe.</td></tr>
+            <tr><td><samp>loc.adv</samp></td><td>Locution adverbiale.</td></tr>
+            <tr><td><samp>loc.adj</samp></td><td>Locution adjectivale.</td></tr>
+            <tr><td><samp>loc.verb</samp></td><td>Locution verbale.</td></tr>
+            <tr><td><samp>interj</samp></td><td>Interjection.</td></tr>
+            <tr><td><samp>mg</samp></td><td>Mot grammatical.</td></tr>
+        </table>
+    </div>
+    
+    <br />
+    
+    <h2 id="lexique" class="section">Champs lexicaux</h2>
+    <p>Si une entrée appartient à plusieurs champs lexicaux, les séparer par un espace.</p>
+    
+    <div class="roundcorner">
+        <h4>Variantes orthographiques</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>var</samp></td><td>variante orthographique (graphies proches). Exemple&nbsp;: anévrysme, au lieu d’anévrisme. Ces mots sont souvent placés dans le sous-dictionnaire “Annexe”.</td></tr>
+            <tr><td><samp>alt</samp></td><td>graphie alternative d’un mot (graphies dissemblables). Exemple&nbsp;: éthologiste, au lieu d’éthologue.</td></tr>
+            <tr><td><samp>dic</samp></td><td>indique une variante graphique répertoriée par un dictionnaire de référence.</td></tr>
+        </table>
+    </div>
+    
+    <div class="roundcorner">
+        <h4>Usage</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>rare</samp></td><td>rarement employé.</td></tr>
+            <tr><td><samp>vieux</samp></td><td>obsolète, désuet.</td></tr>
+            <tr><td><samp>néo</samp></td><td>néologisme, pour les mots dont la pérennité est douteuse.</td></tr>
+            <tr><td><samp>fam</samp></td><td>familier, grossier, vulgaire.</td></tr>
+            <tr><td><samp>fxa</samp></td><td>faux-ami, mot très semblable à un autre d’emploi courant.</td></tr>
+        </table>
+    </div>
+    
+    <div class="roundcorner">
+        <h4>Catégorie</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>symb</samp></td><td>symbole.</td></tr>
+            <tr><td><samp>abr</samp></td><td>abréviation.</td></tr>
+            <tr><td><samp>abty</samp></td><td>abréviation typographique.</td></tr>
+            <tr><td><samp>cité</samp></td><td>ville, village, quartier.</td></tr>
+            <tr><td><samp>dép</samp></td><td>nom déposé, devenu nom commun depuis lors (par exemple, <i>mobylette</i>).</td></tr>
+            <tr><td><samp>TM</samp></td><td>produit ou nom de compagnie (réservé à quelques exceptions à la politique du dictionnaire).</td></tr>
+            <tr><td><samp>hist</samp></td><td>figure ou nom historique.</td></tr>
+            <tr><td><samp>ord</samp></td><td>nombre ordinal.</td></tr>
+            <tr><td><samp>onom</samp></td><td>onomatopée.</td></tr>
+        </table>
+    </div>
+    
+    <div class="roundcorner">
+        <h4>Variétés nationales/régionales</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>afr</samp></td><td>africanisme.</td></tr>
+            <tr><td><samp>belg</samp></td><td>belgicisme.</td></tr>
+            <tr><td><samp>fra</samp></td><td>francisme.</td></tr>
+            <tr><td><samp>helv</samp></td><td>helvétisme.</td></tr>
+            <tr><td><samp>québ</samp></td><td>québécisme.</td></tr>
+            <tr><td><samp>rég</samp></td><td>régionalisme.</td></tr>
+        </table>
+    </div>
+    
+    <div class="roundcorner">
+        <h4>Mots dérivés des langues régionales</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>occ</samp></td><td>occitan, provençal, auvergnat, gascon, etc.</td></tr>
+            <tr><td><samp>oil</samp></td><td>langue d’oïl, normand, champenois, lorrain, wallon, etc.</td></tr>
+            <tr><td><samp>celt</samp></td><td>celte, gaulois.</td></tr>
+        </table>
+    </div>
+    
+    <div class="roundcorner">
+        <h4>Emprunts à d’autres langues</h4>
+        <table class="table_topalign">
+            <tr><th width="75"></th><th></th></tr>
+            <tr><td><samp>lat</samp></td><td>latin.</td></tr>
+            <tr><td><samp>grec</samp></td><td>grec.</td></tr>
+            <tr><td><samp>angl</samp></td><td>anglais.</td></tr>
+            <tr><td><samp>all</samp></td><td>allemand.</td></tr>
+            <tr><td><samp>néer</samp></td><td>néerlandais.</td></tr>
+            <tr><td><samp>fla</samp></td><td>flamand.</td></tr>
+            <tr><td><samp>ita</samp></td><td>italien.</td></tr>
+            <tr><td><samp>esp</samp></td><td>espagnol.</td></tr>
+            <tr><td><samp>port</samp></td><td>portugais.</td></tr>
+            <tr><td><samp>dan</samp></td><td>danois.</td></tr>
+            <tr><td><samp>norv</samp></td><td>norvégien.</td></tr>
+            <tr><td><samp>sué</samp></td><td>suédois.</td></tr>
+            <tr><td><samp>finn</samp></td><td>finnois.</td></tr>
+            <tr><td><samp>isl</samp></td><td>islandais.</td></tr>
+            <tr><td><samp>rus</samp></td><td>russe.</td></tr>
+            <tr><td><samp>pol</samp></td><td>polonais.</td></tr>
+            <tr><td><samp>turc</samp></td><td>turc.</td></tr>
+            <tr><td><samp>pers</samp></td><td>persan.</td></tr>
+            <tr><td><samp>ara</samp></td><td>arabe.</td></tr>
+            <tr><td><samp>héb</samp></td><td>hébreu.</td></tr>
+            <tr><td><samp>hind</samp></td><td>hindi.</td></tr>
+            <tr><td><samp>sskr</samp></td><td>sanskrit.</td></tr>
+            <tr><td><samp>chin</samp></td><td>chinois.</td></tr>
+            <tr><td><samp>jap</samp></td><td>japonais.</td></tr>
+            <tr><td><samp>étr</samp></td><td>autres origines étrangères.</td></tr>
+        </table>
+    </div>
+    
+    
+    <h2 id="politique" class="section">Politique du dictionnaire&nbsp;: quels mots sont acceptés&nbsp;?</h2>
+    <p>Nous n’acceptons pas tous les mots dans notre dictionnaire. Ce point est délicat et souvent sujet à controverses.</p>
+    <p>Voir le fil dans notre <a href="thread.php?prj=fr&amp;t=12">forum</a>.</p>

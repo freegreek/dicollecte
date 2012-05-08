@@ -1,0 +1,46 @@
+
+<img class="imgzone_right" src="./img/icon_lock.png" alt="" />
+
+<h1>{{LABEL}}</h1>
+
+<form method="post" action="useraccount_c.php?prj={{PRJ}}">
+    <div class="roundcorner defaultform">
+        <p>
+            <label class="defaultlbl" style="width: 200px" for="login">{{LOGINLBL}}</label>
+            <input type="text" class="inputtxt" id="login" name="login" style="width: 300px;" maxlength="40" value="{{LOGIN}}" disabled="disabled" />
+        </p>
+        <p><label class="defaultlbl" style="width: 200px">{{CRYPTEDPWLBL}}</label> {{CRYPTEDPW}}</p>
+        <p>
+            <label class="defaultlbl" style="width: 200px" for="pw1">{{NEWPW}}</label>
+            <input type="password" class="inputtxt" id="pw1" name="pw1" style="width: 300px;" maxlength="20" value="" />
+        </p>
+        <p>
+            <label class="defaultlbl" style="width: 200px" for="pw2">{{NEWPW}}</label>
+            <input type="password" class="inputtxt" id="pw2" name="pw2" style="width: 300px;" maxlength="20" value="" />
+        </p>
+    </div>
+    
+    <div class="roundcorner defaultform">
+        <p>
+            <label class="defaultlbl" style="width: 200px" for="name">{{NAME}}</label>
+            <input type="text" class="inputtxt" id="name" name="name" style="width: 300px;" maxlength="40" value="{{MYNAME}}" />
+        </p>
+        <p>
+            <label class="defaultlbl" style="width: 200px" for="email">{{EMAIL}}</label>
+            <input type="text" class="inputtxt" id="email" name="email" style="width: 300px;" maxlength="60" value="{{MYEMAIL}}" />
+        </p>
+        <p>
+            <label class="defaultlbl" style="width: 490px" for="emailnotif">{{EMAILNOTIF}}</label>
+            <input type="checkbox" id="emailnotif" name="emailnotif" value="ON" {{EMAILNOTIFCHECKED}} />
+        </p>
+        <p>
+            <label class="defaultlbl" style="width: 490px" for="enotifauto">{{ENOTIFAUTO}}</label>
+            <input type="checkbox" id="enotifauto" name="enotifauto" value="ON" {{ENOTIFAUTOCHECKED}} />
+        </p>
+    </div>
+    <div class="clearer"></div>
+    <p>
+        <input type="hidden" name="cmd" value="update" />
+        <input type="submit" class="button" value="{{SUBMIT}}" />
+    </p>
+</form>

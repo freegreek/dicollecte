@@ -1,0 +1,265 @@
+<div class="imgzone_right"><img src="./img/icon_lock.png" alt="" /></div>
+
+<h1>{{LABEL}}</h1>
+
+<div class="tabs">         
+    <div class="tabOn" id="administrationPanelTab_0" onclick="selectTab('administrationPanel',0); setCookie('admtab',0,0)">
+        <a href="#" onclick="return false;">{{TAB_TASKS}}</a>
+    </div>         
+    <div class="tabOff" id="administrationPanelTab_1" onclick="selectTab('administrationPanel',1); setCookie('admtab',1,0)">
+        <a href="#" onclick="return false;">{{TAB_SETTINGS}}</a>
+    </div>
+    <div class="tabOff" id="administrationPanelTab_2" onclick="selectTab('administrationPanel',2); setCookie('admtab',2,0)">
+        <a href="#" onclick="return false;">{{TAB_TAGS}}</a>
+    </div>
+    <div class="tabOff" id="administrationPanelTab_3" onclick="selectTab('administrationPanel',3); setCookie('admtab',3,0)">
+        <a href="#" onclick="return false;">{{TAB_UI}}</a>
+    </div>
+    <div class="tabOff" id="administrationPanelTab_4" onclick="selectTab('administrationPanel',4); setCookie('admtab',4,0)">
+        <a href="#" onclick="return false;">{{TAB_IO}}</a>
+    </div>
+</div>
+
+<!-- TASKS AND REPORT -->
+<div id="administrationPanelContent_0" style="display: block;">            
+    <div class="roundcorner">
+        <h2>{{ADMINTASKS}}</h2>
+        <p><br /><a class="button" href="#" onclick="return closeGrammTagEntries('{{_PRJ_}}');">{{CLOSEGRAMMTAGENTRIESLBL}}</a></p>
+        <p><br /><a class="button" href="#" onclick="return updateStats('{{_PRJ_}}');">{{STATSUPDATELBL}}</a></p>
+    </div>
+    <div class="roundcorner">
+        <h2>{{ERRORSREPORTLBL}}</h2>
+        <pre id="report" style="margin: 20px 0">{{ERRORSREPORT}}</pre>
+        <p><a class="button" href="#" onclick="return delReport('{{_PRJ_}}');">{{SUBMITDEL}}</a></p>
+    </div>
+</div>
+
+<!-- SETTINGS -->
+<div id="administrationPanelContent_1" style="display: none;">            
+    <form method="post" action="./administration_c.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+        <div class="roundcorner">
+            <h2>{{FLAGSLBL}}</h2>
+            <div style="padding: 5px; border: 1px solid #DDDDED; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;">
+                <p style="padding: 10px;"><b>{{FLAGTYPE}}</b> &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <label>{{ONECHARACTER}} <input type="radio" name="flagtype" value="1" {{CHECKEDONE}} /></label> &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <label>{{TWOCHARACTERS}} <input type="radio" name="flagtype" value="2" {{CHECKEDTWO}} /></label> &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <label>{{NUMERIC}} <input type="radio" name="flagtype" value="N" {{CHECKEDNUM}} /></label>
+                </p>
+            </div>
+            <br />
+            <p>
+                <label>{{NEEDAFFIXLBL}} &nbsp; <input type="text" class="inputtxt" style="width: 40px;"name="needaffix" value="{{NEEDAFFIX}}" /></label> &nbsp; &nbsp; 
+                <label>{{CIRCUMFIXLBL}} &nbsp; <input type="text" class="inputtxt" style="width: 40px;" name="circumfix" value="{{CIRCUMFIX}}" /></label>
+            </p>
+            <p>{{EXCEPTIONSLISTLBL}}</p>
+            <p><input type="text" class="inputtxt" style="width: 875px;" name="exceptionslist" value="{{EXCEPTIONSLIST}}" /></p>
+        </div>
+        
+        <div class="roundcorner">
+            <h2>{{FLEXIONSLBL}}</h2>
+            <p>
+                <label>{{DEFAULTFLEXIONSDEPTHLBL}} &nbsp;
+                <select name="flexionsdepth" size="1" style="width: 400px;">
+                    <option {{FDSELECTED_0}} value="0">{{FD_0}}</option>
+                    <option {{FDSELECTED_1}} value="1">{{FD_1}}</option>
+                    <option {{FDSELECTED_2}} value="2">{{FD_2}}</option>
+                </select>
+                </label>
+            </p>
+        </div>
+        
+        <div class="roundcorner">
+            <h2>{{DICTIONARYLBL}}</h2>
+            <p>
+                <label>{{DICTDIRECTEDITIONLBL}} &nbsp;
+                    <select name="dictDirectEdition" size="1" style="width: 300px;">
+                        <option {{SELECTED_3}} value="3">{{DICTDIRECTEDITIONADM}}</option>
+                        <option {{SELECTED_5}} value="5">{{DICTDIRECTEDITIONCTRL}}</option>
+                        <option {{SELECTED_7}} value="7">{{DICTDIRECTEDITIONUSER}}</option>
+                    </select>
+                </label> &nbsp; &nbsp;  &nbsp;
+                <label for="resed">{{RESTRICTEDEDITIONLBL}}</label> <input type="checkbox" id="resed" name="restrictededit" value="ON" {{RESEDCHECKED}} />
+            </p>
+            <div class="entryform">
+                <h3><label class="entryformlbl">{{FIELDSLBL}}</label>{{ACTIVEFIELDSLBL}}</h3>
+                <p><b>— Hunspell —</b></p>
+                <p><label class="entryformlbl" for="lemma">{{lemmaLBL}}</label><input type="checkbox" id="lemma" name="lemma" value="ON" checked="checked" disabled="disabled" /></p>
+                <p><label class="entryformlbl" for="flags">{{flagsLBL}}</label><input type="checkbox" id="flags" name="flags" value="ON" checked="checked" disabled="disabled" /></p>
+                
+                <p><label class="entryformlbl" for="po">{{poLBL}}</label><input type="checkbox" id="po" name="po" value="ON" {{poCHECKED}} /> &nbsp; po</p>
+                
+                <p><label class="entryformlbl" for="is">{{isLBL}}</label><input type="checkbox" id="is" name="is" value="ON" {{isCHECKED}} /> &nbsp; is</p>
+                <p><label class="entryformlbl" for="ds">{{dsLBL}}</label><input type="checkbox" id="ds" name="ds" value="ON" {{dsCHECKED}} /> &nbsp; ds</p>
+                <p><label class="entryformlbl" for="ts">{{tsLBL}}</label><input type="checkbox" id="ts" name="ts" value="ON" {{tsCHECKED}} /> &nbsp; ts</p>
+                
+                <p><label class="entryformlbl" for="ip">{{ipLBL}}</label><input type="checkbox" id="ip" name="ip" value="ON" {{ipCHECKED}} /> &nbsp; ip</p>
+                <p><label class="entryformlbl" for="dp">{{dpLBL}}</label><input type="checkbox" id="dp" name="dp" value="ON" {{dpCHECKED}} /> &nbsp; dp</p>
+                <p><label class="entryformlbl" for="tp">{{tpLBL}}</label><input type="checkbox" id="tp" name="tp" value="ON" {{tpCHECKED}} /> &nbsp; tp</p>
+                <p><label class="entryformlbl" for="sp">{{spLBL}}</label><input type="checkbox" id="sp" name="sp" value="ON" {{spCHECKED}} /> &nbsp; sp</p>
+                
+                <p><label class="entryformlbl" for="pa">{{paLBL}}</label><input type="checkbox" id="pa" name="pa" value="ON" {{paCHECKED}} /> &nbsp; pa</p>
+                
+                <p><label class="entryformlbl" for="st">{{stLBL}}</label><input type="checkbox" id="st" name="st" value="ON" {{stCHECKED}} /> &nbsp; st</p>
+                <p><label class="entryformlbl" for="al">{{alLBL}}</label><input type="checkbox" id="al" name="al" value="ON" {{alCHECKED}} /> &nbsp; al</p>
+                <p><label class="entryformlbl" for="ph">{{phLBL}}</label><input type="checkbox" id="ph" name="ph" value="ON" {{phCHECKED}} /> &nbsp; ph</p>
+                
+                <p><b>— Dicollecte —</b></p>
+                <p><label class="entryformlbl" for="lex">{{lexLBL}}</label><input type="checkbox" id="lex" name="lex" value="ON" checked="checked" disabled="disabled" /> &nbsp; lx</p>
+                <p><label class="entryformlbl" for="sem">{{semLBL}}</label><input type="checkbox" id="sem" name="sem" value="ON" {{semCHECKED}} /> &nbsp; se</p>
+                <p><label class="entryformlbl" for="ety">{{etyLBL}}</label><input type="checkbox" id="ety" name="ety" value="ON" {{etyCHECKED}} /> &nbsp; et</p>
+                <p><label class="entryformlbl" for="dic">{{dicLBL}}</label><input type="checkbox" id="dic" name="dic" value="ON" checked="checked" disabled="disabled" /> &nbsp; di</p>
+                <p><label class="entryformlbl" for="ifq">{{ifqLBL}}</label><input type="checkbox" id="ifq" name="ifq" value="ON" {{ifqCHECKED}} /> &nbsp; fq</p>
+            </div>
+        </div>
+        
+        <div class="roundcorner">
+            <h2>{{SUBDICTLBL}}</h2>
+            <p>{{SUBDICTNOTE}}</p>
+            <p><textarea name="subdicts" class="monospace" cols="10" rows="8" style="width: 875px;">{{SUBDICTS}}</textarea></p>
+        </div>
+        
+        <div class="roundcorner">
+            <h2>{{CUSTOMLINKSLBL}}</h2>
+            <p>{{CUSTOMLINKSNOTE}}</p>
+            <p><textarea name="customlinks" class="monospace" cols="10" rows="8" style="width: 875px;">{{CUSTOMLINKS}}</textarea></p>
+        </div>
+        
+        <div class="roundcorner">
+            <h2>{{THESAURUSLBL}}</h2>
+            <p><label class="defaultlbl" style="width: 300px" for="thesAllUsersAllowed">{{THESALLUSERSALLOWED}}</label><input type="checkbox" id="thesAllUsersAllowed" name="thesAllUsersAllowed" value="ON" {{THESCHECKED}} /></p>
+            <p><label class="defaultlbl" style="width: 300px" for="lockDuration">{{LOCKDURATIONLBL}}</label><input type="text" class="inputtxt" style="width: 50px;" id="lockDuration" name="lockDuration" value="{{LOCKDURATION}}" /> {{SECONDS}}</p>
+            <p><label class="defaultlbl" style="width: 300px" for="extendedSearch">{{EXTENDEDSEARCHBYDEFAULT}}</label><input type="checkbox" id="extendedSearch" name="extendedSearch" value="ON" {{ESDCHECKED}} /></p>
+            <p><label class="defaultlbl" style="width: 300px" for="updateByEmail">{{UBMLBL}}</label><input type="checkbox" id="updateByEmail" name="updateByEmail" value="ON" {{UBMCHECKED}} /></p>
+        </div>
+        
+        <p><br /><input type="hidden" name="cmd" value="updatesettings" /><input type="submit" class="button" value="{{SUBMIT}}" /></p>
+    </form>
+</div>
+
+<!-- TAGS -->
+<div id="administrationPanelContent_2" style="display: none;">            
+    <form method="post" action="./administration_c.php?prj={{_PRJ_}}">
+        <div class="roundcorner">
+            <h2>{{TAGSLBL}}</h2>
+            <div class="block_right"><a href="./html/_default/tags.list.txt">{{UI_REFERENCEFILE}}</a></div>
+            <p>{{TAGSNOTE}}</p>
+            <p><textarea name="tags" class="monospace" cols="10" rows="30">{{TAGS}}</textarea></p>
+        </div>
+        <p><br /><input type="hidden" name="cmd" value="updatetags" /><input type="submit" class="button" value="{{SUBMIT}}" /></p>
+    </form>
+</div>
+
+<!-- USER INTERFACE -->
+<div id="administrationPanelContent_3" style="display: none;">
+    <form method="post" action="./administration_c.php?prj={{_PRJ_}}">
+        <div class="roundcorner">
+            <div class="block_right"><a href="./html/_default/ui.ini">{{UI_REFERENCEFILE}}</a></div>
+            <h2>{{UI_EDITION}}</h2>
+            <textarea id="ui" name="ui" class="monospace" cols="10" rows="30">{{MYUI}}</textarea>
+        </div>
+        
+        <div class="roundcorner">
+            <div class="block_right"><a href="./html/_default/langlinks.div.html">{{UI_REFERENCEFILE}}</a></div>
+            <h2>{{LANGLINKSLBL}}</h2>
+            <p>{{LANGLINKSNOTE}}</p>
+            <p><textarea name="langlinks" class="monospace" cols="10" rows="15">{{LANGLINKS}}</textarea></p>
+        </div>
+        
+        <p><br /><input type="hidden" name="cmd" value="saveui" /><input type="submit" class="button" value="{{SUBMIT}}" /></p>
+    </form>
+</div>
+
+<!-- IMPORT-EXPORT -->
+<div id="administrationPanelContent_4" style="display: none;">
+    <div class="roundcorner">
+        <p><img src="./img/tag_alert.png" alt="!" /> {{UTF8ONLY}}</p>
+    </div>
+    <div class="roundcorner">
+        <h2>{{IMPORTLBL}}</h2>
+        <form method="post" enctype="multipart/form-data" action="./administration_c.php?prj={{_PRJ_}}">
+            <p>{{IODICTLBL}} <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input type="file" name="myfile" accept="text/plain" /> <input type="hidden" name="cmd" value="importdict" /> <input type="submit" value="{{IMPORTLBL}}" /></p>
+        </form>
+        <form method="post" enctype="multipart/form-data" action="./administration_c.php?prj={{_PRJ_}}">
+            <p>{{IOAFFIXLBL}} <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input type="file" name="myfile" accept="text/plain" /> <input type="hidden" name="cmd" value="importaffix" /> <input type="submit" value="{{IMPORTLBL}}" /></p>
+        </form>
+        <form method="post" enctype="multipart/form-data" action="./administration_c.php?prj={{_PRJ_}}">
+            <p>{{IOTHESLBL}} <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input type="file" name="myfile" accept="text/plain" /> <input type="hidden" name="cmd" value="importthes" /> <input type="submit" value="{{IMPORTLBL}}" /></p>
+        </form>
+        <form method="post" enctype="multipart/form-data" action="./administration_c.php?prj={{_PRJ_}}">
+            <p>{{IOSYNSETSLBL}} <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input type="file" name="myfile" accept="text/plain" /> <input type="hidden" name="cmd" value="importsynsets" /> <input type="submit" value="{{IMPORTLBL}}" /></p>
+        </form>
+    </div>
+    <div class="roundcorner">
+        <form method="post" enctype="multipart/form-data" action="./administration_c.php?prj={{_PRJ_}}">
+            <h2>{{IOUPDATEIFQLBL}}</h2>
+            <p>{{IOIFQDOC}}</p>
+            <p>{{IOUPLOADLBL}} <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input type="file" name="myfile" accept="text/plain" /> <input type="hidden" name="cmd" value="importifq" /> <input type="submit" value="{{IMPORTLBL}}" /></p>
+        </form>
+    </div>
+    
+    <div class="roundcorner">
+        <h2>{{EXPORTLBL}} {{IODICTLBL}}</h2>
+        <form method="post" action="./administration_c.php?prj={{_PRJ_}}">
+            <div class="block_right" style="border: 1px solid #DDDDED; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;">   
+                <!-- BRANCH dictlist -->
+                <p><label><input type="checkbox" id="dict{{dictlist.NBDICT}}" name="dict{{dictlist.NBDICT}}" value="{{dictlist.DICTCODE}}" checked="checked" disabled="disabled" /> {{dictlist.DICTNAME}}</label></p>
+                <!-- DIE dictlist -->
+            </div>
+            <p><label><input type="checkbox" id="alldict" name="alldict" value="ON" checked="checked" onclick="disableOnOffDictionaries('alldict')"/> {{IOALLDICT}}</label></p>
+            <p><br /></p>
+            <p><label><input type="checkbox" name="nodubiousentries" checked="checked" value="ON" /> {{IONODUBIOUSENTRIES}}</label></p>
+            <p><br /></p>
+            <p><label><input type="checkbox" name="hunspellfields" checked="checked" value="ON" /> {{IOHUNSPELLFIELDS}}</label></p>
+            <p><label><input type="checkbox" name="dicollectefields" checked="checked" value="ON" /> {{IODICOLLECTEFIELDS}}</label></p>
+            
+            
+            <div class="clearer">&nbsp;</div>
+            <p>
+                <b>{{FILENAMELBL}}</b> {{_PRJ_}}_<input type="text" class="inputtxt" style="width: 100px;" maxlength="10" name="name_addon" value="" />_[date]_[username].dic
+                <input type="hidden" name="cmd" value="exportdict" />
+                <input type="submit" value="{{EXPORTLBL}}" />
+            </p>
+        </form>
+    </div>
+    
+    <div class="roundcorner">
+        <h2>{{EXPORTLBL}} {{IOTHESLBL}} / {{IOSYNSETSLBL}}</h2>
+        <form method="post" action="./administration_c.php?prj={{_PRJ_}}">
+            <p>
+                <b>{{FILENAMELBL}}</b> thes_{{_PRJ_}}_<input type="text" class="inputtxt" style="width: 100px;" maxlength="10" name="name_addon" value="" />_[date]_[username].dat
+                <input type="hidden" name="cmd" value="exportthes" />
+                <input type="submit" value="{{EXPORTLBL}}" />
+            </p>
+        </form>
+        <form method="post" action="./administration_c.php?prj={{_PRJ_}}">
+            <p>
+                <b>{{FILENAMELBL}}</b> synsets_{{_PRJ_}}_<input type="text" class="inputtxt" style="width: 100px;" maxlength="10" name="name_addon" value="" />_[date]_[username].dat
+                <input type="hidden" name="cmd" value="exportsynsets" />
+                <input type="submit" value="{{EXPORTLBL}}" />
+            </p>
+        </form>
+    </div>
+    
+    <div class="roundcorner">
+        <h2>{{FILESLBL}}</h2>
+        <p>{{NOFILELBL}}</p>
+        <table class="table_centeralign">
+            <!-- BRANCH file -->
+            <tr class="tablehead"><th width="400"></th><th width="150"></th><th width="250"></th><th></th></tr>
+            <tr id="{{file.FILE}}">
+                <td><a href="./export/{{_PRJ_}}/{{file.FILE}}">{{file.FILE}}</a></td>
+                <td>{{file.SIZE}} Ko</td>
+                <td>{{file.DATE}}</td>
+                <td><div class="littlelinkbutton"><a href="#" onclick="return eraseFile('{{_PRJ_}}', '{{file.FILE}}', '{{_CONFIRMERASEFILE_}}');">X</a></div></td>
+            </tr>
+            <!-- DIE file -->
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+<!--
+    selectTabByCookie();
+-->
+</script>
+

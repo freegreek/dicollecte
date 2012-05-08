@@ -1,0 +1,98 @@
+<div class="imgzone_right"><img src="./img/icon_gears.png" alt="O" title="{{SEARCH}}" /></div>
+<h1>{{LABEL}}</h1>
+<div class="roundcorner">
+    <form method="post" action="synsets.php?prj={{_PRJ_}}" accept-charset="UTF-8">
+        <p>
+            <input type="text" class="spacefield" id="defaultfield" name="search" size="70" maxlength="70" style="font-size: 16px; heigth: 20px;" />
+            <input type="submit" class="button" style="font-size: 16px; heigth: 16px;" value="{{SEARCH}}" /> &nbsp;
+            <label>{{FULLWORD}} <input type="checkbox" name="fullword" value="ON" {{FWCHECKED}} /></label> &nbsp;
+            <!--<label>{{REGEX}} <input type="checkbox" id="regex" name="regex" value="ON" /></label>-->
+        </p>
+    </form>
+</div>
+
+<!-- BRANCH createbutton -->
+<div class="linkbutton fright" style="margin-top: -20px"><a href="#" onclick="$('#neosynset').toggle(200); return false;">{{createbutton.NEWSYNSET}}</a></div>
+<!-- DIE createbutton -->
+
+<div id="neosynset" class="roundcorner" style="display: none;">
+    <form method="post" action="synsets_c.php?prj={{_PRJ_}}&amp;cmd=newsyn" accept-charset="UTF-8">
+        <h2>{{CREATELBL}}</h2>
+        <p><textarea id="newsynset" name="newsynset" class="spacefield" cols="10" rows="5" style="width: 855px;"></textarea></p>
+        <p style="margin-top: 10px; text-align: right;">
+            <input type="text" id="newpos" name="newpos" class="inputtxt" value="" /> • 
+            <input type="text" id="newtags" name="newtags" class="inputtxt" value="" /> &nbsp; &nbsp; &nbsp;
+            <input type="submit" class="button" value="{{CREATESYN}}" 
+                   onclick="sendFormNewSynset('{{_PRJ_}}'); return false;" />
+            <script type="text/javascript">new autosuggest("newpos", ssposValues);</script>
+            <script type="text/javascript">new autosuggest("newtags", sstagsValues);</script>
+        </p>
+    </form>
+</div>
+
+<div id="synsetpattern">
+    <div class="roundcorner" id="blocksynset__NEWID__" style="display: none">
+        <p>
+            <span id="synset__NEWID__">__NEWSYNSET__</span> • <b id="count__NEWID__" style="color: #E0F0E0;">[__NEWNBSYN__]</b> •
+            <samp><a href="synset.php?prj={{_PRJ_}}&amp;id=__NEWID__">#__NEWID__</a></samp>
+        </p>
+        <div class="fleft" style="margin-top: 5px">
+            __NEWDATE__ • 
+            <a href="#" onclick="$('#synsetform__NEWID__').toggle(200); editSynset(__NEWID__); return false;"><img src="img/tag_write.png" alt="edit"/></a>
+            <a href="#" onclick="delSynset('{{_PRJ_}}', __NEWID__, '{{_CONFIRMDEL_}} (#__NEWID__)'); return false;"><img src="img/tag_erased.png" alt="del"/></a>
+        </div>
+        <p class="synsetinfo"><b id="pos__NEWID__">__NEWPOS__</b> • <b id="tags__NEWID__">__NEWTAGS__</b></p>
+        <form id="synsetform__NEWID__" class="synsetform" method="post" action="./synsets_c.php?prj={{_PRJ_}}&amp;cmd=editsyn" accept-charset="UTF-8">
+            <p><textarea id="newsynset__NEWID__" name="synset"  class="spacefield" cols="10" rows="5" style="width: 855px;"></textarea></p>
+            <p style="margin-top: 10px; text-align: right;">
+                <input type="hidden" name="id_synset" value="__NEWID__" />
+                <input type="text" id="newpos__NEWID__" name="pos" class="inputtxt" value="" /> • 
+                <input type="text" id="newtags__NEWID__" name="tags" class="inputtxt" value="" /> &nbsp; &nbsp; &nbsp;
+                <input type="submit" class="button" value="{{_MODIFY_}}"
+                       onclick="sendFormEditSynset('{{_PRJ_}}', __NEWID__); return false;" />
+                <script type="text/javascript">new autosuggest("newpos__NEWID__", ssposValues);</script>
+                <script type="text/javascript">new autosuggest("newtags__NEWID__", sstagsValues);</script>
+            </p>
+        </form>
+    </div>
+</div>
+
+<!-- BRANCH message -->
+<h3>{{message.MSGHEAD}}</h3>
+<p>{{message.MESSAGE}}</p>
+<!-- DIE message -->
+
+<div class="pagination">{{PAGES}}</div>
+
+<div id="synsets">
+<!-- BRANCH synset -->
+<div class="roundcorner" id="blocksynset{{synset.ID}}">
+    <p>
+        <span id="synset{{synset.ID}}">{{synset.SYNSET}}</span> • <b id="nbsyn{{synset.ID}}" style="color: #E0F0E0;">[{{synset.NBSYN}}]</b> •
+        <samp><a href="synset.php?prj={{_PRJ_}}&amp;id={{synset.ID}}">#{{synset.ID}}</a></samp>
+    </p>
+    <!-- BRANCH cmdbut -->
+    <div class="fleft" style="margin-top: 5px">
+        {{synset.cmdbut.DATE}} • 
+        <a href="#" onclick="$('#synsetform{{synset.cmdbut.ID}}').toggle(200); editSynset({{synset.cmdbut.ID}}); return false;"><img src="img/tag_write.png" alt="edit"/></a>
+        <a href="#" onclick="delSynset('{{_PRJ_}}', {{synset.cmdbut.ID}}, '{{_CONFIRMDEL_}}'); return false;"><img src="img/tag_erased.png" alt="del"/></a>
+    </div>
+    <!-- DIE cmdbut -->
+    <p class="synsetinfo"><b id="pos{{synset.ID}}">{{synset.POS}}</b> • <b id="tags{{synset.ID}}">{{synset.TAGS}}</b></p>
+    <form id="synsetform{{synset.ID}}" class="synsetform" method="post" action="./synsets_c.php?prj={{_PRJ_}}&amp;cmd=editsyn" accept-charset="UTF-8">
+        <p><textarea id="newsynset{{synset.ID}}" name="synset"  class="spacefield" cols="10" rows="5" style="width: 855px;"></textarea></p>
+        <p style="margin-top: 10px; text-align: right;">
+            <input type="hidden" name="id_synset" value="{{synset.ID}}" />
+            <input type="text" id="newpos{{synset.ID}}" name="pos" class="inputtxt" value="" /> • 
+            <input type="text" id="newtags{{synset.ID}}" name="tags" class="inputtxt" value="" /> &nbsp; &nbsp; &nbsp;
+            <input type="submit" class="button" value="{{_MODIFY_}}"
+                   onclick="sendFormEditSynset('{{_PRJ_}}', {{synset.ID}}); return false;" />
+            <script type="text/javascript">new autosuggest("newpos{{synset.ID}}", ssposValues);</script>
+            <script type="text/javascript">new autosuggest("newtags{{synset.ID}}", sstagsValues);</script>
+        </p>
+    </form>
+</div>
+<!-- DIE synset -->
+</div>
+
+<div class="pagination">{{PAGES}}</div>

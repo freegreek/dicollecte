@@ -7,7 +7,7 @@
   http://www.opensource.org/licenses/gpl-3.0.html
   
   Source code:
-  http://code.google.com/p/dicollecte/
+  https://github.com/olr/dicollecte
   
   Documentation in /doc
   

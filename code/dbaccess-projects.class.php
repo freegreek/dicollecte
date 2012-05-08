@@ -39,7 +39,7 @@ class dbaccessProjects {
     public function updateStats ($prj) {
         // count synonyms
         try {
-            $oQ = $this->db->connx->query('SELECT syn FROM dicl_'.$prj.'_thes');
+            $oQ = $this->db->connx->query('SELECT synset FROM dicl_'.$prj.'_syns WHERE deleted = FALSE');
         }
         catch (PDOException $e) {
             $this->db->dbErrorReport($prj, $e, 'count synonyms for ' . $prj);
@@ -47,7 +47,7 @@ class dbaccessProjects {
         }
         $count = 0;
         while ($data = $oQ->fetch(PDO::FETCH_ASSOC)) {
-            $count += mb_substr_count($data['syn'], '|', 'UTF-8');
+            $count += mb_substr_count($data['synset'], '|', 'UTF-8');
         }
         // update
         $qUpdate = 'UPDATE dicl_projects SET'
@@ -56,7 +56,7 @@ class dbaccessProjects {
                  . ' nbentsemtag = (SELECT count(id_entry) FROM dicl_'.$prj.'_dic WHERE sem != ' . "''" . '),'
                  . ' nbnotes = (SELECT count(id_note) FROM dicl_'.$prj.'_notes),'
                  . ' nbprop = (SELECT count(id_prop) FROM dicl_'.$prj.'_prop WHERE tab = ' . "'E'" . '),'
-                 . ' nbthesent = (SELECT count(id_word) FROM dicl_'.$prj.'_thes),'
+                 . ' nbsynsets = (SELECT count(id_synset) FROM dicl_'.$prj.'_syns),'
                  . ' nbsyns = ' . $count . ','
                  . ' lastupdate = extract(epoch FROM now())'
                  . ' WHERE prj = ' . "'".$prj."'";

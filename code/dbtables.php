@@ -19,7 +19,7 @@
 
 // To update the db, update this number (i.e. from 1.0001 to 1.0002)
 // then go to http://[homepage]/installer.php
-define('DB_VERSION', 1.0001);
+define('DB_VERSION', 1.0002);
 
 
 /*
@@ -51,6 +51,7 @@ $dbTables['projects']['nbentsemtag']  = array('integer', 0, FALSE, '0', NULL, NU
 $dbTables['projects']['nbprop']     = array('integer', 0, FALSE, '0', NULL, NULL, FALSE);
 $dbTables['projects']['nbnotes']    = array('integer', 0, FALSE, '0', NULL, NULL, FALSE);
 $dbTables['projects']['nbthesent']  = array('integer', 0, FALSE, '0', NULL, NULL, FALSE);
+$dbTables['projects']['nbsynsets']  = array('integer', 0, FALSE, '0', NULL, NULL, FALSE);
 $dbTables['projects']['nbsyns']     = array('integer', 0, FALSE, '0', NULL, NULL, FALSE);
 $dbTables['projects']['lastupdate'] = array('integer', 0, FALSE, 'extract(epoch FROM now())', NULL, NULL, FALSE);
 
@@ -194,6 +195,7 @@ $dbPrjTables['_notes']['datetime']   = array('integer', 0, FALSE, 'extract(epoch
 /*
 // the thesaurus
 */
+// DEPRECATED
 $dbPrjTables['_thes']['id_word']     = array('SERIAL PRIMARY KEY', 0, TRUE, NULL, NULL, NULL, FALSE);
 $dbPrjTables['_thes']['word']        = array('character varying', DB_THESENTRYLEN, FALSE, NULL, "UNIQUE CHECK (word <> '')", NULL, TRUE);      // word
 $dbPrjTables['_thes']['nbclass']     = array('smallint', 0, FALSE, NULL, "CHECK (nbclass > 0)", NULL, FALSE);                                  // number of meanings
@@ -204,6 +206,7 @@ $dbPrjTables['_thes']['lock']        = array('integer', 0, FALSE, '0', NULL, NUL
 $dbPrjTables['_thes']['keyid']       = array('integer', 0, TRUE, '0', NULL, NULL, FALSE);                                                      // key to open the lock (id_user)
 
 // the thesaurus history
+// DEPRECATED
 $dbPrjTables['_thist']['id_hist']     = array('SERIAL PRIMARY KEY', 0, TRUE, NULL, NULL, NULL, FALSE);
 $dbPrjTables['_thist']['word']        = array('character varying', DB_THESENTRYLEN, FALSE, NULL, NULL, NULL, TRUE);                             // word
 $dbPrjTables['_thist']['nbclass']     = array('smallint', 0, FALSE, NULL, "CHECK (nbclass > 0)", NULL, FALSE);                                  // number of meanings

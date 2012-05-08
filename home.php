@@ -53,7 +53,7 @@ else {
                                                             'PCENTSEMTAG' => $pcentsemtag,
                                                             'NBNOTES' => $data['nbnotes'],
                                                             'NBPROP' => $data['nbprop'],
-                                                            'NBTHESENT' => $data['nbthesent'],
+                                                            'NBSYNSETS' => $data['nbsynsets'],
                                                             'NBSYNS' => $data['nbsyns']));
         }
     }

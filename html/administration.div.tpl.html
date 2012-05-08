@@ -183,9 +183,6 @@
             <p>{{IOAFFIXLBL}} <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input type="file" name="myfile" accept="text/plain" /> <input type="hidden" name="cmd" value="importaffix" /> <input type="submit" value="{{IMPORTLBL}}" /></p>
         </form>
         <form method="post" enctype="multipart/form-data" action="./administration_c.php?prj={{_PRJ_}}">
-            <p>{{IOTHESLBL}} <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input type="file" name="myfile" accept="text/plain" /> <input type="hidden" name="cmd" value="importthes" /> <input type="submit" value="{{IMPORTLBL}}" /></p>
-        </form>
-        <form method="post" enctype="multipart/form-data" action="./administration_c.php?prj={{_PRJ_}}">
             <p>{{IOSYNSETSLBL}} <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input type="file" name="myfile" accept="text/plain" /> <input type="hidden" name="cmd" value="importsynsets" /> <input type="submit" value="{{IMPORTLBL}}" /></p>
         </form>
     </div>
@@ -223,14 +220,7 @@
     </div>
     
     <div class="roundcorner">
-        <h2>{{EXPORTLBL}} {{IOTHESLBL}} / {{IOSYNSETSLBL}}</h2>
-        <form method="post" action="./administration_c.php?prj={{_PRJ_}}">
-            <p>
-                <b>{{FILENAMELBL}}</b> thes_{{_PRJ_}}_<input type="text" class="inputtxt" style="width: 100px;" maxlength="10" name="name_addon" value="" />_[date]_[username].dat
-                <input type="hidden" name="cmd" value="exportthes" />
-                <input type="submit" value="{{EXPORTLBL}}" />
-            </p>
-        </form>
+        <h2>{{EXPORTLBL}} {{IOSYNSETSLBL}}</h2>
         <form method="post" action="./administration_c.php?prj={{_PRJ_}}">
             <p>
                 <b>{{FILENAMELBL}}</b> synsets_{{_PRJ_}}_<input type="text" class="inputtxt" style="width: 100px;" maxlength="10" name="name_addon" value="" />_[date]_[username].dat

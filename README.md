@@ -22,3 +22,8 @@ dicollecte
  * sub-dictionaries management
  * preset tags for entries
  * 4 levels of privileges: administrators, editors, controllers, simple users
+
+### Example:
+
+ [Dicollecte (French)]: http://www.dicollecte.org/home.php?prj=fr
+  

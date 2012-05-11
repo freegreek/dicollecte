@@ -2,7 +2,7 @@
 
 class Pagination {
     private $baseURL        = '';
-    private $zoneSize       = 5; // > 0
+    private $zoneSize       = 4; // > 0
     private $borderSize     = 1; // > 0
     private $nbMaxPages     = 25; // shrink if more than $nbMaxPages, must be > $zoneSize
     
@@ -79,23 +79,46 @@ class Pagination {
             $zone2e = $this->pageNum + $this->zoneSize;
             $zone3b = $nbPages - $this->borderSize + 1;
             $zone3e = $nbPages;
+            $m1 = (int) (($zone1e+$zone2b)/2); // between zone1 and zone2
+            $m2 = (int) (($zone2e+$zone3b)/2); // between zone3 and zone3
+            $no_m = $this->zoneSize*2;
             if ($zone2b <= $zone1e) {
                 $zone2e += $this->zoneSize;
                 for ($i=$zone1b; $i<=$zone2e; $i++) { $pagenumbers[] = $i; }
                 $pagenumbers[] = 0;
+                if (($zone3b-$zone2e)>$no_m) {
+                    $pagenumbers[] = $m2;
+                    $pagenumbers[] = 0;
+                }
                 for ($i=$zone3b; $i<=$zone3e; $i++) { $pagenumbers[] = $i; }
             }
             elseif ($zone2e >= $zone3b) {
                 $zone2b -= $this->zoneSize;
                 for ($i=$zone1b; $i<=$zone1e; $i++) { $pagenumbers[] = $i; }
                 $pagenumbers[] = 0;
+                if (($zone2b-$zone1e)>$no_m) {
+                    $pagenumbers[] = $m1;
+                    $pagenumbers[] = 0;
+                }
                 for ($i=$zone2b; $i<=$zone3e; $i++) { $pagenumbers[] = $i; }
             }
             else {
                 for ($i=$zone1b; $i<=$zone1e; $i++) { $pagenumbers[] = $i; }
-                if (($zone1e + 1) != $zone2b) $pagenumbers[] = 0;
+                if (($zone1e + 1) != $zone2b) {
+                    $pagenumbers[] = 0;
+                    if (($zone2b-$zone1e)>$no_m) {
+                        $pagenumbers[] = $m1;
+                        $pagenumbers[] = 0;
+                    }
+                }
                 for ($i=$zone2b; $i<=$zone2e; $i++) { $pagenumbers[] = $i; }
-                if (($zone2e + 1) != $zone3b) $pagenumbers[] = 0;
+                if (($zone2e + 1) != $zone3b) {
+                    $pagenumbers[] = 0;
+                    if (($zone3b-$zone2e)>$no_m) {
+                        $pagenumbers[] = $m2;
+                        $pagenumbers[] = 0;
+                    }
+                }
                 for ($i=$zone3b; $i<=$zone3e; $i++) { $pagenumbers[] = $i; }
             }
         }

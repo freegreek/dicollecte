@@ -43,8 +43,6 @@ else {
 }
 
 // display
-$template->Grow('./html/div.head-nomenu.tpl.html');
 $template->Grow('./html/index.div.tpl.html');
-$template->Grow('./html/div.foot.tpl.html');
 
 ?>

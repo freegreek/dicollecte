@@ -1,16 +1,57 @@
-    
-    <!-- BRANCH msg -->
-    <h1>{{msg.MESSAGE}}</h1>
-    <!-- DIE msg -->
-    
-    <h1>Projects index</h1>
-    <div style="border: 8px solid #000000;">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Projects index • Dicollecte • Dictionaries for OpenOffice.org / LibreOffice, Firefox, Thunderbird, etc.</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Olivier R." />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+
+<body>
+
+<div id="main">
+    <div class="mainflow">
+        
+        <h1><a href="index.php">dicollecte</a></h1>
+        <p>the collaborative tool to work on Hunspell dictionaries.</p>
+        
+        {{SYSMSG}}
+        
+        <!-- BRANCH msg -->
+        <h1>{{msg.MESSAGE}}</h1>
+        <!-- DIE msg -->
+        
         <!-- BRANCH project -->
-        <div class="projectbutton">
-            <a href="home.php?prj={{project.PRJ}}">
-                <img src="./img/tag_valid.png" alt="*" title="{{project.PRJ}}" /> {{project.PROJECTLABEL}}
-            </a>
-        </div>
+        <a class="project" href="home.php?prj={{project.PRJ}}" title="{{project.PRJ}}">{{project.PROJECTLABEL}}</a>
         <!-- DIE project -->
+
     </div>
+</div>
+
+
+<script type="text/javascript">
+<!--
+    window.setTimeout("$('#message').fadeToggle(2500)", 2500);
+    if (document.getElementById('defaultfield')) document.getElementById('defaultfield').focus();
+-->
+</script>
+
+{{STATS_TOOL}}
+
+</body>
+</html>
+
+
+
+
+    
+    
+
+
 

@@ -1,12 +1,13 @@
 # Changelog
 
-## 1.0.0 --- 2012-05-07
+## 1.0.0 --- 2012-05-xx
  
  * new: simple forum
  * new: priority for suggestions
  * new: rank “editor”
  * new: password recovery
  * new: synsets edition
+ * new: notifications by e-mail for suggestions and threads
  * changed: ui update
  * reworked: log of actions on the dictionary
  * reworked: theme details

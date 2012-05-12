@@ -70,7 +70,7 @@ if ($db->connx) {
     }
     
     $label = (!isset($_GET['id_user'])) ? $ui['commentsVars']['label'] : sprintf($ui['commentsVars']['label_id'], $result[0]['login']);
-    if (isset($_GET['prop_user'])) { $label = sprintf($ui['commentsVars']['label_propuser'], '<samp>'.$_GET['user'].'</samp>'); }
+    if (isset($_GET['prop_user'])) { $label = sprintf($ui['commentsVars']['label_propuser'], $_GET['user']); }
     $template->SetTrunkVars($ui['comments']);
     $template->SetTrunkVar('LABEL', $label);
     

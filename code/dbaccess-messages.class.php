@@ -313,7 +313,7 @@ class dbaccessMessages {
     private function remixMsg (&$msg) {
         $msg = strip_tags($msg, '<b><i><u><s><q><h3><img>');
         $msg = str_replace(array('<q>', '</q>'), array('<blockquote><p>', '</p></blockquote>'), $msg);
-        $msg = preg_replace('`[a-zA-Z]+:\/\/([a-z][a-z0-9_\..-]*[a-z]{2,6})[^()\s]*`i', '<a href="$0">$1…</a>', $msg);
+        $msg = preg_replace('`[a-zA-Z]+:\/\/([a-z][a-z0-9_\..-]*[a-z]{2,6})[^()<>\s]*`i', '<a href="$0">$1…</a>', $msg);
         $msg = str_replace('&', '&amp;', $msg);
         $msg = nl2br($msg);
     }

@@ -218,7 +218,7 @@ class dbaccessComments {
     private function remixComment (&$comment) {
         $comment = strip_tags($comment, '<b><i><u><s><q>');
         $comment = str_replace(array('<q>', '</q>'), array('<blockquote><p>', '</p></blockquote>'), $comment);
-        $comment = preg_replace('`[a-zA-Z]+:\/\/([a-z][a-z0-9_\..-]*[a-z]{2,6})[^()\s]*`i', '<a href="$0">$1…</a>', $comment);
+        $comment = preg_replace('`[a-zA-Z]+:\/\/([a-z][a-z0-9_\..-]*[a-z]{2,6})[^()<>\s]*`i', '<a href="$0">$1…</a>', $comment);
         $comment = str_replace('&', '&amp;', $comment);
         $comment = nl2br($comment);
     }

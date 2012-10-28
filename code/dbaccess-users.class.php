@@ -99,9 +99,9 @@ class dbaccessUsers {
             $this->db->dbErrorReport(FALSE, $e, 'update user');
             return array(FALSE, '_dberror');
         }
-        if ($pw != '') {
+        /*if ($pw != '') {
             $this->sendMailAccount($email, $result[0]['login'], $pw, $prj);
-        }
+        }*/
         return array(TRUE, 'ok');
     }
     

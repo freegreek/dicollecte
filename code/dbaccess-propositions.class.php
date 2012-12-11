@@ -46,11 +46,15 @@ class dbaccessPropositions {
         return array(TRUE, $result, $nbOccur);
     }
 
-    public function searchAll ($prj, $isRegEx, $entry, $id_user, $offset, $nbEntriesByPage) {
+    public function searchAll ($prj, $tagSearch, $entry, $id_user, $offset, $nbEntriesByPage) {
         // options
         $qOptions = array();
         if ($entry['lemma'] != '') {
-            $qOptions[] = ($isRegEx) ? "lemma ~ '{$entry['lemma']}' " : "lemma LIKE '{$entry['lemma']}%' ";
+            switch ($tagSearch) {
+                case 'R': $qOptions[] = "lemma ~ '{$entry['lemma']}'"; break;
+                //case 'P': $qOptions[] = "metaphone(lemma) = metaphone('{$entry['lemma']}')"; break;
+                default: $qOptions[] = "lemma ILIKE '{$entry['lemma']}%'";
+            }
         }
         if (is_numeric($id_user) and $id_user != 0) {
             $qOptions[] = 'id_user = ' . $id_user;

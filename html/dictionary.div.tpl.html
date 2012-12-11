@@ -9,9 +9,10 @@
     <form method="post" action="dictionary.php?prj={{_PRJ_}}" accept-charset="UTF-8">
         <p style="height: 24px;">
             <a class="inlinebutton" href="" onclick="$('#extsearch').toggle(200); return false;">+</a>
-            <input type="text" class="inputtxt" id="defaultfield" name="lemma" maxlength="200" style="font-size: 16px; heigth: 20px; width: 500px;" />
+            <input type="text" class="inputtxt" id="defaultfield" name="lemma" maxlength="200" style="font-size: 16px; heigth: 20px; width: 350px;" />
             <input type="submit" class="button" style="font-size: 16px; heigth: 16px;" value="{{SEARCH}}" /> &nbsp;
-            <label for="regex" title="{{LEMMAONLY}}">{{REGEX}}</label> <input type="checkbox" id="regex" name="regex" value="ON" />
+            <label for="regex" title="{{LEMMAONLY}}">{{REGEX}}</label> <input type="checkbox" id="regex" name="regex" value="ON" /> &nbsp;
+            <!--<label for="mphone" title="{{LEMMAONLY}}">{{MPHONE}}</label> <input type="checkbox" id="mphone" name="mphone" value="ON" />-->
         </p>
         <div class="clearer"></div>
         <div id="extsearch" style="display: none">

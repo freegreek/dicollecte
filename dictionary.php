@@ -34,7 +34,8 @@ if ($db->connx and isset($_REQUEST['lemma'])) {
     
     // search in dictionary
     require('./config/img_vars.php');
-    $isRegEx = (isset($_REQUEST['regex']) and $_REQUEST['regex'] == 'ON') ? TRUE : FALSE;
+    $tagSearch = (isset($_REQUEST['regex']) and $_REQUEST['regex'] == 'ON') ? 'R' : 'N';
+    //if (isset($_REQUEST['mphone']) and $_REQUEST['mphone'] == 'ON') $tagSearch = 'P';
     
     // sort
     $orderby = (isset($_REQUEST['order'])) ? $_REQUEST['order'] : 'L';
@@ -60,7 +61,7 @@ if ($db->connx and isset($_REQUEST['lemma'])) {
     $selectuser = (isset($_REQUEST['id_user'])) ? (int) $_REQUEST['id_user'] : 0;
 
     $dbaDictionary = new dbaccessDictionary($db);
-    list($ok, $result, $nbOccur) = $dbaDictionary->search($_GET['prj'], $isRegEx, $_REQUEST, $selectuser, $orderby, $oPg1->getOffset(), $nbEntriesByPage);
+    list($ok, $result, $nbOccur) = $dbaDictionary->search($_GET['prj'], $tagSearch, $_REQUEST, $selectuser, $orderby, $oPg1->getOffset(), $nbEntriesByPage);
     if (!$ok) {
         setSysMsg($result);
         header(URL_HEADER . 'dictionary.php?prj=' . $_GET['prj']);
@@ -115,7 +116,7 @@ if ($db->connx and isset($_REQUEST['lemma'])) {
     if ($doPropSearch) {
         $oPg2 = new Pagination('dictionary.php', 'page2', $nbEntriesByPage);
         $dbaPropositions = new dbaccessPropositions($db);
-        list($ok, $result, $nbOccur2) = $dbaPropositions->searchAll($_GET['prj'], $isRegEx, $_REQUEST, $selectuser, $oPg2->getOffset(), $nbEntriesByPage);
+        list($ok, $result, $nbOccur2) = $dbaPropositions->searchAll($_GET['prj'], $tagSearch, $_REQUEST, $selectuser, $oPg2->getOffset(), $nbEntriesByPage);
         if (!$ok) {
             setSysMsg($result);
             header(URL_HEADER . 'dictionary.php?prj=' . $_GET['prj']);
